@@ -2,10 +2,22 @@
     "rewrites": [
         {
             "source": "/chat",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "(?<subdomain>[^.]+)\\.falarcomumadvogado\\.com\\.br"
+                }
+            ],
             "destination": "https://chat-funnel-alpha.vercel.app/:subdomain"
         },
         {
             "source": "/chat/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "(?<subdomain>[^.]+)\\.falarcomumadvogado\\.com\\.br"
+                }
+            ],
             "destination": "https://chat-funnel-alpha.vercel.app/:subdomain/:path*"
         }
     ]

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://familiasdepoder.com.br" />
+
+    <title>Combo Família Cristã: Casamento Restaurado + Filhos Fortes</title>
+    <meta name="description" content="Transforme seu casamento e eduque filhos vencedores com princípios bíblicos. Acesso vitalício, garantia de 7 dias e mais de 5.000 famílias impactadas." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://familiasdepoder.com.br" />
+    <meta property="og:title" content="Combo Família Cristã: Casamento Restaurado + Filhos Fortes" />
+    <meta name="twitter:image" content="./assets/images/social.jpg" />
+    <meta property="og:description" content="Transforme seu casamento e eduque filhos vencedores com princípios bíblicos. Acesso vitalício, garantia de 7 dias e mais de 5.000 famílias impactadas." />
+    <meta property="og:site_name" content="Família Rosa" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://familiasdepoder.com.br" />
+    <meta name="twitter:title" content="Combo Família Cristã: Casamento Restaurado + Filhos Fortes" />
+    <meta name="twitter:description" content="Transforme seu casamento e eduque filhos vencedores com princípios bíblicos. Acesso vitalício, garantia de 7 dias e mais de 5.000 famílias impactadas." />
+    <meta name="twitter:image" content="./assets/images/social.jpg" />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome-pro.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/bexon-icons.css" />
+    <link rel="stylesheet" href="./assets/css/nice-select.css" />
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="./assets/css/venobox.min.css" />
+    <link rel="stylesheet" href="./assets/css/odometer-theme-default.css" />
+    <link rel="stylesheet" href="./assets/css/meanmenu.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeLSL0rAAAAADmiInXBNxVvKzdu9ToBwJ8L9hb0"></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-TF5CTCN5')
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+      (async function() {
+        const redirectURL = "./sabado"; 
+        
+        const lat = "-15.78"; 
+        const lng = "-47.93";
+
+        if (window.location.href.includes(redirectURL)) return;
+
+        const now = new Date();
+        const dayOfWeek = now.getDay();
+
+        if (dayOfWeek !== 5 && dayOfWeek !== 6) return;
+
+        const currentHour = now.getHours();
+        const currentMinute = now.getMinutes();
+
+        const fallbackSunset = { 
+            5: { hour: 18, minute: 0 }, 
+            6: { hour: 18, minute: 0 } 
+        };
+
+        const getSunsetTime = async () => {
+          try {
+            const response = await fetch(`https://api.sunrisesunset.io/json?lat=${lat}&lng=${lng}&timezone=America/Sao_Paulo`);
+            const data = await response.json();
+            
+            if (data?.results?.sunset) {
+              const [time, period] = data.results.sunset.split(' ');
+              let [hour, minute] = time.split(':').map(Number);
+              
+              hour = period === 'PM' && hour !== 12 ? hour + 12 : period === 'AM' && hour === 12 ? 0 : hour;
+              
+              return { hour, minute };
+            }
+          } catch (error) {
+            console.warn("Não foi possível buscar o pôr do sol, usando horário fixo.");
+          }
+          return fallbackSunset[dayOfWeek];
+        };
+
+        const sunset = await getSunsetTime();
+        const isFridaySabbath = dayOfWeek === 5 && (currentHour > sunset.hour || (currentHour === sunset.hour && currentMinute >= sunset.minute));
+        const isSaturdaySabbath = dayOfWeek === 6 && (currentHour < sunset.hour || (currentHour === sunset.hour && currentMinute < sunset.minute));
+
+        if (isFridaySabbath || isSaturdaySabbath) {
+          window.location.href = redirectURL;
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF5CTCN5" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="body-overlay"></div>
+
+    <main id="primary" class="site-main">
+      <!-- start: Banner Section -->
+      <section class="tj-banner-section-2 section-gap-x bg-primary m-0 rounded-0 hero-height">
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+            <div class="col-lg-7">
+              <div class="banner-content-2">
+                <img src="./assets/images/logo-h-o.svg" height="64" alt="" class="mb-3 wow fadeInUp" data-wow-delay=".6s" />
+                <h1 class="banner-title title-anim fw-bolder mb-3 text-light">Combo Famílias de Poder + Filhos Vencedores</h1>
+                <p class="fs-5 wow fadeInUp text-light" data-wow-delay=".2s">Como transformar seu casamento e educar filhos fortes, com base na Bíblia, na autoridade dos pais e nos princípios de uma família que agrada a Deus.</p>
+                <ul class="list-items d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 mt-3 wow fadeInUp" data-wow-delay=".3s">
+                  <li class="d-flex gap-2 align-items-center mb-0 text-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="7.8 7.8 4.4 4.4" width="12"><path fill="#cfaf60" d="M7.8 10a2.2 2.2 0 0 0 4.4 0 2.2 2.2 0 0 0-4.4 0z" /></svg>
+                    +5.000 famílias transformadas
+                  </li>
+                  <li class="d-flex gap-2 align-items-center mb-0 text-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="7.8 7.8 4.4 4.4" width="12"><path fill="#cfaf60" d="M7.8 10a2.2 2.2 0 0 0 4.4 0 2.2 2.2 0 0 0-4.4 0z" /></svg>
+                    Acesso vitalício
+                  </li>
+                </ul>
+                <div class="btn-area wow fadeInUp" data-wow-delay=".4s">
+                  <a href="https://pay.kiwify.com.br/hivjRgO" target="_blank" class="tj-primary-btn lighter-btn">
+                    <span class="btn-text"><span>Garantir meu acesso agora</span></span>
+                    <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="banner-img-area wow fadeInUp" data-wow-delay=".3s">
+                <div class="banner-img">
+                  <img src="./assets/images/hero-2.jpeg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-shape-1">
+          <img src="./assets/images/pattern-2.svg" alt="" />
+        </div>
+        <div class="bg-shape-2">
+          <img src="./assets/images/pattern-3.svg" alt="" />
+        </div>
+      </section>
+      <!-- end: Banner Section -->
+
+      <!-- start: Pricing Section -->
+      <section class="tj-pricing-section-2 section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="sec-heading text-center">
+                <span class="sub-title wow fadeInUp" data-wow-delay=".1s"><i class="tji-box"></i>Dois cursos completos em um só combo</span>
+                <h2 class="sec-title title-anim">Oferta Especial do <span>Combo</span></h2>
+              </div>
+            </div>
+          </div>
+          <div class="row row-gap-4 align-items-stretch justify-content-center">
+            <div class="col-xl-4 col-md-6">
+              <div class="pricing-box wow fadeInUp h-100" data-wow-delay=".5s">
+                <div class="pricing-header">
+                  <h4 class="package-name mb-5">O que está incluso:</h4>
+                </div>
+                <div class="list-items">
+                  <ul>
+                    <li><i class="tji-list"></i>2 cursos completos em um só combo</li>
+                    <li><i class="tji-list"></i>Acesso vitalício a todo o conteúdo</li>
+                    <li><i class="tji-list"></i>Assista no celular, tablet ou TV</li>
+                    <li><i class="tji-list"></i>Garantia incondicional de 7 dias</li>
+                    <li><i class="tji-list"></i>Suporte direto com a equipe</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+              <div class="pricing-box active wow fadeInUp text-end h-100" data-wow-delay=".7s">
+                <div class="pricing-header">
+                  <small class="text-light mb-0">De: <s>R$ 129,90</s>, por apenas</small>
+                  <div class="package-price mt-1 mb-3 d-block">
+                    <span class="package-period fs-5">12x de R$ </span>
+                    <span class="price-number">6,20</span>
+                  </div>
+                  <p class="text-light fw-bold">Ou R$ 59,90 à vista</p>
+                  <div class="pricing-btn">
+                    <a href="https://pay.kiwify.com.br/hivjRgO" target="_blank" class="text-btn" >
+                      <span class="btn-text"><span>Garantir meu acesso agora</span></span>
+                      <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+                    </a>
+                  </div>
+                  <small class="text-light fw-lighter d-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-clock w-4 h-4" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D" data-component-file="OfferSection.tsx" data-component-line="63" data-component-name="Clock" data-component-path="src/components/OfferSection.tsx" data-lov-id="src/components/OfferSection.tsx:63:18" data-lov-name="Clock" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                    Oferta por tempo limitado
+                  </small>
+                  <small class="text-light fw-lighter d-block mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-shield w-4 h-4" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D" data-component-file="OfferSection.tsx" data-component-line="76" data-component-name="Shield" data-component-path="src/components/OfferSection.tsx" data-lov-id="src/components/OfferSection.tsx:76:14" data-lov-name="Shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
+                    Garantia incondicional de 7 dias
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end: Pricing Section -->
+
+      <!-- start: Choose Section -->
+      <section id="choose" class="tj-choose-section section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="sec-heading-wrap">
+                <!-- <span class="sub-title wow fadeInUp" data-wow-delay=".3s"><i class="tji-box"></i>Choose the Best</span> -->
+                <div class="heading-wrap-content">
+                  <div class="sec-heading">
+                    <h2 class="sec-title title-anim">Pilares da <span>Transformação.</span></h2>
+                  </div>
+                  <!-- <div class="btn-wrap wow fadeInUp" data-wow-delay=".6s">
+                    <a class="tj-primary-btn" href="contact.html">
+                      <span class="btn-text"><span>Quero transformar minha família</span></span>
+                      <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+                    </a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-gap-4 rightSwipeWrap">
+            <div class="col-lg-4">
+              <div class="choose-box right-swipe">
+                <div class="choose-content">
+                  <div class="choose-icon">
+                    <img src="./assets/images/casamento-restaurado.svg" alt="" />
+                  </div>
+                  <h4 class="title">Casamento Restaurado</h4>
+                  <p class="desc">Princípios bíblicos para reconstruir a união e a intimidade conjugal</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="choose-box right-swipe">
+                <div class="choose-content">
+                  <div class="choose-icon">
+                    <img src="./assets/images/filios-obedientes-e-preparados.svg" alt="" />
+                  </div>
+                  <h4 class="title">Filhos Obedientes e Preparados</h4>
+                  <p class="desc">Metodologia cristã para educar filhos fortes, respeitosos e bem-sucedidos</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="choose-box right-swipe">
+                <div class="choose-content">
+                  <div class="choose-icon">
+                    <img src="./assets/images/legado-familiar-cristao.svg" alt="" />
+                  </div>
+                  <h4 class="title">Legado Familiar Cristão</h4>
+                  <p class="desc">Construindo uma herança de fé e valores que perduram por gerações</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end: Choose Section -->
+
+      <!-- start: Service Section -->
+      <section class="tj-service-section service-3 section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="sec-heading style-3 text-md-center">
+                <h2 class="sec-title title-anim">O que você vai aprender</h2>
+                <span class="sub-title mt-3 mb-0 wow fadeInUp" data-wow-delay=".3s"><i class="tji-box"></i>Casamento forte + Filhos vencedores = Família inabalável</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-bottom-area">
+            <div class="mission-vision-box wow fadeInLeft" data-wow-delay=".5s">
+              <div class="d-flex gap-2 align-items-center mb-3">
+                <svg width="64" class="text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>
+                <h4 class="title h2 text-primary mb-0">Famílias de Poder</h4>
+              </div>
+
+              <ul class="list-items">
+                <li><i class="tji-check"></i>Como restaurar a comunicação no casamento</li>
+                <li><i class="tji-check"></i>Autoridade e submissão segundo a Bíblia</li>
+                <li><i class="tji-check"></i>Superando crises e conflitos conjugais</li>
+                <li><i class="tji-check"></i>Intimidade e cumplicidade no relacionamento</li>
+                <li><i class="tji-check"></i>Planejamento familiar e financeiro cristão</li>
+              </ul>
+            </div>
+            <div class="mission-vision-box wow fadeInRight" data-wow-delay=".5s">
+              <div class="d-flex gap-2 align-items-center mb-3">
+                <svg width="64" class="text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                </svg>
+                <h4 class="title h2 text-primary mb-0">Filhos Vencedores</h4>
+              </div>
+
+              <ul class="list-items">
+                <li><i class="tji-check"></i>Disciplina com amor e firmeza</li>
+                <li><i class="tji-check"></i>Educação sexual cristã para crianças</li>
+                <li><i class="tji-check"></i>Como desenvolver caráter e valores</li>
+                <li><i class="tji-check"></i>Preparando filhos para os desafios do mundo</li>
+                <li><i class="tji-check"></i>Criando um ambiente familiar saudável</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-btn-area text-center wow fadeInUp" data-wow-delay=".3s">
+            <a href="https://pay.kiwify.com.br/hivjRgO" target="_blank" class="tj-primary-btn">
+              <span class="btn-text"><span>Garantir meu acesso agora</span></span>
+              <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- end: Service Section -->
+
+      <!-- start: Testimonial Section -->
+      <section class="h5-testimonial section-gap section-gap-x">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-12">
+              <div class="sec-heading style-3 sec-heading-centered">
+                <span class="sub-title wow fadeInUp text-lowercase" data-wow-delay=".3s"><i class="tji-box"></i>Veja o que famílias reais falam sobre nossa metodologia</span>
+                <h2 class="sec-title title-anim">Famílias <span>Transformadas</span></h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="testimonial-wrapper h5-testimonial-wrapper wow fadeInUp" data-wow-delay=".5s">
+                <div class="swiper swiper-container h5-testimonial-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <div class="h5-testimonial-author-wrapper">
+                          <div class="testimonial-author">
+                            <div class="author-inner">
+                              <div class="author-header">
+                                <h4 class="title">Maria</h4>
+                                <!-- <span class="designation">Belo Horizonte, MG</span> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="star-ratings">
+                            <div class="fill-ratings" style="width: 100%">
+                              <span>★★★★★</span>
+                            </div>
+                            <div class="empty-ratings">
+                              <span>★★★★★</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="desc">
+                          <p>“Nós éramos uma família sem educação bíblica, mas a nossa vida foi transformada quando conhecemos uma família fiel que nos ensinou a Palavra. Hoje, meus filhos honram a Deus e vivem seu propósito.”</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <div class="h5-testimonial-author-wrapper">
+                          <div class="testimonial-author">
+                            <div class="author-inner">
+                              <div class="author-header">
+                                <h4 class="title">Enzo</h4>
+                                <!-- <span class="designation">Fortaleza, CE</span> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="star-ratings">
+                            <div class="fill-ratings" style="width: 100%">
+                              <span>★★★★★</span>
+                            </div>
+                            <div class="empty-ratings">
+                              <span>★★★★★</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="desc">
+                          <p>“Sou grato pela minha infância, cheia de amor e princípios. A espiritualidade foi a base da minha criação, me tornando a pessoa que sou hoje.”</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <div class="h5-testimonial-author-wrapper">
+                          <div class="testimonial-author">
+                            <div class="author-inner">
+                              <div class="author-header">
+                                <h4 class="title">Valentina</h4>
+                                <!-- <span class="designation">São Paulo, SP</span> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="star-ratings">
+                            <div class="fill-ratings" style="width: 100%">
+                              <span>★★★★★</span>
+                            </div>
+                            <div class="empty-ratings">
+                              <span>★★★★★</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="desc">
+                          <p>“Sou grata aos meus pais por me ensinarem a amar a Deus. Aos 12 anos, reconheço que a fé e a bondade que eles plantaram em meu coração me fazem ser quem sou.”</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination-area"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <a href="https://pay.kiwify.com.br/hivjRgO" target="_blank" class="tj-primary-btn">
+              <span class="btn-text"><span>Garantir meu acesso agora</span></span>
+              <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-shape-1">
+          <img src="./assets/images/pattern-2.svg" alt="" />
+        </div>
+        <div class="bg-shape-2">
+          <img src="./assets/images/pattern-3.svg" alt="" />
+        </div>
+      </section>
+      <!-- end: Testimonial Section -->
+
+      <!-- start: Pricing Section -->
+      <section class="tj-pricing-section-2 section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="sec-heading text-md-center">
+                <span class="sub-title wow fadeInUp" data-wow-delay=".1s"><i class="tji-box"></i>Dois cursos completos em um só combo</span>
+                <h2 class="sec-title title-anim">Oferta Especial do <span>Combo</span></h2>
+              </div>
+            </div>
+          </div>
+          <div class="row row-gap-4 align-items-stretch justify-content-center">
+            <div class="col-xl-4 col-md-6">
+              <div class="pricing-box wow fadeInUp h-100" data-wow-delay=".5s">
+                <div class="pricing-header">
+                  <h4 class="package-name mb-5">O que está incluso:</h4>
+                </div>
+                <div class="list-items">
+                  <ul>
+                    <li><i class="tji-list"></i>2 cursos completos em um só combo</li>
+                    <li><i class="tji-list"></i>Acesso vitalício a todo o conteúdo</li>
+                    <li><i class="tji-list"></i>Assista no celular, tablet ou TV</li>
+                    <li><i class="tji-list"></i>Garantia incondicional de 7 dias</li>
+                    <li><i class="tji-list"></i>Suporte direto com a equipe</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+              <div class="pricing-box active wow fadeInUp text-end h-100" data-wow-delay=".7s">
+                <div class="pricing-header">
+                  <small class="text-light mb-0">De: <s>R$ 129,90</s>, por apenas</small>
+                  <div class="package-price mt-1 mb-3 d-block">
+                    <span class="package-period fs-5">12x de R$ </span>
+                    <span class="price-number">6,20</span>
+                  </div>
+                  <p class="text-light fw-bold">Ou R$ 59,90 à vista</p>
+                  <div class="pricing-btn">
+                    <a href="https://pay.kiwify.com.br/hivjRgO" target="_blank" class="text-btn">
+                      <span class="btn-text"><span>Garantir meu acesso agora</span></span>
+                      <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+                    </a>
+                  </div>
+                  <small class="text-light fw-lighter d-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-clock w-4 h-4" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D" data-component-file="OfferSection.tsx" data-component-line="63" data-component-name="Clock" data-component-path="src/components/OfferSection.tsx" data-lov-id="src/components/OfferSection.tsx:63:18" data-lov-name="Clock" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                    Oferta por tempo limitado
+                  </small>
+                  <small class="text-light fw-lighter d-block mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-shield w-4 h-4" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D" data-component-file="OfferSection.tsx" data-component-line="76" data-component-name="Shield" data-component-path="src/components/OfferSection.tsx" data-lov-id="src/components/OfferSection.tsx:76:14" data-lov-name="Shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
+                    Garantia incondicional de 7 dias
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end: Pricing Section -->
+
+      <!-- start: About Section -->
+      <section class="section-gap section-gap-x">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 order-lg-1 order-2">
+              <div class="about-img-area style-2 wow fadeInLeft" data-wow-delay=".3s">
+                <div class="about-img overflow-hidden">
+                  <img data-speed=".8" src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=1080&h=800&auto=format&fit=crop" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 order-lg-2 order-1">
+              <div class="about-content-area">
+                <div class="sec-heading style-3">
+                  <!-- <h2 class="sec-title title-anim fw-lighter text-secondary display-1 mb-5">Legado</h2> -->
+                  <h2 class="sec-title title-anim fs-1 fw-bold text-primary">Imagine sua família unida, curada, vivendo o plano de Deus. Este é o verdadeiro legado que você pode deixar.</h2>
+                </div>
+                <p class="fs-5 text-dark wow fadeInUp" data-wow-delay=".3s">Não se trata apenas de cursos. Trata-se de transformar gerações. De construir uma herança que vai muito além do material. Uma família que honra a Deus e impacta o mundo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end: About Section -->
+
+      <!-- start: About Section -->
+      <section class="section-gap section-gap-x">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="sec-heading text-md-center mb-0 mb-md-4">
+                <h2 class="sec-title title-anim fw-bold">Sobre os <span>Criadores</span></h2>
+                <span class="sub-title wow fadeInUp mt-3" data-wow-delay=".1s"><i class="tji-box"></i>Conheça quem desenvolveu essa metodologia transformadora</span>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 order-lg-2 order-1">
+              <div class="about-img-area style-2 wow fadeInLeft" data-wow-delay=".3s">
+                <div class="about-img overflow-hidden">
+                  <img data-speed=".8" src="./assets/images/us-2.jpeg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 order-lg-1 order-2">
+              <div class="about-content-area">
+                <div class="sec-heading style-3 mt-3 mt-md-0">
+                  <h2 class="sec-title title-anim fs-1 text-primary">Dóris e Helevom Rosa</h2>
+                </div>
+                <p class="fs-5 text-dark wow fadeInUp" data-wow-delay=".3s">
+                  Por mais de 25 anos, Helevom, médico dedicado, e Dóris, pós-graduada em Famílias, têm consagrado suas vidas a um propósito maior: edificar lares e transformar corações pelo amor de Cristo. Como missionários no lar, educadores cristãos e pais que ensinam também pelo exemplo, eles se tornaram testemunhos vivos de fé, dedicação e compromisso com os princípios bíblicos.<br /><br />
+                  Sua jornada é marcada por uma metodologia única, fundamentada na Palavra de Deus, que tem impactado vidas e aberto caminhos de esperança, perdão e renovação. Cada conselho e cada atitude carregam a essência do evangelho, promovendo relacionamentos saudáveis, fortalecendo famílias e inspirando gerações a viverem de acordo com o propósito divino.
+                </p>
+                <div class="list-items pt-3 wow fadeInUp" data-wow-delay=".5s">
+                  <ul>
+                    <li><i class="tji-list"></i>Mais de 5.000 famílias impactadas</li>
+                    <li><i class="tji-list"></i>Especialistas em educação cristã</li>
+                    <li><i class="tji-list"></i>Palestrantes em conferências nacionais</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end: About Section -->
+
+      <!-- start: Faq Section -->
+      <section class="tj-faq-section section-gap">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-4">
+              <div class="content-wrap">
+                <div class="sec-heading">
+                  <span class="sub-title wow fadeInUp" data-wow-delay=".3s"><i class="tji-box"></i>Tire suas dúvidas</span>
+                  <h2 class="sec-title title-anim">Perguntas <span>Frequentes</span></h2>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay=".8s">
+                  <a href="https://pay.kiwify.com.br/hivjRgO" target="_blank" class="tj-primary-btn">
+                    <span class="btn-text"><span>Garantir meu acesso agora</span></span>
+                    <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="accordion tj-faq" id="faqOne">
+                <div class="accordion-item active wow fadeInUp" data-wow-delay=".3s">
+                  <button class="faq-title" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="true">Como acesso os cursos?</button>
+                  <div id="faq-1" class="collapse show" data-bs-parent="#faqOne">
+                    <div class="accordion-body faq-text">
+                      <p>Após a confirmação do pagamento, você receberá por email o acesso à nossa plataforma exclusiva. O login e senha serão enviados em até 5 minutos.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item wow fadeInUp" data-wow-delay=".4s">
+                  <button class="faq-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false">O acesso é vitalício?</button>
+                  <div id="faq-2" class="collapse" data-bs-parent="#faqOne">
+                    <div class="accordion-body faq-text">
+                      <p>Sim! Você terá acesso aos cursos para sempre, podendo assistir quantas vezes quiser, no seu ritmo e quando for mais conveniente para você.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item wow fadeInUp" data-wow-delay=".5s">
+                  <button class="faq-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false">Existe alguma garantia?</button>
+                  <div id="faq-3" class="collapse" data-bs-parent="#faqOne">
+                    <div class="accordion-body faq-text">
+                      <p>Sim! Oferecemos garantia incondicional de 7 dias. Se por qualquer motivo você não ficar satisfeito, devolvemos 100% do seu dinheiro, sem perguntas.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item wow fadeInUp" data-wow-delay=".6s">
+                  <button class="faq-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false">Preciso ter algum conhecimento prévio?</button>
+                  <div id="faq-4" class="collapse" data-bs-parent="#faqOne">
+                    <div class="accordion-body faq-text">
+                      <p>Não! Os cursos foram desenvolvidos para qualquer pessoa, independente do conhecimento prévio. Explicamos tudo de forma simples e prática.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
+                  <button class="faq-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false">Há suporte disponível?</button>
+                  <div id="faq-5" class="collapse" data-bs-parent="#faqOne">
+                    <div class="accordion-body faq-text">
+                      <p>Sim! Nossa equipe está sempre disponível para tirar suas dúvidas. Você pode entrar em contato conosco por email ou WhatsApp durante o horário comercial.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end: Faq Section -->
+    </main>
+
+    <!-- start: Footer Section -->
+    <footer class="tj-footer-section footer-3 section-gap-x">
+      <div class="footer-main-area">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-xl-6 col-md-6">
+              <div class="footer-widget footer-col-1 wow fadeInUp" data-wow-delay=".1s">
+                <a href="index.html">
+                  <img src="./assets/images/logo-h-o.svg" height="64" alt="Logos" />
+                </a>
+
+                <div class="footer-text">
+                  <p>Transformando famílias através de princípios bíblicos sólidos. Restaurando casamentos e formando filhos vencedores para a glória de Deus.</p>
+                </div>
+                <div class="social-links style-3">
+                  <ul>
+                    <li>
+                      <a href="https://www.instagram.com/opoderdabencaodospais" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <!-- <li>
+                      <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-xl-3 col-md-6">
+              <div class="footer-widget footer-col-2 widget-nav-menu wow fadeInUp" data-wow-delay=".3s">
+                <h5 class="title">Institucional</h5>
+                <ul>
+                  <li><a href="#">Política de Privacidade</a></li>
+                  <li><a href="#">termos de Uso</a></li>
+                  <li><a href="#">Politica de Reembolso</a></li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="col-xl-3 col-md-6">
+              <div class="footer-widget widget-contact wow fadeInUp" data-wow-delay=".7s">
+                <h5 class="title">Contato</h5>
+                <div class="footer-contact-info">
+                  <div class="contact-item">
+                    <a href="tel:051995447818">(51) 99544-7818</a>
+                    <a href="mailto:support@familiasdopoder.com.br">support@familiasdopoder.com.br</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tj-copyright-area-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="copyright-content-area">
+                <div class="copyright-text d-flex gap-4 align-items-center text-start text-md-center">
+                  <p>&copy; 2025 Todos os direitos reservados</p>
+                  <a href="https://www.manure.marketing" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" id="Camada_1" data-name="Camada 1" viewBox="5.41 360.5 989.18 279">
+                      <defs></defs>
+                      <path fill="#ffffff" d="M5.41 608.28h247.78V360.5H5.41v247.78ZM49.14 451.6l29.14-29.15h131.18v72.87l-21.85 21.87-21.87-21.87v-72.87l-14.58 14.58v72.89l-21.87 21.85-21.87-21.85v-72.89l-14.58 14.58v72.87l-21.87 21.87-21.85-21.87v-72.87ZM382.08 431.53h-1.24l-29.11-71.03h-27.56v105.72h21.68v-69.06h.87l27.36 68.55h14.77l27.35-68.29h.88v68.8h21.68V360.5H411.2l-29.12 71.03zM509.43 392.25c-3.15-2.17-6.75-3.76-10.79-4.8-4.04-1.03-8.27-1.55-12.67-1.55-6.33 0-11.9.95-16.7 2.87-4.8 1.91-8.72 4.63-11.74 8.15-3.03 3.53-5.06 7.7-6.09 12.52l20.34 1.65c.76-2.62 2.31-4.79 4.65-6.53 2.34-1.74 5.49-2.6 9.45-2.6s6.65.89 8.7 2.68c2.05 1.79 3.07 4.32 3.07 7.59v.31c0 1.68-.64 2.96-1.91 3.82-1.28.86-3.32 1.5-6.15 1.93-2.82.43-6.54.89-11.15 1.37-3.92.38-7.67 1.03-11.23 1.96-3.56.93-6.73 2.31-9.52 4.13-2.78 1.82-4.99 4.23-6.61 7.23-1.62 2.99-2.43 6.69-2.43 11.1 0 5.23 1.14 9.59 3.43 13.09 2.29 3.49 5.41 6.12 9.37 7.9 3.96 1.77 8.47 2.66 13.52 2.66 3.92 0 7.38-.52 10.37-1.57 3-1.05 5.56-2.51 7.69-4.39 2.14-1.87 3.84-4.05 5.11-6.53h.62v10.99h20.86v-53.48c0-4.71-.91-8.77-2.74-12.16a23.465 23.465 0 0 0-7.46-8.34Zm-11.64 45.63c0 2.78-.7 5.28-2.11 7.48s-3.36 3.95-5.84 5.24-5.33 1.94-8.57 1.94-6.15-.78-8.33-2.35c-2.19-1.56-3.28-3.84-3.28-6.84 0-2.07.53-3.79 1.6-5.19 1.07-1.4 2.57-2.51 4.49-3.33 1.93-.83 4.18-1.43 6.76-1.8 1.2-.17 2.54-.37 4.03-.6 1.48-.22 2.96-.48 4.44-.77 1.48-.29 2.81-.62 4-.98s2.12-.76 2.81-1.21v8.41ZM605.44 466.22v-50.48c0-6.16-1.13-11.47-3.4-15.93-2.27-4.46-5.46-7.89-9.55-10.3-4.1-2.41-8.9-3.61-14.4-3.61-5.88 0-10.89 1.35-15.02 4.05-4.13 2.7-7.07 6.36-8.83 10.97h-.93v-13.99h-20.96v79.29h21.99v-45.84c.03-3.41.68-6.33 1.93-8.75 1.26-2.43 3.01-4.28 5.27-5.55 2.25-1.28 4.86-1.91 7.82-1.91 4.4 0 7.86 1.37 10.38 4.1 2.51 2.74 3.75 6.53 3.71 11.38v46.56h21.99ZM631.22 463.64c4.03 2.41 8.69 3.61 13.99 3.61 5.95 0 11-1.41 15.15-4.23 4.15-2.82 7.12-6.55 8.9-11.2h.83v14.4h21.11v-79.29h-21.99v45.53c.03 3.55-.66 6.52-2.09 8.93-1.43 2.41-3.3 4.23-5.6 5.45-2.31 1.22-4.78 1.83-7.43 1.83-4.16 0-7.49-1.36-9.96-4.08-2.48-2.72-3.73-6.42-3.77-11.1v-46.56h-21.99v50.49c.03 6.19 1.18 11.51 3.43 15.95 2.25 4.44 5.39 7.86 9.42 10.27ZM726.38 421.36c0-3.24.73-6.09 2.19-8.57 1.47-2.48 3.46-4.41 5.99-5.81 2.53-1.4 5.41-2.09 8.65-2.09 1.51 0 3.18.12 5.01.36 1.82.24 3.25.52 4.28.83v-19.51c-.97-.24-2.08-.43-3.36-.57s-2.46-.21-3.56-.21c-4.44 0-8.36 1.26-11.77 3.79-3.41 2.53-5.84 6.25-7.28 11.17h-.83v-13.83h-21.32v79.29h21.99v-44.86ZM817.49 395.92c-3.39-3.33-7.35-5.84-11.87-7.51-4.53-1.67-9.4-2.51-14.63-2.51-7.78 0-14.55 1.72-20.31 5.16-5.76 3.44-10.23 8.24-13.4 14.4s-4.75 13.32-4.75 21.47 1.58 15.6 4.75 21.71c3.17 6.11 7.68 10.83 13.55 14.14 5.87 3.32 12.88 4.98 21.04 4.98 6.54 0 12.31-1.01 17.32-3.02 5.01-2.02 9.1-4.83 12.29-8.47 3.18-3.63 5.29-7.89 6.32-12.78l-20.34-1.34c-.76 1.99-1.86 3.68-3.3 5.06s-3.18 2.41-5.21 3.09c-2.03.69-4.27 1.04-6.71 1.04-3.68 0-6.86-.78-9.55-2.32-2.69-1.55-4.76-3.75-6.22-6.61-1.47-2.86-2.2-6.25-2.2-10.17v-.05h53.99v-6.04c0-6.74-.95-12.64-2.84-17.68-1.9-5.04-4.54-9.23-7.92-12.57Zm-43.14 22.66c.14-2.84.8-5.46 2.13-7.82 1.44-2.57 3.45-4.61 6.01-6.15 2.56-1.53 5.51-2.29 8.85-2.29s6.01.7 8.44 2.09c2.42 1.39 4.33 3.31 5.7 5.75 1.38 2.45 2.07 5.25 2.07 8.41h-33.2ZM810.42 496.36c-3.23 0-6.02 1.09-8.36 3.28-2.34 2.18-3.51 4.81-3.51 7.87s1.16 5.68 3.49 7.85c2.32 2.17 5.12 3.25 8.38 3.25s6.07-1.09 8.39-3.28c2.32-2.18 3.49-4.81 3.49-7.87s-1.16-5.68-3.49-7.84c-2.32-2.17-5.12-3.25-8.39-3.25ZM382.08 573.42h-1.24l-29.11-71.03h-27.56v105.72h21.68v-69.06h.87l27.36 68.55h14.77l27.35-68.29h.88v68.8h21.68V502.39H411.2l-29.12 71.03zM509.43 534.14c-3.15-2.17-6.75-3.76-10.79-4.8-4.04-1.03-8.27-1.55-12.67-1.55-6.33 0-11.9.95-16.7 2.87-4.8 1.91-8.72 4.63-11.74 8.15-3.03 3.53-5.06 7.7-6.09 12.52l20.34 1.65c.76-2.62 2.31-4.79 4.65-6.53 2.34-1.74 5.49-2.6 9.45-2.6s6.65.89 8.7 2.68c2.05 1.79 3.07 4.32 3.07 7.59v.31c0 1.68-.64 2.96-1.91 3.82-1.28.86-3.32 1.5-6.15 1.93-2.82.43-6.54.89-11.15 1.37-3.92.38-7.67 1.03-11.23 1.96-3.56.93-6.73 2.31-9.52 4.13-2.78 1.82-4.99 4.23-6.61 7.23-1.62 2.99-2.43 6.69-2.43 11.1 0 5.23 1.14 9.59 3.43 13.09 2.29 3.49 5.41 6.12 9.37 7.9 3.96 1.77 8.47 2.66 13.52 2.66 3.92 0 7.38-.52 10.37-1.57 3-1.05 5.56-2.51 7.69-4.39 2.14-1.87 3.84-4.05 5.11-6.53h.62v10.99h20.86v-53.48c0-4.71-.91-8.77-2.74-12.16a23.465 23.465 0 0 0-7.46-8.34Zm-11.64 45.63c0 2.78-.7 5.28-2.11 7.48s-3.36 3.95-5.84 5.24-5.33 1.94-8.57 1.94-6.15-.78-8.33-2.35c-2.19-1.56-3.28-3.84-3.28-6.84 0-2.07.53-3.79 1.6-5.19 1.07-1.4 2.57-2.51 4.49-3.33 1.93-.83 4.18-1.43 6.76-1.8 1.2-.17 2.54-.37 4.03-.6 1.48-.22 2.96-.48 4.44-.77 1.48-.29 2.81-.62 4-.98s2.12-.76 2.81-1.21v8.41ZM573.54 527.69c-4.44 0-8.36 1.26-11.77 3.79-3.41 2.53-5.84 6.25-7.28 11.17h-.83v-13.83h-21.32v79.29h21.99v-44.86c0-3.24.73-6.09 2.19-8.57 1.47-2.48 3.46-4.41 5.99-5.81 2.53-1.4 5.41-2.09 8.65-2.09 1.51 0 3.18.12 5.01.36 1.82.24 3.25.52 4.28.83v-19.51c-.97-.24-2.08-.43-3.36-.57s-2.46-.21-3.56-.21ZM661.21 528.82h-25.24l-25.4 30.1h-1.18v-56.53H587.4v105.72h21.99v-25.17l5.95-6.81 21.61 31.98h25.76l-30.91-44.94 29.41-34.35z" class="cls-1"></path>
+                      <path fill="#ffffff" d="M726.04 537.81c-3.39-3.33-7.35-5.84-11.87-7.51-4.53-1.67-9.4-2.51-14.63-2.51-7.78 0-14.55 1.72-20.31 5.16s-10.23 8.24-13.4 14.4-4.75 13.32-4.75 21.47 1.58 15.6 4.75 21.71c3.17 6.11 7.68 10.83 13.55 14.14 5.87 3.32 12.88 4.98 21.04 4.98 6.54 0 12.31-1.01 17.32-3.02 5.01-2.02 9.1-4.83 12.29-8.47 3.18-3.63 5.29-7.89 6.32-12.78l-20.34-1.34c-.76 1.99-1.86 3.68-3.3 5.06-1.44 1.38-3.18 2.41-5.21 3.09-2.03.69-4.27 1.04-6.71 1.04-3.68 0-6.86-.78-9.55-2.32-2.69-1.55-4.76-3.75-6.22-6.61-1.47-2.86-2.2-6.25-2.2-10.17v-.05h53.99v-6.04c0-6.74-.95-12.64-2.84-17.68-1.9-5.04-4.54-9.23-7.92-12.57Zm-43.14 22.66c.14-2.84.8-5.46 2.13-7.82 1.44-2.57 3.45-4.61 6.01-6.15 2.56-1.53 5.51-2.29 8.85-2.29s6.01.7 8.44 2.09c2.42 1.39 4.33 3.31 5.7 5.75 1.38 2.45 2.07 5.25 2.07 8.41h-33.2ZM784.58 591.21c-1.03.19-2.06.28-3.09.28-1.48 0-2.78-.22-3.9-.67-1.12-.45-1.99-1.23-2.61-2.35-.62-1.12-.93-2.69-.93-4.72v-38.41h14.92v-16.52h-14.92v-18.99h-21.99v18.99h-10.84v16.52h10.84v41.29c-.03 5.2 1.05 9.5 3.25 12.91s5.29 5.92 9.27 7.54c3.98 1.62 8.61 2.32 13.91 2.11 2.86-.1 5.28-.39 7.28-.85 1.99-.46 3.54-.87 4.65-1.21l-3.46-16.36c-.55.1-1.34.25-2.38.44ZM129.91 528.82h21.99v79.29h-21.99zM894.21 531.41c-4.1-2.41-8.9-3.61-14.4-3.61-5.88 0-10.89 1.35-15.02 4.05-4.13 2.7-7.07 6.36-8.83 10.97h-.93v-13.99h-20.96v79.29h21.99v-45.84c.03-3.41.68-6.33 1.93-8.75 1.26-2.43 3.01-4.28 5.27-5.55 2.25-1.28 4.86-1.91 7.82-1.91 4.4 0 7.86 1.37 10.38 4.1 2.51 2.74 3.75 6.53 3.71 11.38v46.56h21.99v-50.48c0-6.16-1.13-11.47-3.4-15.93-2.27-4.46-5.46-7.89-9.55-10.3ZM972.75 542.14h-.83c-1-2.13-2.42-4.31-4.26-6.53-1.84-2.22-4.26-4.08-7.25-5.58-3-1.5-6.71-2.24-11.15-2.24-5.82 0-11.16 1.5-16.03 4.49-4.87 3-8.77 7.5-11.69 13.52s-4.39 13.52-4.39 22.51 1.44 16.03 4.31 21.76c2.87 5.73 6.75 9.98 11.62 12.75 4.87 2.77 10.28 4.16 16.24 4.16 4.19 0 7.81-.62 10.84-1.86 3.03-1.24 5.5-2.84 7.43-4.8 1.93-1.96 3.37-4.04 4.34-6.24h.93v14.5c0 5.44-1.56 9.32-4.67 11.64-3.12 2.32-7.06 3.48-11.85 3.48-3.2 0-5.91-.42-8.13-1.26-2.22-.84-4-1.95-5.34-3.33-1.34-1.38-2.32-2.85-2.94-4.44l-20.34 2.74c.89 4.16 2.84 7.92 5.83 11.25 3 3.33 7.03 5.98 12.11 7.92 5.08 1.95 11.17 2.92 18.3 2.92 7.57 0 14.27-1.14 20.1-3.43 5.84-2.29 10.4-5.7 13.71-10.25 3.3-4.54 4.95-10.18 4.95-16.93v-80.06h-21.84v13.32Zm-1.78 38.02c-1.32 3.32-3.21 5.87-5.68 7.64-2.46 1.77-5.46 2.66-9.01 2.66s-6.65-.9-9.11-2.71c-2.46-1.8-4.34-4.37-5.63-7.69-1.29-3.32-1.94-7.27-1.94-11.85s.64-8.48 1.91-11.93c1.27-3.44 3.15-6.13 5.63-8.07 2.48-1.95 5.52-2.92 9.14-2.92s6.56.95 9.03 2.84c2.48 1.89 4.37 4.55 5.68 7.97 1.31 3.43 1.96 7.46 1.96 12.11s-.66 8.63-1.99 11.95Z" class="cls-1"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-shape-1">
+        <img src="./assets/images/pattern-2.svg" alt="" />
+      </div>
+      <div class="bg-shape-2">
+        <img src="./assets/images/pattern-3.svg" alt="" />
+      </div>
+    </footer>
+    <!-- end: Footer Section -->
+
+    <!-- JS here -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollSmoother.js"></script>
+    <script src="./assets/js/gsap-scroll-to-plugin.min.js"></script>
+    <script src="./assets/js/gsap-scroll-trigger.min.js"></script>
+    <script src="./assets/js/gsap-split-text.min.js"></script>
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/swiper.min.js"></script>
+    <script src="./assets/js/odometer.min.js"></script>
+    <script src="./assets/js/venobox.min.js"></script>
+    <script src="./assets/js/appear.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/meanmenu.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

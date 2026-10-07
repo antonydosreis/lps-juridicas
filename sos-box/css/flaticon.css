@@ -1,0 +1,156 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("https://induyst-demo.pbminfotech.com/html-demo/fonts/flaticon.woff2?46cbd5aaf58197642bdde868cb49ca8d") format("woff2"),
+url("https://induyst-demo.pbminfotech.com/html-demo/fonts/flaticon.woff?46cbd5aaf58197642bdde868cb49ca8d") format("woff"),
+url("https://induyst-demo.pbminfotech.com/html-demo/fonts/flaticon.eot?46cbd5aaf58197642bdde868cb49ca8d#iefix") format("embedded-opentype"),
+url("https://induyst-demo.pbminfotech.com/html-demo/fonts/flaticon.ttf?46cbd5aaf58197642bdde868cb49ca8d") format("truetype"),
+url("https://induyst-demo.pbminfotech.com/html-demo/fonts/flaticon.svg?46cbd5aaf58197642bdde868cb49ca8d#flaticon") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" pbmit-shipex-icon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pbmit-shipex-icon-logistics-delievry:before {
+    content: "\f101";
+}
+.pbmit-shipex-icon-warehouse:before {
+    content: "\f102";
+}
+.pbmit-shipex-icon-delivery-truck:before {
+    content: "\f103";
+}
+.pbmit-shipex-icon-delivery-truck-1:before {
+    content: "\f104";
+}
+.pbmit-shipex-icon-up-sign:before {
+    content: "\f105";
+}
+.pbmit-shipex-icon-box:before {
+    content: "\f106";
+}
+.pbmit-shipex-icon-online-store:before {
+    content: "\f107";
+}
+.pbmit-shipex-icon-checklist:before {
+    content: "\f108";
+}
+.pbmit-shipex-icon-correspondence:before {
+    content: "\f109";
+}
+.pbmit-shipex-icon-delivery-box:before {
+    content: "\f10a";
+}
+.pbmit-shipex-icon-package:before {
+    content: "\f10b";
+}
+.pbmit-shipex-icon-delivery-courier:before {
+    content: "\f10c";
+}
+.pbmit-shipex-icon-map-location:before {
+    content: "\f10d";
+}
+.pbmit-shipex-icon-delivery-time:before {
+    content: "\f10e";
+}
+.pbmit-shipex-icon-letter-box:before {
+    content: "\f10f";
+}
+.pbmit-shipex-icon-calendar:before {
+    content: "\f110";
+}
+.pbmit-shipex-icon-airplane:before {
+    content: "\f111";
+}
+.pbmit-shipex-icon-email:before {
+    content: "\f112";
+}
+.pbmit-shipex-icon-factory:before {
+    content: "\f113";
+}
+.pbmit-shipex-icon-fragile:before {
+    content: "\f114";
+}
+.pbmit-shipex-icon-house:before {
+    content: "\f115";
+}
+.pbmit-shipex-icon-location:before {
+    content: "\f116";
+}
+.pbmit-shipex-icon-targeting:before {
+    content: "\f117";
+}
+.pbmit-shipex-icon-cargo-ship:before {
+    content: "\f118";
+}
+.pbmit-shipex-icon-container:before {
+    content: "\f119";
+}
+.pbmit-shipex-icon-quote:before {
+    content: "\f11a";
+}
+.pbmit-shipex-icon-menu:before {
+    content: "\f11b";
+}
+.pbmit-shipex-icon-arrow:before {
+    content: "\f11c";
+}
+.pbmit-shipex-icon-check-mark:before {
+    content: "\f11d";
+}
+.pbmit-shipex-icon-play-button:before {
+    content: "\f11e";
+}
+.pbmit-shipex-icon-telephone:before {
+    content: "\f11f";
+}
+.pbmit-shipex-icon-phone-call:before {
+    content: "\f120";
+}
+.pbmit-shipex-icon-arrow-up:before {
+    content: "\f121";
+}
+.pbmit-shipex-icon-right-arrow:before {
+    content: "\f122";
+}
+.pbmit-shipex-icon-top-right:before {
+    content: "\f123";
+}
+.pbmit-shipex-icon-up-right-arrow:before {
+    content: "\f124";
+}
+.pbmit-shipex-icon-arrow-down:before {
+    content: "\f125";
+}
+.pbmit-shipex-icon-arrow-down-1:before {
+    content: "\f126";
+}
+.pbmit-shipex-icon-tick:before {
+    content: "\f127";
+}
+.pbmit-shipex-icon-levels:before {
+    content: "\f128";
+}
+.pbmit-shipex-icon-messages:before {
+    content: "\f129";
+}
+.pbmit-shipex-icon-location-point:before {
+    content: "\f12a";
+}
+.pbmit-shipex-icon-location-1:before {
+    content: "\f12b";
+}
+.pbmit-shipex-icon-call:before {
+    content: "\f12c";
+}
+.pbmit-shipex-icon-schedule:before {
+    content: "\f12d";
+}
+

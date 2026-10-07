@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estamos em Descanso - Família Rosa</title>
+    
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome-pro.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-sabbath {
+            background-image: url('https://images.unsplash.com/photo-1472214103451-9374bd1c7dd1?q=80&w=2070&auto=format&fit=crop');
+            height: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.75);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-sabbath {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid #cfaf60;
+            border-radius: 15px;
+            padding: 3rem;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: #fff;
+        }
+
+        .sabbath-title {
+            color: #cfaf60;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .bible-verse {
+            font-style: italic;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .form-control-custom {
+            background: transparent;
+            border: 1px solid #555;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .form-control-custom:focus {
+            background: transparent;
+            color: #fff;
+            border-color: #cfaf60;
+            box-shadow: 0 0 5px rgba(207, 175, 96, 0.5);
+            outline: none;
+        }
+
+        .btn-gold {
+            background-color: #cfaf60;
+            color: #000;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            background-color: #e5c36e;
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold:disabled {
+            background-color: #887440;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .logo-mb {
+            margin-bottom: 2rem;
+            filter: brightness(0) invert(1);
+        }
+    </style>
+
+    <script>
+    // --- LÓGICA DE REDIRECIONAMENTO ---
+    (async function() {
+        // Se estiver testando durante a semana, comente a linha abaixo para não ser redirecionado
+        const homeURL = "../"; 
+        
+        const lat = "-15.78"; 
+        const lng = "-47.93";
+
+        const now = new Date();
+        const dayOfWeek = now.getDay();
+        const currentHour = now.getHours();
+        const currentMinute = now.getMinutes();
+
+        // Bloqueia acesso de Domingo a Quinta
+        if (dayOfWeek >= 0 && dayOfWeek <= 4) {
+             window.location.href = homeURL;
+             return;
+        }
+
+        const fallbackSunset = { 5: { hour: 18, minute: 0 }, 6: { hour: 18, minute: 0 } };
+
+        const getSunsetTime = async () => {
+          try {
+            const response = await fetch(`https://api.sunrisesunset.io/json?lat=${lat}&lng=${lng}&timezone=America/Sao_Paulo`);
+            const data = await response.json();
+            if (data?.results?.sunset) {
+              const [time, period] = data.results.sunset.split(' ');
+              let [hour, minute] = time.split(':').map(Number);
+              hour = period === 'PM' && hour !== 12 ? hour + 12 : period === 'AM' && hour === 12 ? 0 : hour;
+              return { hour, minute };
+            }
+          } catch {}
+          return fallbackSunset[dayOfWeek];
+        };
+
+        const sunset = await getSunsetTime();
+
+        // Se for Sexta antes do por do sol -> Home
+        if (dayOfWeek === 5 && (currentHour < sunset.hour || (currentHour === sunset.hour && currentMinute < sunset.minute))) {
+            window.location.href = homeURL;
+        }
+
+        // Se for Sábado depois do por do sol -> Home
+        if (dayOfWeek === 6 && (currentHour > sunset.hour || (currentHour === sunset.hour && currentMinute >= sunset.minute))) {
+            window.location.href = homeURL;
+        }
+    })();
+    </script>
+</head>
+<body>
+
+    <div class="bg-sabbath">
+        <div class="overlay">
+            <div class="container d-flex justify-content-center">
+                <div class="card-sabbath fade-in-up">
+                    
+                    <img src="../assets/images/logo-h-o.svg" height="80" alt="Família Rosa" class="logo-mb">
+
+                    <h1 class="sabbath-title">Estamos Guardando o Sábado!</h1>
+
+                    <p class="lead mb-4">
+                        Em obediência ao mandamento do Senhor, estamos fazendo uma pausa para o descanso sabático.
+                    </p>
+                    
+                    <span class="bible-verse">
+                        (Gênesis 2:1-3; Êxodo 20:8-11; Isaías 66:23; Lucas 4:16)
+                    </span>
+
+                    <p class="mb-4">
+                        Neste momento, nosso e-commerce está fora do ar, mas não se preocupe! Assim que o sol se puser, estaremos de volta, prontos para atender você com muito carinho e dedicação.
+                    </p>
+
+                    <p class="mb-4 text-white-50">
+                        Deixe seu WhatsApp abaixo e nós te avisaremos assim que retornarmos.
+                    </p>
+
+                    <form id="notifyForm" class="text-start">
+                        <div class="mb-3">
+                            <input type="tel" class="form-control form-control-custom" id="whatsapp" name="whatsapp" placeholder="Seu WhatsApp (DD) 99999-9999" required maxlength="15">
+                        </div>
+                        <button type="submit" id="btnSubmit" class="btn btn-gold">
+                            <i class="fas fa-bell me-2"></i> Me avise quando voltar
+                        </button>
+                    </form>
+
+                    <div id="successMessage" style="display:none; margin-top: 20px;">
+                        <h4 class="text-success" style="color: #28a745 !important;"><i class="fas fa-check-circle"></i> Combinado!</h4>
+                        <p>Você será avisado assim que o sol se pôr.</p>
+                    </div>
+                     <div id="errorMessage" style="display:none; margin-top: 20px;">
+                        <h4 class="text-danger" style="color: #dc3545 !important;"><i class="fas fa-exclamation-circle"></i> Ops!</h4>
+                        <p>Houve um erro. Tente novamente.</p>
+                    </div>
+
+                    <p class="mt-5 mb-0 fw-bold">Att. Família Rosa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ---------------- CONFIGURAÇÃO ----------------
+        // COLE A URL DO SEU SCRIPT GOOGLE AQUI DENTRO DAS ASPAS:
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxY3Jiyr3eOBlYGbbORGbSMrw4JT6ILTq16x1WXDviCcoVLvYPAOggCbm4_Jriar-pbeA/exec";
+        // ----------------------------------------------
+
+
+        // 1. Máscara de Telefone (Formata (XX) XXXXX-XXXX enquanto digita)
+        const phoneInput = document.getElementById('whatsapp');
+        phoneInput.addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+
+        // 2. Envio para o Google Sheets
+        const form = document.getElementById('notifyForm');
+        const btnSubmit = document.getElementById('btnSubmit');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            // Desabilita botão e muda texto
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Enviando...';
+
+            fetch(GOOGLE_SCRIPT_URL, { 
+                method: 'POST', 
+                body: new FormData(form)
+            })
+            .then(response => {
+                // O Google Scripts as vezes retorna sucesso mas a rede pode interpretar diferente
+                // Se chegou aqui, enviou.
+                console.log('Success!', response);
+                form.style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<i class="fas fa-bell me-2"></i> Tentar Novamente';
+                document.getElementById('errorMessage').style.display = 'block';
+            });
+        });
+
+        // Executa o Setup inicial para vincular a planilha
+        // (Isso é feito uma vez via navegador ao implantar, mas o fetch garante o envio).
+    </script>
+</body>
+</html>

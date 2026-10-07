@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="canonical" href="https://SEUDOMINIO.com.br/privacidade" />
+    <title>Política de Privacidade — Guilherme Nunes Advocacia</title>
+    <meta name="description" content="Saiba como o escritório Guilherme Nunes Advocacia coleta, usa e protege seus dados pessoais de acordo com a LGPD." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-heading: 'Lora', Georgia, serif;
+        --base-font-size: 17px;
+        --base-line-height: 1.6;
+        --title-font-size: 2rem;
+        --title-font-size-desktop: 2.4rem;
+        --title-line-height: 1.15;
+        --container-width: 1120px;
+        --container-width-sm: 820px;
+        --section-vertical-spacing: 64px;
+        --base-gap: 24px;
+
+        --ink: #140a2b;
+        --plum: #24123f;
+        --plum-2: #2f1a52;
+        --gold: #c9a24a;
+        --gold-soft: #e5cf8f;
+        --violet: #6d3ae0;
+        --paper: #f7f4fb;
+        --paper-2: #efeaf6;
+        --text-color: #23163f;
+        --text-muted: #6b5f86;
+
+        --background-color: var(--paper);
+        --theme-color: var(--plum);
+        --border-color: rgba(36, 18, 63, 0.14);
+        --border-light: rgba(255, 255, 255, 0.14);
+        --card-bg: #ffffff;
+        --shadow: rgba(0, 0, 0, 0.08);
+
+        --button-background-color: var(--gold);
+        --button-text-color: var(--ink);
+        --base-border-radius: 8px;
+
+        --background-color-foreground: var(--paper-2);
+        --text-color-foreground: var(--text-muted);
+
+        --section-vertical-spacing-desktop: 88px;
+      }
+
+      @keyframes breathe {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        font-family: var(--font-family);
+        font-size: var(--base-font-size);
+        line-height: var(--base-line-height);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      .title,
+      .font-heading {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        line-height: var(--title-line-height);
+        letter-spacing: -0.01em;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+      }
+
+      .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding-inline: 24px;
+      }
+
+      .container.-small {
+        max-width: var(--container-width-sm);
+      }
+
+      .emphasis,
+      h1 span,
+      h2 span,
+      h3 span {
+        color: var(--violet);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 700;
+        background-color: var(--button-background-color);
+        color: var(--button-text-color);
+        padding: 16px 26px;
+        border-radius: var(--base-border-radius);
+        transition:
+          transform 0.15s ease,
+          background-color 0.15s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .button:hover {
+        background-color: var(--gold-soft);
+        transform: translateY(-2px);
+      }
+      .button.-ghost {
+        background-color: transparent;
+        border-color: currentColor;
+        color: inherit;
+      }
+      .button.-ghost:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .button:focus-visible,
+      a:focus-visible {
+        outline: 3px solid var(--violet);
+        outline-offset: 3px;
+      }
+
+      .section {
+        padding-block: var(--section-vertical-spacing);
+      }
+      .section.-foreground {
+        background-color: var(--background-color-foreground);
+      }
+      .section.-dark {
+        background-color: var(--plum);
+        color: #fff;
+      }
+      .section.-ink {
+        background-color: var(--ink);
+        color: #fff;
+      }
+      .section .title {
+        font-size: var(--title-font-size);
+        margin-bottom: 0.6em;
+      }
+      .section .subtitle {
+        font-size: 1rem;
+        color: var(--text-color-foreground);
+        margin-top: 16px;
+        max-width: 62ch;
+      }
+      .section.-dark .subtitle,
+      .section.-ink .subtitle {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      @media (min-width: 768px) {
+        .section {
+          padding-block: var(--section-vertical-spacing-desktop);
+        }
+        .section .title {
+          font-size: var(--title-font-size-desktop);
+        }
+        .section .subtitle {
+          font-size: 1.15rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <style>
+      .section.-nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background-color: var(--ink);
+        color: #fff;
+        border-bottom: 1px solid var(--border-light);
+        padding-block: 0;
+      }
+      .section.-nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .-nav .logo {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+      }
+      .-nav .button {
+        padding: 10px 16px;
+        font-size: 0.92rem;
+      }
+    </style>
+    <nav class="section -nav">
+      <div class="container">
+        <a href="../">
+          <img src="../assets/images/logo.png" alt="Logo Guilherme Nunes Advocacia" class="logo" />
+        </a>
+        <a class="button" href="../">Voltar ao Início</a>
+      </div>
+    </nav>
+
+    <main>
+      <style>
+        .section.-privacy-header {
+          padding-top: 88px;
+          padding-bottom: 64px;
+          text-align: center;
+          border-bottom: 1px solid var(--border-light);
+        }
+        .-privacy-header .title {
+          margin-bottom: 16px;
+        }
+        .-privacy-header .subtitle {
+          margin: 0 auto;
+        }
+      </style>
+      <section class="section -ink -privacy-header">
+        <div class="container -small">
+          <h1 class="title">Política de Privacidade</h1>
+          <p class="subtitle">Entenda como coletamos, protegemos e tratamos os seus dados pessoais, em total conformidade com a Lei Geral de Proteção de Dados (LGPD) e o Estatuto da Advocacia.</p>
+        </div>
+      </section>
+
+      <style>
+        .section.-legal-text {
+          padding-top: 64px;
+          padding-bottom: 88px;
+        }
+        .legal-content h2 {
+          font-family: var(--font-heading);
+          color: var(--plum);
+          font-size: 1.6rem;
+          margin-top: 56px;
+          margin-bottom: 24px;
+          padding-bottom: 8px;
+          border-bottom: 1px solid var(--border-color);
+        }
+        .legal-content h2:first-child {
+          margin-top: 0;
+        }
+        .legal-content p {
+          color: var(--text-color);
+          margin-bottom: 20px;
+          font-size: 1.05rem;
+          line-height: 1.7;
+        }
+        .legal-content ul {
+          list-style: none;
+          padding-left: 24px;
+          margin-bottom: 24px;
+        }
+        .legal-content li {
+          color: var(--text-color);
+          margin-bottom: 12px;
+          font-size: 1.05rem;
+          line-height: 1.6;
+        }
+        .legal-content li::before {
+          content: '❯';
+          color: var(--violet);
+          display: inline-block;
+          width: 24px;
+          margin-left: -24px;
+          font-size: 0.9em;
+        }
+
+        .legal-content strong {
+          color: var(--ink);
+          font-weight: 700;
+        }
+        .legal-content a {
+          color: var(--violet);
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+        .legal-content a:hover {
+          color: var(--plum);
+        }
+      </style>
+      <section class="section -legal-text">
+        <div class="container -small legal-content">
+          <h2>1. Introdução</h2>
+          <p>O escritório <strong>Guilherme Nunes Advocacia</strong> valoriza a sua privacidade e garante o sigilo absoluto das informações compartilhadas conosco. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos os seus dados pessoais ao acessar nosso site e preencher nossos formulários, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 - LGPD) e com o Código de Ética e Disciplina da OAB.</p>
+
+          <h2>2. Quais dados coletamos e por quê?</h2>
+          <p>Ao solicitar o nosso <strong>Diagnóstico Patrimonial Gratuito</strong> ou interagir via WhatsApp, solicitamos informações essenciais para compreender o seu contexto familiar e financeiro. Coletamos os seguintes dados:</p>
+          <ul>
+            <li><strong>Dados de Identificação e Contato:</strong> Nome completo, e-mail e número de telefone (WhatsApp). Usados exclusivamente para retornar o seu contato e agendar a consultoria.</li>
+            <li><strong>Dados de Contexto Patrimonial:</strong> Faixa de valor do patrimônio aproximado e a sua principal preocupação jurídica (inventário, brigas, riscos, impostos). Usados para que nossos especialistas preparem uma análise prévia e assertiva sobre o seu caso antes da nossa reunião.</li>
+          </ul>
+
+          <h2>3. Base Legal para o Tratamento</h2>
+          <p>Tratamos seus dados com base nas seguintes hipóteses legais previstas na LGPD:</p>
+          <ul>
+            <li><strong>Consentimento (Art. 7º, I):</strong> Quando você preenche ativamente nossos formulários e concorda com o envio dos dados.</li>
+            <li><strong>Procedimentos preliminares a contrato (Art. 7º, V):</strong> Para a realização do diagnóstico gratuito, que antecede uma possível contratação de serviços advocatícios.</li>
+          </ul>
+
+          <h2>4. Compartilhamento de Dados</h2>
+          <p>O sigilo é a base da advocacia. <strong>Seus dados não são vendidos, alugados ou compartilhados com terceiros</strong> para fins de marketing. O acesso às informações é restrito exclusivamente aos advogados e especialistas do nosso escritório responsáveis pelo seu atendimento.</p>
+          <p>Poderemos utilizar ferramentas de terceiros apenas para a operacionalização técnica do contato (ex: envio do formulário para banco de dados seguro no Google Workspace ou contato via WhatsApp), ferramentas estas que também estão sujeitas a rigorosos padrões de segurança e privacidade.</p>
+
+          <h2>5. Segurança e Retenção dos Dados</h2>
+          <p>Adotamos medidas técnicas e administrativas rigorosas para proteger seus dados pessoais contra acessos não autorizados, perdas ou vazamentos.</p>
+          <p>Os dados coletados no formulário de diagnóstico serão armazenados apenas pelo tempo necessário para a realização do contato e do atendimento consultivo. Caso você não se torne cliente do escritório após o diagnóstico, seus dados poderão ser eliminados de nossa base, salvo quando a lei exigir sua manutenção.</p>
+
+          <h2>6. Direitos do Titular (Seus Direitos)</h2>
+          <p>Você, como titular dos dados, possui direitos garantidos pela LGPD, incluindo:</p>
+          <ul>
+            <li>Acesso aos dados que possuímos sobre você;</li>
+            <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+            <li>Revogação do consentimento e exclusão dos dados (respeitados os prazos de guarda legal obrigatória);</li>
+            <li>Informação sobre o compartilhamento de dados.</li>
+          </ul>
+          <p>Para exercer qualquer um desses direitos, basta entrar em contato conosco pelos canais listados abaixo.</p>
+
+          <h2>7. Cookies e Tecnologias de Rastreamento</h2>
+          <p>Nosso site pode utilizar cookies básicos de navegação e de performance (como Google Analytics ou Pixel do Meta) para entender como os usuários interagem com a página e melhorar nossas campanhas. Esses dados são anonimizados e não identificam você pessoalmente de forma direta.</p>
+
+          <h2>8. Contato e Encarregado de Dados</h2>
+          <p>Se houver qualquer dúvida sobre como tratamos seus dados ou caso deseje exercer seus direitos, entre em contato conosco:</p>
+          <ul>
+            <li><strong>E-mail:</strong> contato@gnadvocacia.adv.br</li>
+            <li><strong>Endereço:</strong> Av. José Silva de Azevedo Neto, nº 200 – Barra da Tijuca, Bloco 7 Sala 110, Rio de Janeiro/RJ, CEP 22775-056</li>
+          </ul>
+          <p><em>Esta política foi atualizada pela última vez em 10 de Setembro de 2026.</em></p>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      .footer {
+        background-color: var(--plum);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 48px 0;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--border-light);
+      }
+      .footer .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .footer a {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      @media (min-width: 768px) {
+        .footer .container {
+          flex-direction: row;
+        }
+      }
+    </style>
+    <footer class="footer">
+      <div class="container">
+        <div>Guilherme Nunes Advocacia · Av. José Silva de Azevedo Neto, nº 200, Rio de Janeiro/RJ<br />Atendimento em todo o Brasil</div>
+      </div>
+    </footer>
+
+    <style>
+      .whatsapp-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 30;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        animation: breathe 2s ease-in-out infinite;
+        transition: transform 0.2s ease-in-out;
+      }
+      .whatsapp-btn:hover {
+        transform: scale(1.05);
+      }
+      @media (min-width: 768px) {
+        .whatsapp-btn {
+          bottom: 32px;
+          right: 32px;
+        }
+      }
+    </style>
+    <a class="whatsapp-btn" href="https://wa.me/5521999507507?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">
+      <img width="42px" src="../assets/images/whatsapp.svg" alt="Botão de Contato WhatsApp" />
+    </a>
+  </body>
+</html>

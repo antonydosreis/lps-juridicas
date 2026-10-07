@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Timer para Começar a Live</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+  background-color: #5a1f2e;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10vw;
+  gap: 10vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2vh;
+}
+
+.text {
+  font-family: "Playfair Display", serif;
+  color: white;
+  line-height: 1;
+}
+
+.logo {
+  width: 12vw;
+  height: auto;
+}
+
+.title {
+  font-size: 4vw;
+}
+
+.subtitle {
+  font-size: 2vw;
+  color: #cfaf60;
+}
+
+.timer {
+  font-size: 10vw;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 5vw;
+    gap: 5vw;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 8vw;
+  }
+
+  .subtitle {
+    font-size: 4vw;
+  }
+
+  .timer {
+    font-size: 15vw;
+  }
+
+  .logo {
+    width: 25vw;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <img class="logo" src="https://www.familiasdepoder.com.br/assets/images/logo-h-o.svg" alt="Logo Famílias de Poder" />
+        <div>
+          <h1 class="title text">Semana da Transformação Familiar</h1>
+          <h2 class="subtitle text">7, 8 e 9 de outubro, ao vivo</h2>
+          <div id="timer" class="text timer"></div>
+        </div>
+      </div>
+      <img class="image" src="https://www.familiasdepoder.com.br/assets/images/hero-2.jpeg" alt="" />
+    </div>
+
+    <script>
+      const horaFinal = 20;
+      const minutoFinal = 0;
+
+      const timerElement = document.getElementById("timer");
+
+      function atualizarTimer() {
+        const agora = new Date();
+        const dataFinal = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate(), horaFinal, minutoFinal, 0);
+
+        let tempoRestante = dataFinal.getTime() - agora.getTime();
+
+        if (tempoRestante < 0) {
+          timerElement.textContent = "Agora!";
+          return;
+        }
+
+        const minutos = Math.floor(tempoRestante / (1000 * 60));
+        const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
+
+        const textoTimer = `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+
+        timerElement.textContent = textoTimer;
+
+        setTimeout(atualizarTimer, 1000);
+      }
+
+      atualizarTimer();
+    </script>
+  </body>
+</html>

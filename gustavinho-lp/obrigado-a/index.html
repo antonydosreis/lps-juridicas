@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Obrigado | Incon Digital</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="../site.webmanifest" />
+
+    <style>
+      :root {
+        --theme: #d6b786;
+        --theme-strong: #ead2aa;
+        --theme-soft: rgba(214, 183, 134, 0.16);
+        --text: #ffffff;
+        --text-muted: #a0a0a0;
+        --text-soft: #7e7e7e;
+        --background: #000000;
+        --background-soft: #0a0a0a;
+        --background-dark: #000000;
+        --background-dark-soft: #0a0a0a;
+        --card-dark: #111111;
+        --border-light: #222222;
+        --border-dark: #2a2a2a;
+        --radius-sm: 16px;
+        --radius-md: 24px;
+        --radius-lg: 32px;
+        --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-dark);
+        color: #ffffff;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-inline: 16px;
+      }
+
+      .container.-small {
+        max-width: 960px;
+      }
+
+      .section {
+        padding-block: 72px;
+      }
+
+      .emphasis {
+        color: var(--theme);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.875rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: '';
+        width: 28px;
+        height: 1px;
+        background-color: currentColor;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 3.5vw, 3.2rem);
+        line-height: 1.1;
+        font-weight: 900;
+      }
+
+      .section-text {
+        line-height: 1.65;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 16px 28px;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        background-color: var(--theme);
+        color: #000000;
+        font-size: 0.95rem;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition:
+          transform 0.25s ease,
+          background-color 0.25s ease,
+          border-color 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background-color: var(--theme-strong);
+      }
+
+      .button.-ghost {
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.76);
+        border-color: var(--border-dark);
+      }
+
+      .button.-ghost:hover {
+        background-color: var(--border-dark);
+        color: #ffffff;
+      }
+
+      .button.-instagram {
+        background-color: transparent;
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .button.-instagram:hover {
+        background-color: #111111;
+        border-color: rgba(255, 255, 255, 0.26);
+      }
+
+      @media (min-width: 768px) {
+        .section {
+          padding-block: 96px;
+        }
+      }
+    </style>
+
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-TLVKPKB7')
+    </script>
+  </head>
+
+  <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLVKPKB7" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <main>
+      <style>
+        .thankyou-hero {
+          display: flex;
+          align-items: center;
+          min-height: min(100dvh, 920px);
+          padding-block: 72px;
+          background: radial-gradient(circle at top right, rgba(214, 183, 134, 0.12), transparent 32%), radial-gradient(circle at left 20% bottom 10%, rgba(214, 183, 134, 0.08), transparent 28%), var(--background-dark);
+        }
+
+        .thankyou-hero__inner {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 28px;
+        }
+
+        .thankyou-hero__logo {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 4px;
+        }
+
+        .thankyou-hero__logo img {
+          height: 48px;
+          width: auto;
+        }
+
+        .thankyou-hero__badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 18px;
+          border: 1px solid rgba(214, 183, 134, 0.3);
+          border-radius: 999px;
+          background-color: var(--theme);
+          color: #000000;
+          font-size: 0.9rem;
+          font-weight: 800;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+
+        .thankyou-hero__badge-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 999px;
+          background-color: #000000;
+          animation: thankyou-pulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes thankyou-pulse {
+          0%,
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.5;
+            transform: scale(0.75);
+          }
+        }
+
+        .thankyou-hero__title {
+          max-width: 920px;
+          font-size: clamp(2.6rem, 6vw, 5rem);
+          line-height: 0.94;
+          font-weight: 900;
+        }
+
+        .thankyou-hero__subtitle {
+          max-width: 720px;
+          color: rgba(255, 255, 255, 0.72);
+          font-size: clamp(1.05rem, 2vw, 1.35rem);
+          line-height: 1.7;
+        }
+      </style>
+
+      <section class="section thankyou-hero">
+        <div class="container -small">
+          <div class="thankyou-hero__inner">
+            <div class="thankyou-hero__logo">
+              <img src="../assets/images/logo.png" alt="Logo Incon Digital" loading="lazy" />
+            </div>
+
+            <span class="thankyou-hero__badge">
+              <span class="thankyou-hero__badge-dot"></span>
+              Mensagem recebida
+            </span>
+
+            <h1 class="thankyou-hero__title">
+              Boa. Agora é com a gente.
+              <span class="emphasis">Fique de olho no seu WhatsApp</span>
+            </h1>
+
+            <p class="thankyou-hero__subtitle">Em até 5 minutos em horário comercial, um especialista da Incon Digital vai entrar em contato para entender a sua marca e apresentar o Método Revendedoras de Alta Performance.</p>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .next-steps {
+          padding-block: 72px;
+          background-color: var(--background-soft);
+          color: var(--text);
+        }
+
+        .next-steps__inner {
+          display: flex;
+          flex-direction: column;
+          gap: 28px;
+        }
+
+        .next-steps__eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          color: var(--theme);
+          font-size: 0.875rem;
+          font-weight: 900;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+
+        .next-steps__title {
+          max-width: 720px;
+        }
+
+        .next-steps__grid {
+          display: grid;
+          gap: 16px;
+        }
+
+        .next-steps__card {
+          display: grid;
+          grid-template-columns: 56px 1fr;
+          gap: 16px;
+          align-items: start;
+          padding: 24px;
+          border: 1px solid #222222;
+          border-radius: 24px;
+          background-color: #111111;
+          color: #ffffff;
+        }
+
+        .next-steps__number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 56px;
+          height: 56px;
+          border-radius: 16px;
+          background-color: var(--theme);
+          color: #000000;
+          font-size: 1.1rem;
+          font-weight: 900;
+          flex: 0 0 auto;
+        }
+
+        .next-steps__card-title {
+          margin-bottom: 6px;
+          font-size: 1.08rem;
+          font-weight: 800;
+        }
+
+        .next-steps__card-text {
+          color: rgba(255, 255, 255, 0.72);
+          line-height: 1.65;
+        }
+
+        @media (min-width: 768px) {
+          .next-steps__grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+        }
+      </style>
+
+      <section class="section next-steps">
+        <div class="container">
+          <div class="next-steps__inner">
+            <div>
+              <span class="eyebrow next-steps__eyebrow">O que acontece agora</span>
+              <h2 class="section-title next-steps__title">Seus próximos passos com a Incon Digital.</h2>
+            </div>
+
+            <div class="next-steps__grid">
+              <article class="next-steps__card">
+                <div class="next-steps__number">1</div>
+                <div>
+                  <h3 class="next-steps__card-title">Contato do especialista</h3>
+                  <p class="next-steps__card-text">Um especialista da Incon Digital entra em contato em até 5 minutos em horário comercial para agendar a reunião de diagnóstico.</p>
+                </div>
+              </article>
+
+              <article class="next-steps__card">
+                <div class="next-steps__number">2</div>
+                <div>
+                  <h3 class="next-steps__card-title">Diagnóstico da marca</h3>
+                  <p class="next-steps__card-text">Na reunião, mapeamos o estágio atual do seu estoque de maletas, identificamos os gargalos e apresentamos um plano de ação personalizado.</p>
+                </div>
+              </article>
+
+              <article class="next-steps__card">
+                <div class="next-steps__number">3</div>
+                <div>
+                  <h3 class="next-steps__card-title">Implementação do método</h3>
+                  <p class="next-steps__card-text">Com o plano estruturado, começamos a implementação do método para captar revendedoras de semijoias com previsibilidade e escala.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .instagram-cta {
+          background-color: var(--background-dark);
+          color: #ffffff;
+        }
+
+        .instagram-cta__inner {
+          display: grid;
+          gap: 24px;
+          padding: 32px;
+          border: 1px solid #222222;
+          border-radius: var(--radius-lg);
+          background: radial-gradient(circle at top right, rgba(214, 183, 134, 0.1), transparent 28%), #111111;
+        }
+
+        .instagram-cta__eyebrow {
+          color: var(--theme);
+        }
+
+        .instagram-cta__title {
+          max-width: 760px;
+          margin: 12px 0 24px;
+        }
+
+        .instagram-cta__text {
+          max-width: 680px;
+          color: rgba(255, 255, 255, 0.72);
+          font-size: 1.05rem;
+          line-height: 1.7;
+        }
+
+        .instagram-cta__actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 14px;
+        }
+
+        @media (min-width: 1024px) {
+          .instagram-cta__inner {
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: end;
+          }
+
+          .instagram-cta__side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            gap: 14px;
+          }
+        }
+      </style>
+
+      <section class="section instagram-cta">
+        <div class="container">
+          <div class="instagram-cta__inner">
+            <div>
+              <span class="eyebrow instagram-cta__eyebrow">Enquanto isso</span>
+              <h2 class="section-title instagram-cta__title">Quer entender melhor como a Incon pensa captação de revendedoras?</h2>
+              <p class="instagram-cta__text">Acompanhe o Instagram e veja bastidores, posicionamento, insights de negócio e conteúdos práticos sobre aquisição de revendedoras em consignação para marcas de Semijoias.</p>
+            </div>
+
+            <div class="instagram-cta__side">
+              <div class="instagram-cta__actions">
+                <a href="https://www.instagram.com/incon.semijoias/" target="_blank" rel="noopener noreferrer" class="button">Acessar Instagram</a>
+
+                <a href="/" class="button -instagram">Voltar ao início</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      .footer {
+        padding: 28px 0 36px;
+        border-top: 1px solid #1e1e1e;
+        background-color: var(--background-dark);
+      }
+
+      .footer__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .footer__logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .footer__logo img {
+        height: 36px;
+        width: auto;
+      }
+
+      .footer__social-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .footer__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #2e2e2e;
+        border-radius: 10px;
+        background-color: #111111;
+        color: rgba(255, 255, 255, 0.62);
+        transition:
+          color 0.18s ease,
+          border-color 0.18s ease,
+          background-color 0.18s ease;
+      }
+
+      .footer__social-link:hover {
+        border-color: var(--theme);
+        background-color: var(--theme);
+        color: #000000;
+      }
+
+      .footer__copyright {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.875rem;
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      .footer__copyright strong {
+        color: rgba(255, 255, 255, 0.56);
+        font-weight: 600;
+      }
+
+      @media (min-width: 768px) {
+        .footer__inner {
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 16px;
+        }
+
+        .footer__copyright {
+          text-align: right;
+        }
+      }
+    </style>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__logo">
+            <img src="../assets/images/logo.png" alt="Logo Incon Digital" loading="lazy" />
+          </div>
+
+          <div class="footer__social-links">
+            <a href="https://www.instagram.com/incon.semijoias/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="28 28 200 200"><path fill="currentColor" d="M160 128a32 32 0 1 1-32-32 32 32 0 0 1 32 32m68-44v88a56 56 0 0 1-56 56H84a56 56 0 0 1-56-56V84a56 56 0 0 1 56-56h88a56 56 0 0 1 56 56m-52 44a48 48 0 1 0-48 48 48 48 0 0 0 48-48m16-52a12 12 0 1 0-12 12 12 12 0 0 0 12-12" /></svg>
+            </a>
+          </div>
+
+          <p class="footer__copyright">2026 © Incon Digital. CNPJ: <strong>54.213.471/0001-07</strong></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/chat",
+            "destination": "https://chat-funnel-alpha.vercel.app/:subdomain"
+        },
+        {
+            "source": "/chat/:path*",
+            "destination": "https://chat-funnel-alpha.vercel.app/:subdomain/:path*"
+        }
+    ]
+}

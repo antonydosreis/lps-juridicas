@@ -31,14 +31,14 @@
             "destination": "/:subdomain/index.html"
         },
         {
-            "source": "/:path((?!chat).* )",
+            "source": "/:file((?!chat).*)",
             "has": [
                 {
                     "type": "host",
                     "value": "(?<subdomain>[^.]+)\\.falarcomadvogado\\.com\\.br"
                 }
             ],
-            "destination": "/:subdomain/:path*"
+            "destination": "/:subdomain/:file"
         }
     ]
 }

@@ -1,6 +1,10 @@
 {
     "rewrites": [
         {
+            "source": "/_next/:path*",
+            "destination": "https://chat-funnel-alpha.vercel.app/_next/:path*"
+        },
+        {
             "source": "/chat",
             "has": [
                 {
@@ -31,7 +35,7 @@
             "destination": "/:subdomain/index.html"
         },
         {
-            "source": "/:file((?!chat).*)",
+            "source": "/:file((?!chat|_next).*)",
             "has": [
                 {
                     "type": "host",

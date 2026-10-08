@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/bensal-advogados/sitemap.xml
+Sitemap: https://bensal-advogados.falarcomadvogado.com.br/sitemap.xml

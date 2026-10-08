@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/souza-lima/sitemap.xml
+Sitemap: https://souza-lima.falarcomadvogado.com.br/sitemap.xml

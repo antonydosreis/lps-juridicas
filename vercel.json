@@ -21,7 +21,17 @@
             "destination": "https://chat-funnel-alpha.vercel.app/:subdomain/:path*"
         },
         {
-            "source": "/:path*",
+            "source": "/",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "(?<subdomain>[^.]+)\\.falarcomadvogado\\.com\\.br"
+                }
+            ],
+            "destination": "/:subdomain/index.html"
+        },
+        {
+            "source": "/:path((?!chat).* )",
             "has": [
                 {
                     "type": "host",

@@ -5,7 +5,7 @@
             "has": [
                 {
                     "type": "host",
-                    "value": "(?<subdomain>[^.]+)\\.falarcomumadvogado\\.com\\.br"
+                    "value": "(?<subdomain>[^.]+)\\.falarcomadvogado\\.com\\.br"
                 }
             ],
             "destination": "https://chat-funnel-alpha.vercel.app/:subdomain"
@@ -15,27 +15,17 @@
             "has": [
                 {
                     "type": "host",
-                    "value": "(?<subdomain>[^.]+)\\.falarcomumadvogado\\.com\\.br"
+                    "value": "(?<subdomain>[^.]+)\\.falarcomadvogado\\.com\\.br"
                 }
             ],
             "destination": "https://chat-funnel-alpha.vercel.app/:subdomain/:path*"
-        },
-        {
-            "source": "/",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "(?<subdomain>[^.]+)\\.falarcomumadvogado\\.com\\.br"
-                }
-            ],
-            "destination": "/:subdomain/index.html"
         },
         {
             "source": "/:path*",
             "has": [
                 {
                     "type": "host",
-                    "value": "(?<subdomain>[^.]+)\\.falarcomumadvogado\\.com\\.br"
+                    "value": "(?<subdomain>[^.]+)\\.falarcomadvogado\\.com\\.br"
                 }
             ],
             "destination": "/:subdomain/:path*"

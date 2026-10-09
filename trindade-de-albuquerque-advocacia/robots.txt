@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/enzo-ferreira-do-carmo-lima/sitemap.xml
+Sitemap: https://trindade-de-albuquerque-advocacia.falarcomadvogado.com.br/sitemap.xml

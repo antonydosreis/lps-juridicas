@@ -308,7 +308,7 @@
               </li>
             </ul>
             <br />
-            <a href="https://wa.me/5511983695378?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button -light" target="_blank">Falar com o Plantão de Análise</a>
+            <a href="https://wa.me/5511912872264?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button -light" target="_blank">Falar com o Plantão de Análise</a>
           </div>
         </div>
       </section>
@@ -331,7 +331,7 @@
         <div class="container">
           <h2 class="title">A inércia agora pode custar o <span>nome da sua empresa</span></h2>
           <p class="subtitle">Ignorar uma notificação de terceiros ou cair no desespero após ter sua conta no Mercado Livre ou Amazon derrubada só agrava a situação. Descobrir que você investiu em letreiros, uniformes e embalagens para um nome que não pode usar exige estratégia jurídica, não adivinhação. Assumimos o controle da crise para mitigar seus prejuízos e buscar saídas legais imediatamente.</p>
-          <a href="https://wa.me/5511983695378?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button" target="_blank">Solicitar Análise Imediata</a>
+          <a href="https://wa.me/5511912872264?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button" target="_blank">Solicitar Análise Imediata</a>
         </div>
       </section>
 
@@ -393,7 +393,7 @@
               <p>Buscamos a regularização prioritária (quando aplicável) ou desenhamos o caminho mais seguro para transição de marca, se essa for a única saída legal.</p>
             </div>
           </div>
-          <a href="https://wa.me/5511983695378?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button" target="_blank">Iniciar Protocolo de Defesa</a>
+          <a href="https://wa.me/5511912872264?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button" target="_blank">Iniciar Protocolo de Defesa</a>
         </div>
       </section>
 
@@ -548,7 +548,7 @@
           <div class="content">
             <h2 class="title">Quem vai defender você</h2>
             <p>O escritório Assef Moschetta Advogados, fundado por Dra. Tatiana Moschetta e Dr. Eduardo Assef, não é um sistema automatizado. Somos especialistas com mais de 20 anos de atuação sólida e estratégica na proteção da propriedade intelectual (marcas, patentes, desenho industrial, direitos autorais e afins).<br /><br />Lidamos diariamente com casos graves: empresas sendo vítimas de extorsão por uso de nomes idênticos, lojas com o faturamento paralisado em marketplaces e golpistas fraudando documentos oficiais.<br /><br />Atuamos na linha de frente para resolver essas situações. Traduzimos o problema jurídico em uma solução aplicável, para que você possa voltar a gerir seu negócio com segurança.</p>
-            <a href="https://wa.me/5511983695378?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button" target="_blank">Falar com Advogado Agora</a>
+            <a href="https://wa.me/5511912872264?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." class="button" target="_blank">Falar com Advogado Agora</a>
           </div>
         </div>
       </section>
@@ -757,70 +757,8 @@
         background-color: #3d121b;
       }
     </style>
-    <a class="whatsapp-btn" href="https://wa.me/5511983695378?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." target="_blank">
+    <a class="whatsapp-btn" href="https://wa.me/5511912872264?text=Ol%C3%A1%2C+estou+com+um+problema+urgente+com+minha+marca+e+preciso+de+ajuda." target="_blank">
       <img width="48px" src="../assets/images/whatsapp.svg" alt="Botão do WhatsApp" />
     </a>
-
-    <div id="wa-modal" class="modal-overlay">
-      <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <h3 class="modal-title">Falar com o Plantão</h3>
-        <p class="modal-desc">Informe seus dados rápidos para direcionarmos você a um especialista.</p>
-        <form id="wa-form" class="wa-form">
-          <input type="text" id="wa-name" placeholder="Nome Completo" required />
-          <input type="tel" id="wa-phone" placeholder="Seu Telefone / WhatsApp" required />
-          <button type="submit" class="button">Iniciar Conversa</button>
-        </form>
-      </div>
-    </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const GOOGLE_SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwNLtxXLUGMXt5SgfJcNzp-Vb6cN-RouPmDfo3sCTE80c4uS0rlTK6PtrEjd25T0jI9Og/exec'
-        const GOOGLE_SHEETS_TAB_NAME = 'leads'
-
-        const modal = document.getElementById('wa-modal')
-        const form = document.getElementById('wa-form')
-        const closeBtn = document.querySelector('.modal-close')
-        const submitBtn = form.querySelector('button[type="submit"]')
-        const originalBtnText = submitBtn.textContent
-        let targetUrl = ''
-
-        const waLinks = document.querySelectorAll('a[href^="https://wa.me"]')
-        waLinks.forEach(link => {
-          link.addEventListener('click', e => {
-            // e.preventDefault()
-            targetUrl = link.href
-            // modal.classList.add('active')
-          })
-        })
-
-        closeBtn.addEventListener('click', () => modal.classList.remove('active'))
-        window.addEventListener('click', e => {
-          if (e.target === modal) modal.classList.remove('active')
-        })
-
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          submitBtn.disabled = true
-          submitBtn.textContent = 'Enviando...'
-          const name = document.getElementById('wa-name').value.trim()
-          const phone = document.getElementById('wa-phone').value.trim()
-          const time = new Date().toISOString().slice(0, 19).replace('T', ' ')
-          const leadRowData = [time, name, phone]
-          const googleSheetsUrl = new URL(GOOGLE_SHEETS_WEBAPP_URL)
-          googleSheetsUrl.searchParams.set('sheet', GOOGLE_SHEETS_TAB_NAME)
-          googleSheetsUrl.searchParams.set('rows', JSON.stringify([leadRowData]))
-          const pixelImage = new Image()
-          pixelImage.src = googleSheetsUrl.toString()
-          setTimeout(() => {
-            window.open(targetUrl, '_blank')
-            form.reset()
-            submitBtn.disabled = false
-            submitBtn.textContent = originalBtnText
-            modal.classList.remove('active')
-          }, 300)
-        })
-      })
-    </script>
   </body>
 </html>

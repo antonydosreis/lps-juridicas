@@ -3,9 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="canonical" href="https://www.lp.manure.marketing/fabio-delmanto" />
+    <link rel="canonical" href="https://fabio-delmanto.falarcomadvogado.com.br" />
     <title>Advogado Criminalista SP - Defesa em Crimes Tributários e Fiscais</title>
     <meta name="description" content="Especialista em Direito Penal Empresarial em SP. Defesa estratégica em crimes tributários, lavagem de dinheiro e inquéritos policiais. Atendimento imediato para sua tranquilidade." />
+
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-5M7PP8R8')
+    </script>
+    <!-- End Google Tag Manager -->
 
     <style>
       :root {
@@ -162,6 +177,10 @@
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M7PP8R8" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <main>
       <style>
         .section.-hero {
@@ -681,160 +700,5 @@
     <a class="whatsapp-btn" href="https://wa.me/551138876251?text=Ol%C3%A1%2C+preciso+de+um+advogado+especialista+em+crimes+tribut%C3%A1rios+e+gostaria+de+conversar+sobre+meu+caso." target="_blank">
       <img width="48px" src="assets/images/whatsapp.svg" alt="Botão do WhatsApp" />
     </a>
-
-    <style>
-      .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(3px);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .modal-overlay.active {
-        display: flex;
-        opacity: 1;
-      }
-
-      .modal-content {
-        background: var(--background-color);
-        padding: 32px;
-        border-radius: var(--base-border-radius);
-        width: 90%;
-        max-width: 400px;
-        position: relative;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        text-align: center;
-      }
-
-      .modal-close {
-        position: absolute;
-        top: 16px;
-        right: 20px;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-        color: var(--text-color-foreground);
-        line-height: 1;
-      }
-
-      .modal-close:hover {
-        color: var(--theme-color);
-      }
-
-      .modal-title {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--theme-color);
-        margin-bottom: 8px;
-      }
-
-      .modal-desc {
-        font-size: 0.9rem;
-        color: var(--text-color-foreground);
-        margin-bottom: 24px;
-      }
-
-      .wa-form {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .wa-form input {
-        padding: 16px;
-        border: 1px solid var(--border-color);
-        border-radius: var(--base-border-radius);
-        font-family: inherit;
-        font-size: 1rem;
-        color: var(--text-color);
-      }
-
-      .wa-form input:focus {
-        outline: 2px solid var(--theme-color);
-        border-color: transparent;
-      }
-
-      .wa-form .button {
-        width: 100%;
-        animation: none;
-      }
-    </style>
-    <div id="wa-modal" class="modal-overlay">
-      <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <h3 class="modal-title">Fale conosco</h3>
-        <p class="modal-desc">Preencha seus dados para iniciar o atendimento pelo WhatsApp.</p>
-        <form id="wa-form" class="wa-form">
-          <input type="text" id="wa-name" placeholder="Seu Nome" required />
-          <input type="tel" id="wa-phone" placeholder="Seu Telefone" required />
-          <button type="submit" class="button">Iniciar Conversa</button>
-        </form>
-      </div>
-    </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const GOOGLE_SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyb-JmiwP8I0aCWdiMjW54_LG_7bVzWjDsYKyTniWgubx0OQDxITXqIALWSYHNmlmULhg/exec'
-        const GOOGLE_SHEETS_TAB_NAME = 'leads'
-
-        const modal = document.getElementById('wa-modal')
-        const form = document.getElementById('wa-form')
-        const closeBtn = document.querySelector('.modal-close')
-        const submitBtn = form.querySelector('button[type="submit"]')
-        const originalBtnText = submitBtn.textContent
-
-        let targetUrl = ''
-
-        const waLinks = document.querySelectorAll('a[href^="https://wa.me"]')
-        waLinks.forEach(link => {
-          link.addEventListener('click', e => {
-            // e.preventDefault()
-            targetUrl = link.href
-            // modal.classList.add('active')
-          })
-        })
-
-        closeBtn.addEventListener('click', () => modal.classList.remove('active'))
-        window.addEventListener('click', e => {
-          if (e.target === modal) modal.classList.remove('active')
-        })
-
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-
-          submitBtn.disabled = true
-          submitBtn.textContent = 'Conectando...'
-
-          const name = document.getElementById('wa-name').value.trim()
-          const phone = document.getElementById('wa-phone').value.trim()
-          const time = new Date().toISOString().slice(0, 19).replace('T', ' ')
-
-          const leadRowData = [time, name, phone]
-          const googleSheetsUrl = new URL(GOOGLE_SHEETS_WEBAPP_URL)
-          googleSheetsUrl.searchParams.set('sheet', GOOGLE_SHEETS_TAB_NAME)
-          googleSheetsUrl.searchParams.set('rows', JSON.stringify([leadRowData]))
-
-          const pixelImage = new Image()
-          pixelImage.src = googleSheetsUrl.toString()
-
-          setTimeout(() => {
-            window.open(targetUrl, '_blank')
-
-            form.reset()
-            submitBtn.disabled = false
-            submitBtn.textContent = originalBtnText
-            modal.classList.remove('active')
-          }, 300)
-        })
-      })
-    </script>
   </body>
 </html>

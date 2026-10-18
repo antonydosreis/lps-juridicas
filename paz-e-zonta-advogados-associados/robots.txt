@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/paz-e-zonta-advogados-associados/sitemap.xml
+Sitemap: https://paz-e-zonta-advogados-associados.falarcomadvogado.com.br/sitemap.xml

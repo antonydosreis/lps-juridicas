@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/val-advocacia/sitemap.xml
+Sitemap: https://val-advocacia.falarcomadvogado.com.br/sitemap.xml

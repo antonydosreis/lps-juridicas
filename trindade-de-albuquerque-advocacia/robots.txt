@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
 Sitemap: https://trindade-de-albuquerque-advocacia.falarcomadvogado.com.br/sitemap.xml

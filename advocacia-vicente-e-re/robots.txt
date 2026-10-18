@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/advocacia-vicente-e-re/sitemap.xml
+Sitemap: https://advocacia-vicente-e-re.falarcomadvogado.com.br/sitemap.xml

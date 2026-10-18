@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/rpd-advogados/sitemap.xml
+Sitemap: https://rpd-advogados.falarcomadvogado.com.br/sitemap.xml

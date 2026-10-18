@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/monteiro-e-maistro/sitemap.xml
+Sitemap: https://monteiro-e-maistro.falarcomadvogado.com.br/sitemap.xml

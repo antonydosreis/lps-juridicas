@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/cunha-e-peres-advogados/sitemap.xml
+Sitemap: https://cunha-e-peres-advogados.falarcomadvogado.com.br/sitemap.xml

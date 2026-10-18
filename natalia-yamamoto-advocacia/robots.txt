@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/natalia-yamamoto-advocacia/sitemap.xml
+Sitemap: https://natalia-yamamoto-advocacia.falarcomadvogado.com.br/sitemap.xml

@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/fowler-cunha-advocacia/sitemap.xml
+Sitemap: https://fowler-cunha-advocacia.falarcomadvogado.com.br/sitemap.xml

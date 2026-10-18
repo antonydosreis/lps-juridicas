@@ -1,4 +1,17 @@
 {
+    "redirects": [
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "assef-e-moschetta-advogados.falarcomadvogado.com.br"
+                }
+            ],
+            "destination": "/empresas",
+            "permanent": false
+        }
+    ],
     "rewrites": [
         {
             "source": "/_next/:path*",
@@ -23,6 +36,10 @@
                 }
             ],
             "destination": "https://chat-funnel-alpha.vercel.app/:subdomain/:path*"
+        },
+        {
+            "source": "/privacidade",
+            "destination": "/_compartilhado/privacidade.html"
         },
         {
             "source": "/",

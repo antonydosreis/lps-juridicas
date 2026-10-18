@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/jpb-lima-advogados/sitemap.xml
+Sitemap: https://jpb-lima-advogados.falarcomadvogado.com.br/sitemap.xml

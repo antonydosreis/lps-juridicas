@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Página inicial -->
   <url>
-    <loc>https://www.lp.manure.marketing/paz-e-zonta-advogados-associados</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://paz-e-zonta-advogados-associados.falarcomadvogado.com.br</loc>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://paz-e-zonta-advogados-associados.falarcomadvogado.com.br/penal-empresarial</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

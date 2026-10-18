@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/wadna-saldanha/sitemap.xml
+Sitemap: https://wadna-saldanha.falarcomadvogado.com.br/sitemap.xml

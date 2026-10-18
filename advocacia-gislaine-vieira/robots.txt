@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/enzo-ferreira-do-carmo-lima/sitemap.xml
+Sitemap: https://advocacia-gislaine-vieira.falarcomadvogado.com.br/sitemap.xml

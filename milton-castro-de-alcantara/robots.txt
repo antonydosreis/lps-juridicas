@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/milton-castro-de-alcantara/sitemap.xml
+Sitemap: https://milton-castro-de-alcantara.falarcomadvogado.com.br/sitemap.xml

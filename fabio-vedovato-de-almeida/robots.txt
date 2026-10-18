@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/fabio-vedovato-de-almeida/sitemap.xml
+Sitemap: https://fabio-vedovato-de-almeida.falarcomadvogado.com.br/sitemap.xml

@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/antonio-henrique-tenorio-pedrosa/sitemap.xml
+Sitemap: https://antonio-henrique-tenorio-pedrosa.falarcomadvogado.com.br/sitemap.xml

@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/daniela-sathler/sitemap.xml
+Sitemap: https://daniela-sathler.falarcomadvogado.com.br/sitemap.xml

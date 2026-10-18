@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
 Sitemap: https://souza-lima.falarcomadvogado.com.br/sitemap.xml

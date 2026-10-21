@@ -12,6 +12,47 @@
       content="Há 26 anos protegendo o patrimônio das famílias em São Paulo. Especialistas em Inventário Extrajudicial, planejamento sucessório e regularização de imóveis."
     />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Trindade de Albuquerque Advocacia" />
+    <meta property="og:url" content="https://trindade-de-albuquerque-advocacia.falarcomadvogado.com.br" />
+    <meta property="og:title" content="Inventário e Regularização Imobiliária em SP — Dr. Carlos Trindade" />
+    <meta
+      property="og:description"
+      content="Há 26 anos protegendo o patrimônio das famílias em São Paulo. Inventário Extrajudicial, planejamento sucessório e regularização de imóveis."
+    />
+    <meta
+      property="og:image"
+      content="https://trindade-de-albuquerque-advocacia.falarcomadvogado.com.br/assets/images/og.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Trindade de Albuquerque Advocacia",
+        "url": "https://trindade-de-albuquerque-advocacia.falarcomadvogado.com.br",
+        "image": "https://trindade-de-albuquerque-advocacia.falarcomadvogado.com.br/assets/images/og.jpg",
+        "logo": "https://trindade-de-albuquerque-advocacia.falarcomadvogado.com.br/assets/images/logo.png",
+        "telephone": "+55-11-94597-8037",
+        "description": "Inventário Extrajudicial, planejamento sucessório e regularização de imóveis para famílias em São Paulo.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Flórida, 1703, 5º andar - Ed. Gávea",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "04565-001",
+          "addressCountry": "BR"
+        },
+        "areaServed": { "@type": "City", "name": "São Paulo" },
+        "knowsAbout": ["Inventário Extrajudicial", "Planejamento Sucessório", "Regularização Imobiliária", "Usucapião"],
+        "founder": { "@type": "Person", "name": "Carlos Trindade" }
+      }
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -589,8 +630,8 @@
       <section class="section -about">
         <div class="container">
           <picture>
-            <source media="(min-width: 1024px)" srcset="./assets/images/about-desktop.png" />
-            <img src="./assets/images/about-mobile.png" alt="Equipe do Escritório" class="img-about" loading="lazy" />
+            <source media="(min-width: 1024px)" srcset="./assets/images/about-desktop.webp" />
+            <img src="./assets/images/about-mobile.webp" alt="Equipe do Escritório" class="img-about" loading="lazy" />
           </picture>
           <div class="content">
             <p class="surtitle">A Força da Tradição</p>
@@ -710,6 +751,93 @@
       </section>
 
       <style>
+        .section.-location .container {
+          display: grid;
+          gap: var(--base-gap);
+          align-items: center;
+        }
+        .section.-location .content {
+          display: flex;
+          flex-direction: column;
+          gap: var(--base-gap);
+          align-items: center;
+          text-align: center;
+        }
+        .section.-location .address {
+          font-style: normal;
+          color: var(--text-color-foreground);
+        }
+        .section.-location .address strong {
+          color: var(--theme-color);
+        }
+        .section.-location .directions {
+          font-weight: 800;
+          color: var(--theme-color);
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+        .section.-location .map {
+          width: 100%;
+          height: 360px;
+          border: 1px solid var(--border-color);
+          border-radius: var(--base-border-radius);
+        }
+        @media (min-width: 768px) {
+          .section.-location .container {
+            grid-template-columns: 1fr 1.5fr;
+          }
+          .section.-location .content {
+            align-items: flex-start;
+            text-align: left;
+          }
+          .section.-location .title {
+            text-align: left;
+          }
+          .section.-location .map {
+            height: 420px;
+          }
+        }
+      </style>
+      <section class="section -foreground -location">
+        <div class="container">
+          <div class="content">
+            <p class="surtitle">Onde Estamos</p>
+            <h2 class="title">Escritório no <span class="emphasis">Brooklin, em São Paulo</span></h2>
+            <address class="address">
+              <strong>Trindade de Albuquerque Advocacia</strong><br />
+              Rua Flórida, 1703, 5º andar – Ed. Gávea<br />
+              Brooklin, São Paulo – SP, 04565-001
+            </address>
+            <p>
+              Atendemos presencialmente em nosso escritório na Zona Sul de São Paulo ou de forma 100% digital, pelo
+              celular, para quem prefere resolver tudo sem sair de casa.
+            </p>
+            <a
+              href="https://wa.me/5511945978037?text=Quero+agendar+uma+conversa+sobre+meu+patrimônio."
+              class="button"
+              target="_blank"
+              >Agendar Atendimento</a
+            >
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=Rua+Fl%C3%B3rida,+1703,+Brooklin,+S%C3%A3o+Paulo+-+SP,+04565-001"
+              class="directions"
+              target="_blank"
+              rel="noopener"
+              >Como chegar →</a
+            >
+          </div>
+          <iframe
+            class="map"
+            title="Mapa do escritório Trindade de Albuquerque Advocacia em São Paulo"
+            src="https://www.google.com/maps?q=Trindade+de+Albuquerque+Advocacia,+Rua+Fl%C3%B3rida,+1703,+Brooklin,+S%C3%A3o+Paulo+-+SP&hl=pt-BR&z=16&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <style>
         .faq-list {
           width: 100%;
           display: flex;
@@ -805,7 +933,12 @@
     </style>
     <footer class="footer">
       <div class="container">
-        <p>Copyright © 2026 - Trindade de Albuquerque Advocacia - OAB 179.695/SP · <a href="/privacidade" style="text-decoration: underline">Política de privacidade</a></p>
+        <p>
+          Copyright © 2026 - Trindade de Albuquerque Advocacia - OAB 179.695/SP<br />
+          Rua Flórida, 1703, 5º andar – Brooklin, São Paulo – SP, 04565-001 ·
+          <a href="tel:+5511945978037">(11) 94597-8037</a> ·
+          <a href="/privacidade" style="text-decoration: underline">Política de privacidade</a>
+        </p>
         <a href="https://www.manure.marketing" target="_blank">
           <img src="./assets/images/manure.svg" alt="Manure Marketing" />
         </a>

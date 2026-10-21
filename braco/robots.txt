@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
 Allow: /
 
-Sitemap: https://www.lp.manure.marketing/assef-e-moschetta-advogados/sitemap.xml
+Sitemap: https://braco.falarcomadvogado.com.br/sitemap.xml

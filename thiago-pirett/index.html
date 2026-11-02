@@ -276,6 +276,42 @@
                 font-weight: 600;
             }
 
+            .image-gap {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                width: 100%;
+                aspect-ratio: 1080 / 766;
+                padding: 16px;
+                border: 2px dashed var(--theme-color);
+                border-radius: var(--base-border-radius);
+                background: color-mix(in srgb, var(--theme-color) 8%, transparent);
+                color: var(--theme-color);
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .-hero .logo-gap {
+                display: inline-flex;
+                align-items: center;
+                height: 48px;
+                padding: 0 20px;
+                margin: 0 auto;
+                border: 2px dashed var(--theme-color);
+                border-radius: 8px;
+                color: var(--theme-color);
+                font-size: 0.9rem;
+                font-weight: 700;
+            }
+
+            @media (min-width: 1024px) {
+                .image-gap {
+                    aspect-ratio: 768 / 960;
+                }
+            }
+
             .-hero .logo-name {
                 font-size: 1.25rem;
                 font-weight: 700;
@@ -319,16 +355,20 @@
                     font-size: 3.5rem;
                 }
 
-                .-hero .logo {
+                .-hero .logo,
+                .-hero .logo-gap {
                     max-width: auto;
                     margin: initial;
                 }
             }
         </style>
-        <section class="section -hero -no-image">
+        <section class="section -hero">
             <div class="container">
+                                    <div class="image-side">
+                        <div class="image-gap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-3h8l2 3h3v13H3z" /><circle cx="12" cy="13" r="4" /></svg><span>Sua foto aqui</span></div>
+                    </div>
                                 <div class="content">
-                                            <span class="logo-name">Thiago Pirett</span>
+                                            <span class="logo-gap">Seu logo aqui</span>
                                         <h1 class="title">Precisa realizar o <span>inventário de bens e imóveis</span> da sua família?</h1>
                     <p class="subtitle">Conte com atendimento direto dos advogados para orientar a partilha, evitar multas tributárias e regularizar a transferência de patrimônio com agilidade e clareza.</p>
                     <ul class="features">
@@ -597,8 +637,9 @@
                 }
             }
         </style>
-        <section class="section -about -no-image">
+        <section class="section -about">
             <div class="container">
+                                    <div class="image-gap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-3h8l2 3h3v13H3z" /><circle cx="12" cy="13" r="4" /></svg><span>Foto do escritório aqui</span></div>
                                 <div class="content">
                     <h2 class="title emphasis">Thiago Pirett</h2>
                     <p>Fundado por Thiago Pirett e Gustavo Pereira, nosso escritório tem atuação dedicada exclusivamente à condução de inventários e partilhas de bens.<br><br>Unimos uma visão estratégica voltada à eficiência patrimonial ao rigor técnico necessário para lidar com cartórios e tribunais. Entendemos a importância de proteger os ativos construídos pela família e desatar entraves burocráticos com serenidade e postura ética.<br><br>Aqui o seu caso não é delegado a intermediários: os próprios titulares acompanham cada etapa do procedimento, assegurando transparência e suporte constante em toda a Grande São Paulo e região.</p>

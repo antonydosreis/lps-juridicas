@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thiago-pirett.falarcomadvogado.com.br/sitemap.xml

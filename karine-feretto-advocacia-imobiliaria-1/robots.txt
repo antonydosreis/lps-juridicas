@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://karine-feretto-advocacia-imobiliaria-1.falarcomadvogado.com.br/sitemap.xml

@@ -16,6 +16,7 @@
     <meta property="og:url" content="https://thiago-pirett.falarcomadvogado.com.br" />
     <meta property="og:title" content="Advogado para Inventário de Imóveis e Bens em SP" />
     <meta property="og:description" content="Assessoria jurídica dedicada à abertura e condução de inventário judicial e extrajudicial. Evite multas de atraso e organize o patrimônio da família." />
+            <meta property="og:image" content="https://thiago-pirett.falarcomadvogado.com.br/assets/images/hero-mobile.webp" />
         <meta property="og:image:width" content="1080" />
     <meta property="og:image:height" content="766" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -30,6 +31,7 @@
             "url": "https://thiago-pirett.falarcomadvogado.com.br",
             "description": "Assessoria jurídica dedicada à abertura e condução de inventário judicial e extrajudicial. Evite multas de atraso e organize o patrimônio da família.",
             "telephone": "+5511995190557",
+            "image": "https://thiago-pirett.falarcomadvogado.com.br/assets/images/hero-mobile.webp",
             "knowsAbout": "Imobiliário"
         },
         {
@@ -40,7 +42,7 @@
                     "name": "Qual é o prazo para iniciar o inventário e o que acontece se atrasar?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "O prazo estabelecido pelo Código de Processo Civil é de 60 dias a contar do falecimento. Caso o inventário não seja aberto nesse período, os estados aplicam multas pecuniárias sobre o valor do imposto devido (ITCMD)."
+                        "text": "O prazo estabelecido pelo Código de Processo Civil é de 60 dias, contados a partir da data do falecimento. Caso o inventário não seja aberto nesse período, os estados aplicam multas pecuniárias sobre o valor do imposto devido (ITCMD)."
                     }
                 },
                 {
@@ -72,7 +74,9 @@
     ]
 }
     </script>
-    
+    <!-- erp:head-scripts -->
+        <!-- /erp:head-scripts -->
+
     <style>
         :root {
             --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -228,7 +232,9 @@
     </head>
 
 <body>
-        <main>
+    <!-- erp:body-scripts -->
+        <!-- /erp:body-scripts -->
+    <main>
         <style>
             .section.-hero {
                 text-align: center;
@@ -365,7 +371,10 @@
         <section class="section -hero">
             <div class="container">
                                     <div class="image-side">
-                        <div class="image-gap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-3h8l2 3h3v13H3z" /><circle cx="12" cy="13" r="4" /></svg><span>Sua foto aqui</span></div>
+                        <picture>
+                            <source media="(min-width: 1024px)" srcset="./assets/images/hero-desktop.webp" width="768" height="960" />
+                            <img src="./assets/images/hero-mobile.webp" width="1080" height="766" fetchpriority="high" alt="Thiago Pirett" class="hero-img" />
+                        </picture>
                     </div>
                                 <div class="content">
                                             <span class="logo-gap">Seu logo aqui</span>
@@ -388,7 +397,7 @@
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--theme-color)">
                                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                                 </svg>
-                                Análise completa para via judicial ou extrajudicial em cartório
+                                Análise completa para a realização do inventário pela via judicial ou extrajudicial
                             </li>
                                             </ul>
                     <a href="https://wa.me/5511995190557?text=Ol%C3%A1%21+Gostaria+de+conversar+com+os+advogados+para+entender+os+passos+do+invent%C3%A1rio+da+minha+fam%C3%ADlia." data-cta="hero" class="button"
@@ -410,7 +419,7 @@
         <section class="section -foreground -problem">
             <div class="container -small">
                 <h2 class="title">O tempo corre contra o <span>patrimônio da família</span></h2>
-                <p class="subtitle">Após o falecimento de um ente querido, as exigências burocráticas exigem atenção imediata. A legislação estipula o prazo de 60 dias para o início do inventário sob pena de multa sobre o imposto de transmissão (ITCMD). Além do risco de penalidades, contas bancárias permanecem bloqueadas e os imóveis ficam impedidos de venda ou transferência regular. Lidar com essa burocracia sem acompanhamento focado gera atritos, atrasos nos cartórios e gastos desnecessários.</p>
+                <p class="subtitle">Após o falecimento de um ente querido, as exigências burocráticas exigem atenção imediata. A legislação estabelece o prazo de 60 dias para a abertura do inventário, sob pena de multa sobre o imposto de transmissão (ITCMD). Além do risco de penalidades, contas bancárias podem permanecer bloqueadas, e a venda ou transferência regular dos imóveis pode ficar comprometida. Lidar com essa burocracia sem acompanhamento focado gera atritos, atrasos nos cartórios e gastos desnecessários.</p>
                 <a href="https://wa.me/5511995190557?text=Ol%C3%A1%21+Gostaria+de+conversar+com+os+advogados+para+entender+os+passos+do+invent%C3%A1rio+da+minha+fam%C3%ADlia." data-cta="problem" class="button"
                     target="_blank">Analisar meu caso agora</a>
             </div>
@@ -458,17 +467,17 @@
                                             <div class="step-card">
                             <span class="step-number">01</span>
                             <span class="step-title">Diagnóstico do acervo</span>
-                            <p class="faq-answer">Mapeamos os bens móveis, imóveis e contas financeiras, checando a regularidade documental e a viabilidade da via extrajudicial.</p>
+                            <p class="faq-answer">Mapeamos os bens móveis e imóveis, bem como as contas bancárias e os investimentos, checando a regularidade documental e a viabilidade da via extrajudicial.</p>
                         </div>
                                             <div class="step-card">
                             <span class="step-number">02</span>
                             <span class="step-title">Estratégia e cálculo fiscal</span>
-                            <p class="faq-answer">Estruturamos a partilha entre os herdeiros, apuramos as guias do ITCMD dentro do prazo e preparamos toda a minuta legal necessária.</p>
+                            <p class="faq-answer">Estruturamos a partilha entre os herdeiros, calculamos o ITCMD e providenciamos as respectivas guias de recolhimento, observando os prazos legais e preparamos toda a minuta legal necessária.</p>
                         </div>
                                             <div class="step-card">
                             <span class="step-number">03</span>
                             <span class="step-title">Formalização e partilha</span>
-                            <p class="faq-answer">Concluímos a escritura pública ou a homologação judicial para a liberação de valores e registro dos bens em nome dos herdeiros.</p>
+                            <p class="faq-answer">Providenciamos a lavratura da escritura pública ou acompanhamos a homologação judicial da partilha para a liberação de valores e registro dos bens em nome dos herdeiros.</p>
                         </div>
                                     </div>
                 <a href="https://wa.me/5511995190557?text=Ol%C3%A1%21+Gostaria+de+conversar+com+os+advogados+para+entender+os+passos+do+invent%C3%A1rio+da+minha+fam%C3%ADlia." data-cta="steps" class="button"
@@ -538,7 +547,7 @@
         </style>
         <section class="section -foreground -compare">
             <div class="container">
-                <h2 class="title">Por que contar com nossa <span>atuação direcionada</span></h2>
+                <h2 class="title">Por que contar com nossa <span>atuação especializada </span></h2>
                 <div class="grid">
                     <div class="card -highlight">
                         <span class="card-title emphasis">Thiago Pirett</span>
@@ -561,7 +570,7 @@
                                                             <li class="item">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--theme-color)">
                                         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                                    </svg> Estrutura com reuniões online ou presenciais na região de São Paulo
+                                    </svg> Atendimento por meio de reuniões on-line ou presenciais em São Paulo e região.
                                 </li>
                                                     </ul>
                     </div>
@@ -578,7 +587,7 @@
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff4444">
                                         <path
                                             d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-                                    </svg> Falta de foco na celeridade dos prazos fiscais e regras cartorárias
+                                    </svg> Falta de atenção aos prazos fiscais e às exigências cartorárias
                                 </li>
                                                             <li class="item">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff4444">
@@ -639,10 +648,13 @@
         </style>
         <section class="section -about">
             <div class="container">
-                                    <div class="image-gap"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-3h8l2 3h3v13H3z" /><circle cx="12" cy="13" r="4" /></svg><span>Foto do escritório aqui</span></div>
+                                    <picture>
+                        <source media="(min-width: 1024px)" srcset="./assets/images/about-desktop.webp" width="768" height="960" />
+                        <img src="./assets/images/about-mobile.webp" width="1080" height="766" alt="Thiago Pirett" class="img-about" loading="lazy" />
+                    </picture>
                                 <div class="content">
                     <h2 class="title emphasis">Thiago Pirett</h2>
-                    <p>Fundado por Thiago Pirett e Gustavo Pereira, nosso escritório tem atuação dedicada exclusivamente à condução de inventários e partilhas de bens.<br><br>Unimos uma visão estratégica voltada à eficiência patrimonial ao rigor técnico necessário para lidar com cartórios e tribunais. Entendemos a importância de proteger os ativos construídos pela família e desatar entraves burocráticos com serenidade e postura ética.<br><br>Aqui o seu caso não é delegado a intermediários: os próprios titulares acompanham cada etapa do procedimento, assegurando transparência e suporte constante em toda a Grande São Paulo e região.</p>
+                    <p>Fundado por Thiago Pirett e Gustavo Pereira, nosso escritório tem atuação dedicada exclusivamente à condução de inventários e partilhas de bens.<br><br>Unimos uma visão estratégica voltada à eficiência patrimonial ao rigor técnico necessário para lidar com cartórios e tribunais. Compreendemos a importância de preservar o patrimônio familiar e solucionar questões burocráticas com segurança jurídica, transparência e postura ética.<br><br>Aqui, seu caso é acompanhado diretamente pelos advogados responsáveis, sem intermediários, garantindo transparência, atendimento personalizado e suporte durante todas as etapas do procedimento.</p>
                     <a href="https://wa.me/5511995190557?text=Ol%C3%A1%21+Gostaria+de+conversar+com+os+advogados+para+entender+os+passos+do+invent%C3%A1rio+da+minha+fam%C3%ADlia." data-cta="about" class="button"
                         target="_blank">Analisar meu caso agora</a>
                 </div>
@@ -682,7 +694,7 @@
                 <div class="faq-list">
                                             <div class="faq-item">
                             <span class="faq-question">Qual é o prazo para iniciar o inventário e o que acontece se atrasar?</span>
-                            <p class="faq-answer">O prazo estabelecido pelo Código de Processo Civil é de 60 dias a contar do falecimento. Caso o inventário não seja aberto nesse período, os estados aplicam multas pecuniárias sobre o valor do imposto devido (ITCMD).</p>
+                            <p class="faq-answer">O prazo estabelecido pelo Código de Processo Civil é de 60 dias, contados a partir da data do falecimento. Caso o inventário não seja aberto nesse período, os estados aplicam multas pecuniárias sobre o valor do imposto devido (ITCMD).</p>
                         </div>
                                             <div class="faq-item">
                             <span class="faq-question">Quando é possível realizar o inventário extrajudicial em cartório?</span>
@@ -796,6 +808,7 @@
         <img width="48px" src="./assets/images/whatsapp.svg" alt="Botão do WhatsApp" />
     </a>
 
+    <!-- erp:click-tracking -->
     <script>
                 var clickTracking = {"endpoint":"https:\/\/erp.manure.marketing\/api\/landing-pages\/clicks","page":7032,"sig":"87642c06659997f6ed199ec4c9156d6c","attribution_days":90}        var attribution = (function () {
             var storageKey = 'lp_attribution'
@@ -829,6 +842,7 @@
                             })
         })
     </script>
+    <!-- /erp:click-tracking -->
 </body>
 
 </html>

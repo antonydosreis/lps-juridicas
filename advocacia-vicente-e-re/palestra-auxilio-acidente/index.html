@@ -141,7 +141,7 @@ O link da palestra é enviado no grupo do WhatsApp
 </footer>
 <script>
 var groupCode='CKC6X2R8J369fZupXntL8f',isPhone=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-document.querySelectorAll('.group-link').forEach(function(link){link.addEventListener('click',function(event){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'whatsapp_group_click',cta_position:link.dataset.cta||'button'});if(typeof fbq==='function')fbq('track','Lead');if(!isPhone)return;event.preventDefault();window.location.href='whatsapp://chat?code='+groupCode;setTimeout(function(){window.location.href='https://chat.whatsapp.com/'+groupCode},600)})});
+document.querySelectorAll('.group-link').forEach(function(link){link.addEventListener('click',function(event){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'whatsapp_group_click',cta_position:link.dataset.cta||'button'});if(typeof fbq==='function'){fbq('track','Lead');fbq('trackCustom','WhatsAppGroupClick')}if(!isPhone)return;event.preventDefault();window.location.href='whatsapp://chat?code='+groupCode;setTimeout(function(){window.location.href='https://chat.whatsapp.com/'+groupCode},600)})});
 </script>
 <!-- erp:click-tracking -->
     <script>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://advocacia-gislaine-vieira-ltda.falarcomadvogado.com.br/sitemap.xml

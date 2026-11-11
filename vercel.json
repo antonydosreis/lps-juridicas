@@ -71,6 +71,26 @@
                 }
             ],
             "destination": "/:subdomain/:file"
+        },
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "(www\\.)?advogadossouzalima\\.com\\.br"
+                }
+            ],
+            "destination": "/souza-lima/index.html"
+        },
+        {
+            "source": "/:file((?!chat|_next).*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "(www\\.)?advogadossouzalima\\.com\\.br"
+                }
+            ],
+            "destination": "/souza-lima/:file"
         }
     ]
 }

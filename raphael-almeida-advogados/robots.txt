@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raphael-almeida-advogados.falarcomadvogado.com.br/sitemap.xml

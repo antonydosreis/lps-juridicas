@@ -20,14 +20,7 @@
 <meta name="theme-color" content="#000d3a">
 <link rel="preload" as="image" href="/palestra-auxilio-acidente/assets/images/hero-mobile.webp">
 <!-- erp:head-scripts -->
-    
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KFBVG6Q4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-        <!-- /erp:head-scripts -->
+<!-- /erp:head-scripts -->
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -141,7 +134,7 @@ O link da palestra é enviado no grupo do WhatsApp
 </footer>
 <script>
 var groupCode='CKC6X2R8J369fZupXntL8f',isPhone=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-document.querySelectorAll('.group-link').forEach(function(link){link.addEventListener('click',function(event){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'whatsapp_group_click',cta_position:link.dataset.cta||'button'});if(typeof fbq==='function'){fbq('track','Lead');fbq('trackCustom','WhatsAppGroupClick')}if(!isPhone)return;event.preventDefault();window.location.href='whatsapp://chat?code='+groupCode;setTimeout(function(){window.location.href='https://chat.whatsapp.com/'+groupCode},600)})});
+document.querySelectorAll('.group-link').forEach(function(link){link.addEventListener('click',function(event){var ctaPosition=link.dataset.cta||'button';if(typeof fbq==='function'){fbq('track','Lead',{content_name:ctaPosition});fbq('trackCustom','WhatsAppGroupClick',{cta_position:ctaPosition})}if(!isPhone)return;event.preventDefault();setTimeout(function(){window.location.href='whatsapp://chat?code='+groupCode;setTimeout(function(){window.location.href='https://chat.whatsapp.com/'+groupCode},600)},300)})});
 </script>
 <!-- erp:click-tracking -->
     <script>

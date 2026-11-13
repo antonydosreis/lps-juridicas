@@ -233,11 +233,385 @@
             }
         }
     </style>
+
+    <!-- Dinamismo pedido pelo cliente (nov/2026): barra fixa, blocos contrastados e animações ao rolar. Exclusivo desta LP. -->
+    <style>
+        :root {
+            --theme-dark: color-mix(in srgb, var(--theme-color), black 55%);
+            --theme-light: color-mix(in srgb, var(--theme-color), white 70%);
+            --background-color-foreground: color-mix(in srgb, var(--theme-color) 5%, #faf8f7);
+            --border-color: rgba(105, 29, 32, 0.12);
+            --header-height: 72px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Barra superior fixa */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.86);
+            -webkit-backdrop-filter: saturate(180%) blur(12px);
+            backdrop-filter: saturate(180%) blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease, height 0.3s ease;
+        }
+
+        .topbar.is-scrolled {
+            --header-height: 60px;
+            border-bottom-color: var(--border-color);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .topbar .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .topbar-logo img {
+            display: block;
+            height: 36px;
+            width: auto;
+            transition: height 0.3s ease;
+        }
+
+        .topbar.is-scrolled .topbar-logo img {
+            height: 30px;
+        }
+
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .topbar-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 50px;
+            border: 1px solid var(--bord-th);
+            color: var(--theme-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+        }
+
+        .topbar-link:hover {
+            background-color: var(--theme-color);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .topbar-link svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .topbar-link .label {
+            display: none;
+        }
+
+        .topbar-progress {
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: 3px;
+            width: 100%;
+            background: var(--theme-color);
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+
+        @media (min-width: 768px) {
+            .topbar-logo img {
+                height: 44px;
+            }
+
+            .topbar.is-scrolled .topbar-logo img {
+                height: 36px;
+            }
+
+            .topbar-link.-phone {
+                padding: 0 18px;
+            }
+
+            .topbar-link.-phone .label {
+                display: inline;
+            }
+        }
+
+        /* O logo agora fica na barra; no topo da página ele não se repete */
+        .section.-hero .logo {
+            display: none;
+        }
+
+        /* Hero com fundo levemente tingido e foto emoldurada */
+        .section.-hero {
+            background:
+                radial-gradient(ellipse 60% 70% at 85% 30%, color-mix(in srgb, var(--theme-color) 9%, transparent), transparent 70%),
+                linear-gradient(180deg, #fff, var(--background-color-foreground));
+        }
+
+        .-hero .image-side {
+            position: relative;
+        }
+
+        .-hero .image-side::before {
+            content: '';
+            position: absolute;
+            inset: 16px -16px -16px 16px;
+            border: 2px solid var(--theme-color);
+            border-radius: var(--base-border-radius);
+            opacity: 0.35;
+        }
+
+        .-hero .hero-img {
+            position: relative;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Etiqueta acima de cada título, marcando o bloco */
+        .section .surtitle {
+            margin-bottom: -8px;
+        }
+
+        /* Bloco escuro: a troca de seção fica evidente */
+        .section.-dark {
+            position: relative;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 0%, color-mix(in srgb, var(--theme-color) 55%, transparent), transparent 70%),
+                var(--theme-dark);
+            color: #fff;
+            --text-color-foreground: rgba(255, 255, 255, 0.78);
+            overflow: hidden;
+        }
+
+        .section.-dark .title span {
+            color: var(--theme-light);
+        }
+
+        .section.-dark .surtitle {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .section.-dark .button {
+            --button-background-color: #fff;
+            --button-text-color: var(--theme-color);
+        }
+
+        /* Cards com movimento */
+        .step-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--theme-color);
+            transform: scaleX(0.2);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--bord-th);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-number {
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .section.-compare .card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .section.-compare .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Foto do "Quem somos" emoldurada */
+        .section.-about .about-media {
+            position: relative;
+        }
+
+        .section.-about .about-media::before {
+            content: '';
+            position: absolute;
+            inset: -16px 16px 16px -16px;
+            background: var(--background-color-foreground);
+            border: 1px solid var(--border-color);
+            border-radius: var(--base-border-radius);
+        }
+
+        .section.-about .img-about {
+            position: relative;
+            display: block;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Perguntas em sanfona */
+        .section.-faq {
+            background-color: var(--background-color-foreground);
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: var(--base-border-radius);
+            padding: 0;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .faq-item[open] {
+            border-color: var(--bord-th);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 24px;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary .faq-question {
+            margin: 0;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--theme-color-foreground);
+            color: var(--theme-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+            background: var(--theme-color);
+            color: #fff;
+        }
+
+        .faq-item .faq-answer {
+            padding: 0 24px 24px;
+        }
+
+        /* Entrada dos elementos ao rolar (só com JavaScript e sem preferência por menos movimento) */
+        @media (prefers-reduced-motion: no-preference) {
+            .js-reveal [data-reveal] {
+                opacity: 0;
+                transform: translateY(28px);
+                transition: opacity 0.8s ease var(--d, 0s), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s);
+            }
+
+            .js-reveal [data-reveal='left'] {
+                transform: translateX(-32px);
+            }
+
+            .js-reveal [data-reveal='right'] {
+                transform: translateX(32px);
+            }
+
+            .js-reveal [data-reveal].is-visible {
+                opacity: 1;
+                transform: none;
+            }
+
+            /* Topo: só movimento, sem esconder o texto (não atrasa o carregamento percebido) */
+            .-hero .image-side {
+                animation: hero-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+            }
+
+            .-hero .image-side::before {
+                animation: hero-frame 1.2s 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+            }
+
+            @keyframes hero-in {
+                from {
+                    transform: translateY(24px) scale(0.98);
+                }
+            }
+
+            @keyframes hero-frame {
+                from {
+                    transform: translate(-16px, -16px);
+                }
+            }
+        }
+    </style>
+    <script>
+        // Esconde os blocos abaixo do topo só quando o navegador consegue revelá-los ao rolar
+        if ('IntersectionObserver' in window) document.documentElement.classList.add('js-reveal')
+    </script>
     </head>
 
 <body>
     <!-- erp:body-scripts -->
         <!-- /erp:body-scripts -->
+    <header class="topbar">
+        <div class="container">
+            <a href="#" class="topbar-logo" aria-label="Raphael Almeida Advogados - voltar ao topo">
+                <img src="./assets/images/logo.webp" width="720" height="159" alt="Logo Raphael Almeida Advogados" />
+            </a>
+            <div class="topbar-actions">
+                <a href="tel:+552730629865" class="topbar-link -phone" data-cta="topbar-phone" aria-label="Ligar para (27) 3062-9865">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    <span class="label">(27) 3062-9865</span>
+                </a>
+                <a href="https://www.instagram.com/raphaelalmeidaadvogados" class="topbar-link" data-cta="topbar-instagram" target="_blank" rel="noopener" aria-label="Instagram do escritório">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="topbar-progress"></div>
+    </header>
     <main>
         <style>
             .section.-hero {
@@ -420,11 +794,12 @@
                 color: var(--text-color-foreground);
             }
         </style>
-        <section class="section -foreground -problem">
+        <section class="section -dark -problem">
             <div class="container -small">
-                <h2 class="title">Sua empresa pode estar <span>deixando ativos relevantes na mesa</span> ou recorrendo a crédito bancário caro</h2>
-                <p class="subtitle">Com a complexidade da legislação fiscal e o calendário da transição tributária, valores substanciais de PIS, COFINS, ICMS e encargos sobre folha de pagamento deixam de ser compensados mês a mês. Manter esses haveres inativos impacta diretamente a liquidez corporativa e compromete margens que poderiam sustentar investimentos e despesas operacionais da sua operação.</p>
-                <a href="https://wa.me/552730629865?text=Ol%C3%A1.+Gostaria+de+agendar+uma+reuni%C3%A3o+t%C3%A9cnica+para+analisar+a+viabilidade+de+cr%C3%A9ditos+tribut%C3%A1rios+da+minha+empresa." data-cta="problem" class="button"
+                <span class="surtitle" data-reveal>O cenário</span>
+                <h2 class="title" data-reveal>Sua empresa pode estar <span>deixando ativos relevantes na mesa</span> ou recorrendo a crédito bancário caro</h2>
+                <p class="subtitle" data-reveal style="--d:.1s">Com a complexidade da legislação fiscal e o calendário da transição tributária, valores substanciais de PIS, COFINS, ICMS e encargos sobre folha de pagamento deixam de ser compensados mês a mês. Manter esses haveres inativos impacta diretamente a liquidez corporativa e compromete margens que poderiam sustentar investimentos e despesas operacionais da sua operação.</p>
+                <a href="https://wa.me/552730629865?text=Ol%C3%A1.+Gostaria+de+agendar+uma+reuni%C3%A3o+t%C3%A9cnica+para+analisar+a+viabilidade+de+cr%C3%A9ditos+tribut%C3%A1rios+da+minha+empresa." data-cta="problem" class="button" data-reveal
                     target="_blank">Falar com Advogado</a>
             </div>
         </section>
@@ -466,25 +841,26 @@
         </style>
         <section class="section -steps">
             <div class="container">
-                <h2 class="title">Metodologia estruturada para <span>segurança e eficiência fiscal</span></h2>
+                <span class="surtitle" data-reveal>Como trabalhamos</span>
+                <h2 class="title" data-reveal>Metodologia estruturada para <span>segurança e eficiência fiscal</span></h2>
                 <div class="steps-grid">
-                                            <div class="step-card">
+                                            <div class="step-card" data-reveal style="--d:0.00s">
                             <span class="step-number">01</span>
                             <span class="step-title">Diagnóstico Preliminar de Viabilidade</span>
                             <p class="faq-answer">Análise documental dos arquivos fiscais dos últimos 5 anos para identificar potenciais haveres tributários e previdenciários aplicáveis ao perfil da empresa.</p>
                         </div>
-                                            <div class="step-card">
+                                            <div class="step-card" data-reveal style="--d:0.12s">
                             <span class="step-number">02</span>
                             <span class="step-title">Validação Técnica e Fundamentação</span>
                             <p class="faq-answer">Cruzamento de dados contábeis com base na jurisprudência administrativa e judicial pacificada, sem comprometer a conformidade legal do seu negócio.</p>
                         </div>
-                                            <div class="step-card">
+                                            <div class="step-card" data-reveal style="--d:0.24s">
                             <span class="step-number">03</span>
                             <span class="step-title">Aproveitamento e Estratégia Corporativa</span>
                             <p class="faq-answer">Implementação das compensações ou pedidos de restituição, abrindo caminho para uma revisão contínua de eficiência fiscal e societária.</p>
                         </div>
                                     </div>
-                <a href="https://wa.me/552730629865?text=Ol%C3%A1.+Gostaria+de+agendar+uma+reuni%C3%A3o+t%C3%A9cnica+para+analisar+a+viabilidade+de+cr%C3%A9ditos+tribut%C3%A1rios+da+minha+empresa." data-cta="steps" class="button"
+                <a href="https://wa.me/552730629865?text=Ol%C3%A1.+Gostaria+de+agendar+uma+reuni%C3%A3o+t%C3%A9cnica+para+analisar+a+viabilidade+de+cr%C3%A9ditos+tribut%C3%A1rios+da+minha+empresa." data-cta="steps" class="button" data-reveal
                     target="_blank">Falar com Advogado</a>
             </div>
         </section>
@@ -551,9 +927,10 @@
         </style>
         <section class="section -foreground -compare">
             <div class="container">
-                <h2 class="title">O modelo boutique em comparação à <span>consultoria genérica de massa</span></h2>
+                <span class="surtitle" data-reveal>Diferenciais</span>
+                <h2 class="title" data-reveal>O modelo boutique em comparação à <span>consultoria genérica de massa</span></h2>
                 <div class="grid">
-                    <div class="card -highlight">
+                    <div class="card -highlight" data-reveal="right" style="--d:.15s">
                         <span class="card-title emphasis">Raphael Almeida Advogados</span>
                         <ul class="list">
                                                             <li class="item">
@@ -578,7 +955,7 @@
                                 </li>
                                                     </ul>
                     </div>
-                    <div class="card">
+                    <div class="card" data-reveal="left">
                         <span class="card-title">Assessorias Padronizadas e Plataformas de Massa</span>
                         <ul class="list">
                                                             <li class="item">
@@ -602,7 +979,7 @@
                                                     </ul>
                     </div>
                 </div>
-                <a href="https://wa.me/552730629865?text=Ol%C3%A1.+Gostaria+de+agendar+uma+reuni%C3%A3o+t%C3%A9cnica+para+analisar+a+viabilidade+de+cr%C3%A9ditos+tribut%C3%A1rios+da+minha+empresa." data-cta="compare" class="button"
+                <a href="https://wa.me/552730629865?text=Ol%C3%A1.+Gostaria+de+agendar+uma+reuni%C3%A3o+t%C3%A9cnica+para+analisar+a+viabilidade+de+cr%C3%A9ditos+tribut%C3%A1rios+da+minha+empresa." data-cta="compare" class="button" data-reveal
                     target="_blank">Falar com Advogado</a>
             </div>
         </section>
@@ -652,11 +1029,14 @@
         </style>
         <section class="section -about">
             <div class="container">
-                                    <picture>
+                                    <div class="about-media" data-reveal="left">
+                    <picture>
                         <source media="(min-width: 1024px)" srcset="./assets/images/about-desktop.webp" width="768" height="960" />
                         <img src="./assets/images/about-mobile.webp" width="1080" height="766" alt="Raphael Almeida Advogados" class="img-about" loading="lazy" />
                     </picture>
-                                <div class="content">
+                    </div>
+                                <div class="content" data-reveal="right" style="--d:.15s">
+                    <span class="surtitle">Quem somos</span>
                     <h2 class="title emphasis">Raphael Almeida Advogados</h2>
                     <p>A Raphael Almeida Advogados atua sob a premissa de um modelo boutique: dedicação direta aos clientes, profundidade técnica e acompanhamento próximo em demandas empresariais complexas.<br><br>Sediado no Espírito Santo e estruturado para atender demandas de alta sofisticação jurídica, o escritório combina o relacionamento personalizado à retaguarda técnica de uma rede com mais de três décadas de experiência corporativa em âmbito nacional.<br><br>Nosso compromisso é tratar cada operação com a confidencialidade e a segurança que lideranças corporativas, diretores financeiros e controladores exigem ao tomar decisões sobre seus passivos e ativos fiscais.</p>
                     <a href="https://wa.me/552730629865?text=Ol%C3%A1.+Gostaria+de+agendar+uma+reuni%C3%A3o+t%C3%A9cnica+para+analisar+a+viabilidade+de+cr%C3%A9ditos+tribut%C3%A1rios+da+minha+empresa." data-cta="about" class="button"
@@ -694,24 +1074,25 @@
         </style>
         <section class="section -faq">
             <div class="container -small">
-                <h2 class="title">Esclarecimentos sobre o <span>diagnóstico tributário</span> corporativo</h2>
+                <span class="surtitle" data-reveal>Dúvidas frequentes</span>
+                <h2 class="title" data-reveal>Esclarecimentos sobre o <span>diagnóstico tributário</span> corporativo</h2>
                 <div class="faq-list">
-                                            <div class="faq-item">
-                            <span class="faq-question">Quais tipos de empresas se enquadram neste modelo de análise?</span>
+                                            <details class="faq-item" open data-reveal style="--d:0.00s">
+                            <summary><span class="faq-question">Quais tipos de empresas se enquadram neste modelo de análise?</span></summary>
                             <p class="faq-answer">O trabalho é direcionado prioritariamente a empresas tributadas pelo Lucro Real ou Lucro Presumido, que tenham faturamento anual a partir de R$ 20 milhões ou folha com mais de 50 colaboradores, devido à complexidade das bases de apuração envolvidas.</p>
-                        </div>
-                                            <div class="faq-item">
-                            <span class="faq-question">Quais tributos costumam apresentar maior incidência de valores passíveis de recuperação?</span>
+                        </details>
+                                            <details class="faq-item" data-reveal style="--d:0.08s">
+                            <summary><span class="faq-question">Quais tributos costumam apresentar maior incidência de valores passíveis de recuperação?</span></summary>
                             <p class="faq-answer">Geralmente identificam-se créditos em contribuições federais (PIS e COFINS), tributos sobre a folha de pagamento (verbas previdenciárias de natureza indenizatória), além de particularidades em ICMS e IPI, observando sempre o prazo prescricional dos últimos 5 anos.</p>
-                        </div>
-                                            <div class="faq-item">
-                            <span class="faq-question">O procedimento expõe a empresa a riscos junto aos órgãos fiscalizadores?</span>
+                        </details>
+                                            <details class="faq-item" data-reveal style="--d:0.16s">
+                            <summary><span class="faq-question">O procedimento expõe a empresa a riscos junto aos órgãos fiscalizadores?</span></summary>
                             <p class="faq-answer">Todo o trabalho baseia-se em entendimentos firmados pelos Tribunais Superiores e normas da própria Receita Federal. Não utilizamos expedientes aventureiros, assegurando que cada apontamento seja auditado e documentalmente fundamentado.</p>
-                        </div>
-                                            <div class="faq-item">
-                            <span class="faq-question">Como funciona o primeiro contato com a equipe jurídica?</span>
+                        </details>
+                                            <details class="faq-item" data-reveal style="--d:0.24s">
+                            <summary><span class="faq-question">Como funciona o primeiro contato com a equipe jurídica?</span></summary>
                             <p class="faq-answer">O atendimento inicial é conduzido diretamente por nossa equipe de advogados para alinhar o enquadramento fiscal, porte da empresa e delimitação do escopo analítico com total sigilo.</p>
-                        </div>
+                        </details>
                                     </div>
             </div>
         </section>
@@ -811,6 +1192,38 @@
         target="_blank">
         <img width="48px" src="./assets/images/whatsapp.svg" alt="Botão do WhatsApp" />
     </a>
+
+    <script>
+        // Barra fixa (sombra + progresso de leitura) e entrada dos blocos ao rolar
+        (function () {
+            var bar = document.querySelector('.topbar')
+            var progress = document.querySelector('.topbar-progress')
+            var ticking = false
+            function update() {
+                var max = document.documentElement.scrollHeight - window.innerHeight
+                bar.classList.toggle('is-scrolled', window.scrollY > 10)
+                progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')'
+                ticking = false
+            }
+            window.addEventListener('scroll', function () {
+                if (!ticking) { ticking = true; requestAnimationFrame(update) }
+            }, { passive: true })
+            update()
+
+            if (!('IntersectionObserver' in window)) return
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return
+                    var el = entry.target
+                    el.classList.add('is-visible')
+                    observer.unobserve(el)
+                    // Depois de entrar, o elemento volta às transições próprias (hover dos botões e cards)
+                    setTimeout(function () { el.removeAttribute('data-reveal'); el.style.removeProperty('--d') }, 1400)
+                })
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 })
+            document.querySelectorAll('[data-reveal]').forEach(function (el) { observer.observe(el) })
+        })()
+    </script>
 
     <!-- erp:click-tracking -->
     <script>

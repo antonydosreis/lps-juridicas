@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bruno-pereira-de-almeida.falarcomadvogado.com.br/sitemap.xml

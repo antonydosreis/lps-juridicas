@@ -1867,18 +1867,18 @@
         background: rgba(9, 9, 10, 0.55);
         border-color: var(--line);
       }
-      .section.-charcoal::after,
-      .section.-warm::after {
-        content: '✦';
+      /* Losango dourado marcando a divisa entre seções */
+      .section:not(.hero):not(.final):not(#sobre)::after {
+        content: '';
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 0 14px;
-        font-size: 0.7rem;
-        line-height: 1;
-        color: var(--gold);
-        background: var(--ink);
+        width: 9px;
+        height: 9px;
+        background: var(--gold-grad);
+        transform: translate(-50%, -50%) rotate(45deg);
+        box-shadow: 0 0 14px rgba(212, 176, 106, 0.55);
+        z-index: 2;
       }
 
       /* Seções claras (marfim) para dar respiro */

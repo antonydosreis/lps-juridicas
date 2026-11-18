@@ -376,28 +376,6 @@
         transform: none;
       }
 
-      /* Botões de WhatsApp na cor do WhatsApp */
-      .btn.btn-gold[data-wa],
-      .wa-float {
-        background: linear-gradient(180deg, #25d366, #169647);
-        color: #fff;
-        border-color: transparent;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-        box-shadow:
-          0 12px 28px -12px rgba(37, 211, 102, 0.65),
-          inset 0 1px 0 rgba(255, 255, 255, 0.35);
-      }
-      .btn.btn-gold[data-wa]:hover {
-        background: linear-gradient(180deg, #2be070, #128a40);
-        box-shadow:
-          0 18px 36px -14px rgba(37, 211, 102, 0.75),
-          inset 0 1px 0 rgba(255, 255, 255, 0.4);
-      }
-      .btn.btn-gold[data-wa] svg,
-      .wa-float svg {
-        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
-      }
-
       /* Header */
       .header {
         position: fixed;
@@ -1796,16 +1774,13 @@
         bottom: 24px;
         width: 62px;
         height: 62px;
-        border-radius: 16px;
+        border-radius: 50%;
         display: grid;
         place-items: center;
-        background: linear-gradient(180deg, #25d366, #169647);
+        background: #25d366;
         color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        box-shadow:
-          0 16px 36px -10px rgba(0, 0, 0, 0.7),
-          0 8px 24px -8px rgba(37, 211, 102, 0.5),
-          inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        border: 0;
+        box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
         transform: translateY(20px) scale(0.9);
         opacity: 0;
         visibility: hidden;

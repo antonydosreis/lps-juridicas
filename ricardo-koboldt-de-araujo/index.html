@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://ricardo-koboldt-de-araujo.falarcomadvogado.com.br" />
     <meta property="og:title" content="Dívidas Empresariais em Porto Alegre | Koboldt Advocacia" />
     <meta property="og:description" content="Atuação jurídica em renegociação e revisão de dívidas bancárias empresariais em Porto Alegre. Proteja o caixa da sua empresa com suporte qualificado." />
-            <meta property="og:image" content="https://ricardo-koboldt-de-araujo.falarcomadvogado.com.br/assets/images/hero-mobile-v2.webp" />
+            <meta property="og:image" content="https://ricardo-koboldt-de-araujo.falarcomadvogado.com.br/assets/images/hero-mobile.webp" />
         <meta property="og:image:width" content="1080" />
     <meta property="og:image:height" content="766" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -31,7 +31,7 @@
             "url": "https://ricardo-koboldt-de-araujo.falarcomadvogado.com.br",
             "description": "Atuação jurídica em renegociação e revisão de dívidas bancárias empresariais em Porto Alegre. Proteja o caixa da sua empresa com suporte qualificado.",
             "telephone": "+5551998835313",
-            "image": "https://ricardo-koboldt-de-araujo.falarcomadvogado.com.br/assets/images/hero-mobile-v2.webp",
+            "image": "https://ricardo-koboldt-de-araujo.falarcomadvogado.com.br/assets/images/hero-mobile.webp",
             "logo": "https://ricardo-koboldt-de-araujo.falarcomadvogado.com.br/assets/images/logo.webp",
             "knowsAbout": "Empresarial"
         },
@@ -373,8 +373,8 @@
             <div class="container">
                                     <div class="image-side">
                         <picture>
-                            <source media="(min-width: 1024px)" srcset="./assets/images/hero-desktop-v2.webp" width="768" height="960" />
-                            <img src="./assets/images/hero-mobile-v2.webp" width="1080" height="766" fetchpriority="high" alt="Ricardo Koboldt de Araujo" class="hero-img" />
+                            <source media="(min-width: 1024px)" srcset="./assets/images/hero-desktop.webp" width="768" height="960" />
+                            <img src="./assets/images/hero-mobile.webp" width="1080" height="766" fetchpriority="high" alt="Ricardo Koboldt de Araujo" class="hero-img" />
                         </picture>
                     </div>
                                 <div class="content">
@@ -650,8 +650,8 @@
         <section class="section -about">
             <div class="container">
                                     <picture>
-                        <source media="(min-width: 1024px)" srcset="./assets/images/about-desktop-v2.webp" width="768" height="960" />
-                        <img src="./assets/images/about-mobile-v2.webp" width="1080" height="766" alt="Ricardo Koboldt de Araujo" class="img-about" loading="lazy" />
+                        <source media="(min-width: 1024px)" srcset="./assets/images/about-desktop.webp" width="768" height="960" />
+                        <img src="./assets/images/about-mobile.webp" width="1080" height="766" alt="Ricardo Koboldt de Araujo" class="img-about" loading="lazy" />
                     </picture>
                                 <div class="content">
                     <h2 class="title emphasis">Ricardo Koboldt de Araujo</h2>
@@ -811,7 +811,7 @@
 
     <!-- erp:click-tracking -->
     <script>
-                var clickTracking = {"endpoint":"https:\/\/erp.manure.marketing\/api\/landing-pages\/clicks","page":4443,"sig":"2f99c3a9d49e267bee2b443891126ce5","attribution_days":90}        var attribution = (function () {
+                var clickTracking = {"endpoint":"https:\/\/erp.manure.marketing\/api\/landing-pages\/clicks","visits_endpoint":"https:\/\/erp.manure.marketing\/api\/landing-pages\/visits","page":4443,"sig":"2f99c3a9d49e267bee2b443891126ce5","attribution_days":90}        var attribution = (function () {
             var storageKey = 'lp_attribution'
             var params = new URLSearchParams(window.location.search)
             var saved = {}
@@ -835,11 +835,43 @@
             } catch (error) {}
             try { fetch(clickTracking.endpoint, { method: 'POST', body: body, mode: 'no-cors', keepalive: true }) } catch (error) {}
         }
+        var pageVisit = (function () {
+            if (!clickTracking.visits_endpoint) return null
+            var params = new URLSearchParams(window.location.search)
+            var utmSource = (params.get('utm_source') || '').toLowerCase()
+            var visit = {
+                key: Date.now().toString(36) + Math.random().toString(36).slice(2, 12),
+                source: params.get('gclid') || params.get('gbraid') || params.get('wbraid') ? 'google' : params.get('fbclid') || /facebook|instagram|^fb|^ig|meta/.test(utmSource) ? 'meta' : 'other',
+                device: window.innerWidth < 768 ? 'mobile' : 'desktop',
+                scroll: 0, headings: 0, clicked: false, visibleMs: 0, shownAt: Date.now()
+            }
+            var headings = Array.prototype.slice.call(document.querySelectorAll('h1, h2'))
+            function measure() {
+                var viewBottom = window.scrollY + window.innerHeight
+                visit.scroll = Math.max(visit.scroll, Math.min(100, Math.round(viewBottom / Math.max(1, document.documentElement.scrollHeight) * 100)))
+                headings.forEach(function (heading, index) { if (heading.getBoundingClientRect().top + window.scrollY < viewBottom - 80) visit.headings = Math.max(visit.headings, index + 1) })
+            }
+            visit.send = function () {
+                var visibleMs = visit.visibleMs + (document.visibilityState === 'visible' ? Date.now() - visit.shownAt : 0)
+                var body = JSON.stringify({ page: clickTracking.page, sig: clickTracking.sig, visit: visit.key, url: window.location.href, source: visit.source, device: visit.device, scroll: visit.scroll, headings: visit.headings, seconds: Math.round(visibleMs / 1000), clicked: visit.clicked })
+                try { if (navigator.sendBeacon && navigator.sendBeacon(clickTracking.visits_endpoint, new Blob([body], { type: 'text/plain' }))) return } catch (error) {}
+                try { fetch(clickTracking.visits_endpoint, { method: 'POST', body: body, mode: 'no-cors', keepalive: true }) } catch (error) {}
+            }
+            window.addEventListener('scroll', measure, { passive: true })
+            window.addEventListener('load', measure)
+            measure()
+            document.addEventListener('visibilitychange', function () {
+                if (document.visibilityState === 'hidden') { visit.visibleMs += Date.now() - visit.shownAt; visit.send() } else visit.shownAt = Date.now()
+            })
+            window.addEventListener('pagehide', function () { if (document.visibilityState === 'visible') visit.send() })
+            return visit
+        })()
                 document.querySelectorAll('a[href^="https://wa.me"]').forEach(function (link) {
             link.addEventListener('click', function () {
                 window.dataLayer = window.dataLayer || []
                 window.dataLayer.push({ event: 'whatsapp_click', cta_position: link.dataset.cta || 'button' })
                                 registerWhatsappClick(link.dataset.cta || 'button')
+                if (pageVisit) { pageVisit.clicked = true; pageVisit.send() }
                             })
         })
     </script>

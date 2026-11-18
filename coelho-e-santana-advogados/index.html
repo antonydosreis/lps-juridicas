@@ -232,7 +232,6 @@
       .eyebrow {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
         font-size: 0.72rem;
         font-weight: 700;
         letter-spacing: 0.22em;
@@ -241,6 +240,8 @@
       }
       .eyebrow::before {
         content: '';
+        margin-right: 12px;
+        flex: none;
         width: 28px;
         height: 1px;
         background: var(--gold-grad);
@@ -552,7 +553,7 @@
         flex-direction: column;
         justify-content: center;
         padding-top: calc(var(--header-h) + 28px);
-        padding-bottom: 0;
+        padding-bottom: clamp(56px, 8vw, 96px);
         overflow: hidden;
         isolation: isolate;
         background:
@@ -760,7 +761,7 @@
       .marquee-track {
         display: flex;
         width: max-content;
-        animation: marquee 48s linear infinite;
+        animation: marquee 60s linear infinite;
       }
       .marquee-track span {
         font-family: var(--serif);
@@ -931,6 +932,37 @@
           grid-template-columns: 0.9fr 1.1fr;
           gap: 96px;
         }
+      }
+
+      .pillars {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 24px;
+        margin-top: 8px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line-soft);
+      }
+      .pillars strong {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--serif);
+        font-size: 1.02rem;
+        font-weight: 600;
+        line-height: 1.25;
+        margin-bottom: 4px;
+      }
+      .pillars strong::before {
+        content: '✦';
+        font-size: 0.6rem;
+        color: var(--gold);
+      }
+      .pillars span {
+        display: block;
+        font-size: 0.86rem;
+        line-height: 1.5;
+        color: var(--muted);
       }
 
       /* Frase de impacto */
@@ -1260,7 +1292,7 @@
       @media (min-width: 1100px) {
         .others ul {
           grid-auto-flow: row;
-          grid-template-columns: repeat(6, 1fr);
+          grid-template-columns: repeat(5, 1fr);
           overflow: visible;
           margin-inline: 0;
           padding: 0;
@@ -1345,14 +1377,17 @@
         counter-increment: step;
       }
       .step::before {
-        content: 'Etapa ' counter(step);
+        content: '0' counter(step);
         display: block;
-        font-size: 0.7rem;
-        font-weight: 800;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 16px;
+        font-family: var(--serif);
+        font-size: 2.8rem;
+        font-weight: 500;
+        line-height: 1;
+        background: var(--gold-grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 18px;
       }
       .step h3 {
         font-family: var(--serif);
@@ -1565,8 +1600,8 @@
         pointer-events: none;
       }
       .final .display {
-        font-size: clamp(2.4rem, 7vw, 5rem);
-        max-width: 16ch;
+        font-size: clamp(2.1rem, 5.6vw, 4.2rem);
+        max-width: 20ch;
         margin: 22px auto 0;
       }
       .final .lead {
@@ -1871,8 +1906,8 @@
           padding: 18px 14px;
         }
         .step::before {
-          font-size: 0.62rem;
-          margin-bottom: 10px;
+          font-size: 2rem;
+          margin-bottom: 12px;
         }
         .step h3 {
           font-size: 1.1rem;
@@ -2006,8 +2041,8 @@
           <a href="#sobre">O escritório</a>
           <a href="#atuacao">Atuação</a>
           <a href="#como-atuamos">Como atuamos</a>
-          <a href="#duvidas">Dúvidas</a>
           <a href="#unidades">Unidades</a>
+          <a href="#duvidas">Dúvidas</a>
         </nav>
         <a class="btn btn-gold header-cta" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
           <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com advogado
@@ -2019,8 +2054,8 @@
       <a href="#sobre">O escritório</a>
       <a href="#atuacao">Áreas de atuação</a>
       <a href="#como-atuamos">Como atuamos</a>
-      <a href="#duvidas">Dúvidas frequentes</a>
       <a href="#unidades">Unidades</a>
+      <a href="#duvidas">Dúvidas frequentes</a>
       <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
         <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com um advogado
       </a>
@@ -2050,22 +2085,14 @@
               <img class="brasao" src="./assets/images/brasao.webp" width="640" height="595" alt="" fetchpriority="high" data-reveal style="--d: 0.1s" />
             </div>
           </div>
-          <div class="credentials" data-reveal style="--d: 0.32s">
-            <ul>
-              <li><strong>4 unidades</strong><span>Alphaville, Osasco, Itapevi e Ivoti/RS</span></li>
-              <li><strong>Atendimento direto</strong><span>Você fala com quem cuida do seu caso</span></li>
-              <li><strong>Presencial e online</strong><span>No escritório ou pelo WhatsApp</span></li>
-              <li><strong>Sigilo total</strong><span>O que você contar fica entre nós</span></li>
-            </ul>
-          </div>
         </div>
       </section>
 
       <!-- FAIXA -->
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Rescisão indireta</span><span>Horas extras</span><span>Assédio no trabalho</span><span>Acidente de trabalho</span><span>Trabalho sem carteira</span><span>Rescisão paga errada</span><span>Plano de saúde negado</span><span>Remédio de alto custo</span>
-          <span>Rescisão indireta</span><span>Horas extras</span><span>Assédio no trabalho</span><span>Acidente de trabalho</span><span>Trabalho sem carteira</span><span>Rescisão paga errada</span><span>Plano de saúde negado</span><span>Remédio de alto custo</span>
+          <span>4 unidades: Alphaville, Osasco, Itapevi e Ivoti/RS</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span><span>4 unidades: Alphaville, Osasco, Itapevi e Ivoti/RS</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span>
+          <span>4 unidades: Alphaville, Osasco, Itapevi e Ivoti/RS</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span><span>4 unidades: Alphaville, Osasco, Itapevi e Ivoti/RS</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span>
         </div>
       </div>
 
@@ -2091,21 +2118,13 @@
             <h2 class="display h2" data-reveal>Técnica de alto nível. <span class="gold">Linguagem que você entende.</span></h2>
             <p data-reveal>O <strong>Coelho &amp; Santana Advogados Associados</strong> nasceu de uma ideia simples: quem procura um advogado precisa ser ouvido, entender o que está acontecendo e confiar em quem está cuidando do caso.</p>
             <p data-reveal>Com o <strong>Dr. Michel de Santana Coelho</strong> à frente, o escritório cresceu e hoje tem unidades em Alphaville, Osasco, Itapevi e no Rio Grande do Sul. Também atende pelo WhatsApp e por videochamada.</p>
-            <ul class="values" data-reveal>
-              <li><b>i.</b><div><strong>Clareza</strong><span>Você entende cada passo do seu caso, sem palavras difíceis.</span></div></li>
-              <li><b>ii.</b><div><strong>Cuidado</strong><span>Cada caso é estudado com calma. Nada de modelo pronto.</span></div></li>
-              <li><b>iii.</b><div><strong>Proximidade</strong><span>Você fala direto com quem cuida do seu caso, sem enrolação.</span></div></li>
+            <ul class="pillars" data-reveal>
+              <li><strong>Sempre atualizados</strong><span>Acompanhamos as mudanças na lei e nas decisões da Justiça.</span></li>
+              <li><strong>Cada caso é único</strong><span>Seu caso é estudado com calma. Nada de modelo pronto.</span></li>
+              <li><strong>Conversa sincera</strong><span>Você sabe as chances reais, sem promessa que não dá para cumprir.</span></li>
+              <li><strong>Fácil de encontrar</strong><span>4 unidades e atendimento online pelo WhatsApp.</span></li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <!-- FRASE -->
-      <section class="section statement -warm" aria-label="Nosso posicionamento">
-        <div class="wrap" data-reveal>
-          <span class="quote-mark" aria-hidden="true">“</span>
-          <blockquote>Desistir dos seus direitos por medo pode custar <span class="gold">muito mais caro</span> no futuro.</blockquote>
-          <cite>Coelho &amp; Santana Advogados Associados</cite>
         </div>
       </section>
 
@@ -2221,7 +2240,6 @@
           <div class="others" data-reveal>
             <h3>Outras áreas de atuação</h3>
             <ul>
-              <li><a data-wa="Olá! Vim pelo site e gostaria de falar sobre defesa da minha empresa em processo trabalhista." href="https://wa.me/5511936197327" target="_blank" rel="noopener"><span class="o-icon"><svg aria-hidden="true"><use href="#i-briefcase" /></svg></span><strong>Defesa trabalhista para empresas</strong><span class="o-cta" aria-hidden="true"><svg><use href="#i-arrow" /></svg></span></a></li>
               <li><a data-wa="Olá! Vim pelo site e gostaria de conhecer a assessoria jurídica para empresas." href="https://wa.me/5511936197327" target="_blank" rel="noopener"><span class="o-icon"><svg aria-hidden="true"><use href="#i-calendar" /></svg></span><strong>Assessoria jurídica para empresas</strong><span class="o-cta" aria-hidden="true"><svg><use href="#i-arrow" /></svg></span></a></li>
               <li><a data-wa="Olá! Vim pelo site e gostaria de falar sobre um contrato." href="https://wa.me/5511936197327" target="_blank" rel="noopener"><span class="o-icon"><svg aria-hidden="true"><use href="#i-doc" /></svg></span><strong>Contratos</strong><span class="o-cta" aria-hidden="true"><svg><use href="#i-arrow" /></svg></span></a></li>
               <li><a data-wa="Olá! Vim pelo site e gostaria de falar sobre cobrança de valores em aberto." href="https://wa.me/5511936197327" target="_blank" rel="noopener"><span class="o-icon"><svg aria-hidden="true"><use href="#i-coins" /></svg></span><strong>Cobrança de dívidas</strong><span class="o-cta" aria-hidden="true"><svg><use href="#i-arrow" /></svg></span></a></li>
@@ -2232,50 +2250,8 @@
         </div>
       </section>
 
-      <!-- DIFERENCIAIS -->
-      <section class="section why -light" id="diferenciais">
-        <div class="wrap why-grid">
-          <div class="why-aside">
-            <span class="eyebrow" data-reveal>Por que o Coelho &amp; Santana</span>
-            <h2 class="display h2" data-reveal>Confiança se conquista <span class="gold">caso a caso.</span></h2>
-            <p class="lead" data-reveal>Aqui você não é mais um número. Cada pessoa recebe atenção, uma resposta sincera e acompanhamento de perto.</p>
-            <div data-reveal>
-              <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de uma análise do meu caso." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
-                <svg aria-hidden="true"><use href="#i-wa" /></svg>Analisar meu caso
-              </a>
-            </div>
-          </div>
-          <ol class="why-list">
-            <li data-reveal>
-              <div>
-                <h3>Sempre atualizados</h3>
-                <p>As leis e as decisões da Justiça mudam. A gente acompanha tudo isso para escolher o caminho mais seguro para você.</p>
-              </div>
-            </li>
-            <li data-reveal>
-              <div>
-                <h3>Cada caso é único</h3>
-                <p>Seu caso é estudado com calma antes de qualquer passo. Nada de processo feito em modelo pronto.</p>
-              </div>
-            </li>
-            <li data-reveal>
-              <div>
-                <h3>Conversa sincera</h3>
-                <p>Você sabe o que está acontecendo, quais são as chances reais e o que esperar. Sem prometer o que não dá para cumprir.</p>
-              </div>
-            </li>
-            <li data-reveal>
-              <div>
-                <h3>Fácil de encontrar</h3>
-                <p>Unidades em Alphaville, Osasco, Itapevi e Ivoti/RS, e atendimento online para quem não pode ir até lá.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
       <!-- COMO ATUAMOS -->
-      <section class="section" id="como-atuamos">
+      <section class="section -warm" id="como-atuamos">
         <div class="wrap">
           <div class="section-head">
             <span class="eyebrow" data-reveal>Como atuamos</span>
@@ -2304,6 +2280,43 @@
               <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com um advogado
             </a>
           </div>
+        </div>
+      </section>
+
+      <!-- UNIDADES -->
+      <section class="section units -light" id="unidades">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow" data-reveal>Unidades</span>
+            <h2 class="display h2" data-reveal>Perto de você, <span class="gold">onde você estiver.</span></h2>
+          </div>
+          <div class="unit-grid">
+            <article class="unit" data-reveal>
+              <span class="tag">Barueri · SP</span>
+              <h3>Alphaville</h3>
+              <address>Av. Cauaxi, 293, Sala 607<br />Alphaville, Barueri/SP<br />CEP 06454-020</address>
+              <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cauaxi,+293,+Alphaville,+Barueri+-+SP,+06454-020" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
+            </article>
+            <article class="unit" data-reveal style="--d: 0.08s">
+              <span class="tag">Osasco · SP</span>
+              <h3>Osasco</h3>
+              <address>Rua Itabuna, 55, Sala 102<br />Centro, Osasco/SP<br />CEP 06010-120</address>
+              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Itabuna,+55,+Centro,+Osasco+-+SP,+06010-120" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
+            </article>
+            <article class="unit" data-reveal style="--d: 0.16s">
+              <span class="tag">Itapevi · SP</span>
+              <h3>Itapevi</h3>
+              <address>Av. Cezario de Abreu, 12, Sala 02<br />Centro, Itapevi/SP<br />CEP 06653-020</address>
+              <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cezario+de+Abreu,+12,+Centro,+Itapevi+-+SP,+06653-020" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
+            </article>
+            <article class="unit" data-reveal style="--d: 0.24s">
+              <span class="tag">Ivoti · RS</span>
+              <h3>Rio Grande do Sul</h3>
+              <address>Rua Fernando Ferrari, 65, Sala 201<br />Centro, Ivoti/RS<br />CEP 93900-000</address>
+              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Fernando+Ferrari,+65,+Centro,+Ivoti+-+RS,+93900-000" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
+            </article>
+          </div>
+          <p class="online-note" data-reveal>Não pode ir até uma unidade? Atendemos também online, pelo WhatsApp ou por videochamada.</p>
         </div>
       </section>
 
@@ -2348,49 +2361,12 @@
         </div>
       </section>
 
-      <!-- UNIDADES -->
-      <section class="section units -light" id="unidades">
-        <div class="wrap">
-          <div class="section-head">
-            <span class="eyebrow" data-reveal>Unidades</span>
-            <h2 class="display h2" data-reveal>Perto de você, <span class="gold">onde você estiver.</span></h2>
-          </div>
-          <div class="unit-grid">
-            <article class="unit" data-reveal>
-              <span class="tag">Barueri · SP</span>
-              <h3>Alphaville</h3>
-              <address>Av. Cauaxi, 293, Sala 607<br />Alphaville, Barueri/SP<br />CEP 06454-020</address>
-              <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cauaxi,+293,+Alphaville,+Barueri+-+SP,+06454-020" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
-            </article>
-            <article class="unit" data-reveal style="--d: 0.08s">
-              <span class="tag">Osasco · SP</span>
-              <h3>Osasco</h3>
-              <address>Rua Itabuna, 55, Sala 102<br />Centro, Osasco/SP<br />CEP 06010-120</address>
-              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Itabuna,+55,+Centro,+Osasco+-+SP,+06010-120" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
-            </article>
-            <article class="unit" data-reveal style="--d: 0.16s">
-              <span class="tag">Itapevi · SP</span>
-              <h3>Itapevi</h3>
-              <address>Av. Cezario de Abreu, 12, Sala 02<br />Centro, Itapevi/SP<br />CEP 06653-020</address>
-              <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cezario+de+Abreu,+12,+Centro,+Itapevi+-+SP,+06653-020" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
-            </article>
-            <article class="unit" data-reveal style="--d: 0.24s">
-              <span class="tag">Ivoti · RS</span>
-              <h3>Rio Grande do Sul</h3>
-              <address>Rua Fernando Ferrari, 65, Sala 201<br />Centro, Ivoti/RS<br />CEP 93900-000</address>
-              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Fernando+Ferrari,+65,+Centro,+Ivoti+-+RS,+93900-000" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
-            </article>
-          </div>
-          <p class="online-note" data-reveal>Não pode ir até uma unidade? Atendemos também online, pelo WhatsApp ou por videochamada.</p>
-        </div>
-      </section>
-
       <!-- CTA FINAL -->
       <section class="section final" id="contato">
         <img class="watermark" src="./assets/images/brasao.webp" width="640" height="595" alt="" loading="lazy" aria-hidden="true" />
         <div class="wrap">
           <span class="eyebrow" data-reveal>Fale com o escritório</span>
-          <h2 class="display" data-reveal>Seu caso merece <span class="gold">estratégia.</span></h2>
+          <h2 class="display" data-reveal>Desistir dos seus direitos por medo pode custar <span class="gold">muito mais caro</span> no futuro.</h2>
           <p class="lead" data-reveal>Conte o que aconteceu. Um advogado do Coelho &amp; Santana vai olhar a sua situação com atenção, e tudo fica entre nós.</p>
           <div class="final-actions" data-reveal>
             <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">

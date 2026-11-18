@@ -1059,24 +1059,36 @@
           padding: 12px 8px;
           font-size: 0.78rem;
         }
+        /* Serviços em 2 colunas compactas */
+        .cards,
+        .cards.-three {
+          grid-template-columns: 1fr 1fr;
+        }
         .card {
-          display: grid;
-          grid-template-columns: 40px 1fr;
-          column-gap: 16px;
-          row-gap: 6px;
-          padding: 24px 20px;
+          gap: 8px;
+          padding: 18px 14px 16px;
         }
         .card-icon {
-          width: 40px;
-          height: 40px;
-          grid-row: span 3;
+          width: 34px;
+          height: 34px;
+          border-radius: 9px;
+        }
+        .card-icon svg {
+          width: 18px;
+          height: 18px;
         }
         .card h3 {
-          font-size: 1.18rem;
-          align-self: center;
+          font-size: 1.02rem;
+          line-height: 1.22;
+          margin-top: 2px;
         }
         .card p {
-          font-size: 0.92rem;
+          font-size: 0.8rem;
+          line-height: 1.5;
+        }
+        .card-link {
+          font-size: 0.7rem;
+          margin-top: 2px;
         }
       }
       @media (min-width: 640px) {
@@ -1633,6 +1645,125 @@
         background: var(--ink);
       }
 
+      /* Celular: menos rolagem vertical */
+      @media (max-width: 639px) {
+        .section {
+          padding-block: 64px;
+        }
+        .section-head {
+          margin-bottom: 32px;
+        }
+        .about-grid {
+          gap: 52px;
+        }
+        .portrait {
+          max-width: 300px;
+        }
+        .portrait-card {
+          width: calc(100% - 24px);
+          padding: 14px 16px;
+        }
+        .portrait-card strong {
+          font-size: 1.05rem;
+        }
+        .portrait-card span {
+          font-size: 0.66rem;
+        }
+
+        /* Diferenciais em 2x2 */
+        .why-grid {
+          gap: 36px;
+        }
+        .why-list {
+          grid-template-columns: 1fr 1fr;
+          column-gap: 16px;
+        }
+        .why-list li {
+          display: block;
+          padding: 22px 0;
+        }
+        .why-list li::before {
+          display: block;
+          font-size: 1.9rem;
+          margin-bottom: 10px;
+        }
+        .why-list h3 {
+          font-size: 1.08rem;
+          margin-bottom: 6px;
+        }
+        .why-list p {
+          font-size: 0.82rem;
+          line-height: 1.5;
+        }
+
+        /* Etapas em 2x2 */
+        .steps {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+        .step {
+          padding: 18px 14px;
+        }
+        .step::before {
+          font-size: 0.62rem;
+          margin-bottom: 10px;
+        }
+        .step h3 {
+          font-size: 1.1rem;
+          margin-bottom: 6px;
+        }
+        .step p {
+          font-size: 0.82rem;
+          line-height: 1.5;
+        }
+        .center-cta {
+          margin-top: 36px;
+        }
+
+        /* Unidades em carrossel lateral */
+        .unit-grid {
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: 78%;
+          gap: 12px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          margin-inline: calc(var(--gutter) * -1);
+          padding: 4px var(--gutter) 8px;
+          scroll-padding-inline: var(--gutter);
+          scrollbar-width: none;
+        }
+        .unit-grid::-webkit-scrollbar {
+          display: none;
+        }
+        .unit {
+          scroll-snap-align: start;
+          padding: 22px 20px;
+        }
+        .unit:hover {
+          transform: none;
+        }
+        .online-note {
+          margin-top: 18px;
+          font-size: 0.86rem;
+        }
+
+        /* Rodapé em 2 colunas */
+        .footer {
+          padding-top: 48px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px 20px;
+        }
+        .footer-grid > :first-child {
+          grid-column: 1 / -1;
+        }
+        .footer-grid > :last-child {
+          grid-column: 1 / -1;
+        }
+      }
+
       /* Entrada dos elementos (só com JS ativo) */
       .js [data-reveal] {
         opacity: 0;
@@ -1832,49 +1963,49 @@
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-door" /></svg></span>
                 <h3>Rescisão indireta</h3>
                 <p>Quando a empresa descumpre o contrato, você pode sair e receber como se tivesse sido demitido sem justa causa.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre rescisão indireta." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre rescisão indireta." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-clock" /></svg></span>
                 <h3>Horas extras e jornada</h3>
                 <p>Horas não pagas, banco de horas irregular, intervalo cortado e trabalho em domingos e feriados.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre horas extras." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre horas extras." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-alert" /></svg></span>
                 <h3>Assédio moral e sexual</h3>
                 <p>Humilhação, perseguição e abuso no ambiente de trabalho geram direito à reparação.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre assédio no trabalho." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre assédio no trabalho." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-shield" /></svg></span>
                 <h3>Acidente e doença do trabalho</h3>
                 <p>Estabilidade, indenizações e reconhecimento de doenças causadas ou agravadas pelo trabalho.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre acidente ou doença do trabalho." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre acidente ou doença do trabalho." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-cash" /></svg></span>
                 <h3>Verbas rescisórias e FGTS</h3>
                 <p>Rescisão paga errada, FGTS sem depósito, multa de 40% e seguro-desemprego.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre verbas rescisórias e FGTS." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre verbas rescisórias e FGTS." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-id" /></svg></span>
                 <h3>Trabalho sem registro e “PJ”</h3>
                 <p>Trabalhou sem carteira ou como PJ cumprindo ordens e horário? O vínculo pode ser reconhecido.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre trabalho sem registro ou como PJ." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre trabalho sem registro ou como PJ." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-minus" /></svg></span>
                 <h3>Descontos indevidos</h3>
                 <p>Descontos no salário sem previsão legal ou sem sua autorização podem ser devolvidos.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre descontos no meu salário." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre descontos no meu salário." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-flask" /></svg></span>
                 <h3>Insalubridade e periculosidade</h3>
                 <p>Adicionais devidos a quem trabalha exposto a riscos à saúde ou à própria vida.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre insalubridade ou periculosidade." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre insalubridade ou periculosidade." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
             </div>
           </div>
@@ -1886,37 +2017,37 @@
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-heart" /></svg></span>
                 <h3>Cirurgias e exames negados</h3>
                 <p>Negativa ou demora na autorização de cirurgias, exames e internações prescritos pelo médico.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou uma cirurgia ou exame." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou uma cirurgia ou exame." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-pill" /></svg></span>
                 <h3>Medicamentos de alto custo</h3>
                 <p>Remédios oncológicos, imunobiológicos e de alto custo negados por estarem “fora do rol”.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou um medicamento." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou um medicamento." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-shield" /></svg></span>
                 <h3>Terapias e home care</h3>
                 <p>Terapias para autismo (TEA), tratamentos contínuos e atendimento domiciliar recusados.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou uma terapia ou home care." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou uma terapia ou home care." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-coins" /></svg></span>
                 <h3>Reajuste abusivo</h3>
                 <p>Aumentos desproporcionais na mensalidade, por faixa etária ou em planos coletivos.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre reajuste do meu plano de saúde." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e gostaria de falar sobre reajuste do meu plano de saúde." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-lock" /></svg></span>
                 <h3>Cancelamento do plano</h3>
                 <p>Cancelamento indevido do contrato, inclusive durante tratamento em andamento.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e meu plano de saúde foi cancelado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e meu plano de saúde foi cancelado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
               <article class="card">
                 <span class="card-icon"><svg aria-hidden="true"><use href="#i-receipt" /></svg></span>
                 <h3>Reembolso negado</h3>
                 <p>Reembolso recusado ou pago abaixo do devido por consultas, procedimentos e tratamentos.</p>
-                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou meu reembolso." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar sobre isso <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+                <a class="card-link" data-wa="Olá! Vim pelo site e o plano de saúde negou meu reembolso." href="https://wa.me/5511936197327" target="_blank" rel="noopener">Falar<span class="hide-sm">&nbsp;sobre isso</span> <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
               </article>
             </div>
           </div>

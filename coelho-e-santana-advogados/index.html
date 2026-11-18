@@ -434,6 +434,7 @@
       }
       .nav a {
         position: relative;
+        white-space: nowrap;
         font-size: 0.84rem;
         font-weight: 600;
         color: rgba(243, 239, 230, 0.78);
@@ -528,7 +529,7 @@
       .mobile-menu .btn {
         margin-top: 28px;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .nav {
           display: flex;
           gap: 34px;
@@ -1207,6 +1208,7 @@
         grid-auto-columns: minmax(150px, 42%);
         gap: 10px;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         margin-inline: calc(var(--gutter) * -1);
         padding: 4px var(--gutter) 10px;
@@ -1429,7 +1431,36 @@
         border-top: 1px solid var(--line-soft);
       }
       .faq details {
+        position: relative;
         border-bottom: 1px solid var(--line-soft);
+        transition: background-color 0.35s var(--ease);
+      }
+      .faq details::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--gold-grad);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.4s var(--ease);
+      }
+      .faq details[open] {
+        background: linear-gradient(90deg, rgba(212, 176, 106, 0.1), rgba(212, 176, 106, 0.02) 70%, transparent);
+        border-bottom-color: var(--line);
+      }
+      .faq details[open]::before {
+        transform: scaleY(1);
+      }
+      .faq details[open] summary {
+        color: var(--gold-hi);
+      }
+      @media (hover: hover) {
+        .faq summary:hover {
+          color: var(--gold-hi);
+        }
       }
       .faq summary {
         list-style: none;
@@ -1438,8 +1469,9 @@
         justify-content: space-between;
         align-items: center;
         gap: 20px;
-        padding: 24px 0;
+        padding: 24px 18px;
         font-family: var(--serif);
+        transition: color 0.3s;
         font-size: clamp(1.1rem, 2vw, 1.3rem);
         font-weight: 600;
         line-height: 1.3;
@@ -1472,12 +1504,17 @@
       }
       .faq details[open] summary i {
         transform: rotate(45deg);
-        background: rgba(212, 176, 106, 0.1);
+        background: var(--gold-grad);
+        border-color: transparent;
+      }
+      .faq details[open] summary i::before,
+      .faq details[open] summary i::after {
+        background: #1a1408;
       }
       .faq details p {
         color: var(--muted);
-        padding: 0 50px 26px 0;
-        max-width: 70ch;
+        padding: 0 70px 26px 18px;
+        max-width: 72ch;
       }
       @media (min-width: 900px) {
         .faq-grid {
@@ -1687,6 +1724,48 @@
         }
       }
 
+      .footer-bottom {
+        align-items: center;
+      }
+      .manure {
+        color: var(--muted);
+        opacity: 0.8;
+        transition: opacity 0.3s, color 0.3s;
+      }
+      .manure:hover {
+        opacity: 1;
+        color: var(--text);
+      }
+      .manure svg {
+        height: 18px;
+        width: auto;
+      }
+      @media (max-width: 639px) {
+        .footer-grid > :first-child {
+          text-align: center;
+        }
+        .footer-grid > :first-child .footer-logo {
+          margin-inline: auto;
+        }
+        .footer-grid > :first-child p {
+          margin-inline: auto;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+          gap: 14px;
+        }
+      }
+      @media (min-width: 640px) {
+        .manure {
+          margin-left: auto;
+        }
+        .footer-bottom {
+          justify-content: flex-start;
+          gap: 12px 24px;
+        }
+      }
+
       /* WhatsApp fixo */
       .wa-float {
         position: fixed;
@@ -1851,6 +1930,13 @@
         .section {
           padding-block: 64px;
         }
+        .faq summary {
+          padding: 20px 14px;
+        }
+        .faq details p {
+          padding: 0 14px 22px;
+          font-size: 0.95rem;
+        }
         .section-head {
           margin-bottom: 32px;
         }
@@ -1928,6 +2014,7 @@
           grid-auto-columns: 78%;
           gap: 12px;
           overflow-x: auto;
+          overflow-y: hidden;
           scroll-snap-type: x mandatory;
           margin-inline: calc(var(--gutter) * -1);
           padding: 4px var(--gutter) 8px;
@@ -2044,8 +2131,8 @@
           <a href="#unidades">Unidades</a>
           <a href="#duvidas">Dúvidas</a>
         </nav>
-        <a class="btn btn-gold header-cta" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
-          <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com advogado
+        <a class="btn btn-gold header-cta" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de atendimento." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com o escritório
         </a>
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
       </div>
@@ -2056,8 +2143,8 @@
       <a href="#como-atuamos">Como atuamos</a>
       <a href="#unidades">Unidades</a>
       <a href="#duvidas">Dúvidas frequentes</a>
-      <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
-        <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com um advogado
+      <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de atendimento." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com o escritório
       </a>
     </div>
 
@@ -2072,8 +2159,8 @@
               <h1 class="display" data-reveal style="--d: 0.08s">Seus direitos, levados <span class="gold">a sério.</span></h1>
               <p class="lead" data-reveal style="--d: 0.16s">Foi prejudicado e não sabe por onde começar? O Coelho &amp; Santana explica os seus direitos <strong style="color: var(--text); font-weight: 600">em palavras simples</strong> e cuida do seu caso do começo ao fim.</p>
               <div class="hero-actions" data-reveal style="--d: 0.24s">
-                <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
-                  <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com um advogado
+                <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de atendimento." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
+                  <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com o escritório
                 </a>
                 <a class="btn btn-ghost" href="#sobre">Conheça o escritório</a>
               </div>
@@ -2091,8 +2178,8 @@
       <!-- FAIXA -->
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span><span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span>
-          <span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span><span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Atendimento direto com quem cuida do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span>
+          <span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Acompanhamento de perto do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span><span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Acompanhamento de perto do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span>
+          <span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Acompanhamento de perto do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span><span>4 unidades: Alphaville, Osasco, Itapevi e Rio Grande do Sul</span><span>Acompanhamento de perto do seu caso</span><span>Presencial ou pelo WhatsApp</span><span>Sigilo total</span><span>OAB/SP 421.613</span>
         </div>
       </div>
 
@@ -2276,8 +2363,8 @@
             </li>
           </ol>
           <div class="center-cta" data-reveal>
-            <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
-              <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com um advogado
+            <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de atendimento." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar com o escritório
             </a>
           </div>
         </div>
@@ -2290,26 +2377,26 @@
             <span class="eyebrow" data-reveal>Unidades</span>
             <h2 class="display h2" data-reveal>Perto de você, <span class="gold">onde você estiver.</span></h2>
           </div>
-          <div class="unit-grid">
-            <article class="unit" data-reveal>
+          <div class="unit-grid" data-reveal>
+            <article class="unit">
               <span class="tag">Barueri · SP</span>
               <h3>Alphaville</h3>
               <address>Av. Cauaxi, 293, Sala 607<br />Alphaville, Barueri/SP<br />CEP 06454-020</address>
               <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cauaxi,+293,+Alphaville,+Barueri+-+SP,+06454-020" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
             </article>
-            <article class="unit" data-reveal style="--d: 0.08s">
+            <article class="unit">
               <span class="tag">Osasco · SP</span>
               <h3>Osasco</h3>
               <address>Rua Itabuna, 55, Sala 102<br />Centro, Osasco/SP<br />CEP 06010-120</address>
               <a href="https://www.google.com/maps/search/?api=1&query=Rua+Itabuna,+55,+Centro,+Osasco+-+SP,+06010-120" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
             </article>
-            <article class="unit" data-reveal style="--d: 0.16s">
+            <article class="unit">
               <span class="tag">Itapevi · SP</span>
               <h3>Itapevi</h3>
               <address>Av. Cezario de Abreu, 12, Sala 02<br />Centro, Itapevi/SP<br />CEP 06653-020</address>
               <a href="https://www.google.com/maps/search/?api=1&query=Av.+Cezario+de+Abreu,+12,+Centro,+Itapevi+-+SP,+06653-020" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin" /></svg>Ver no mapa</a>
             </article>
-            <article class="unit" data-reveal style="--d: 0.24s">
+            <article class="unit">
               <span class="tag">Ivoti · RS</span>
               <h3>Rio Grande do Sul</h3>
               <address>Rua Fernando Ferrari, 65, Sala 201<br />Centro, Ivoti/RS<br />CEP 93900-000</address>
@@ -2329,31 +2416,31 @@
             <p class="lead" data-reveal>As perguntas que mais ouvimos de quem chega até nós. Ficou alguma dúvida? Fale com a gente.</p>
           </div>
           <div class="faq" data-reveal>
-            <details open>
+            <details name="faq" open>
               <summary>Se eu perder a ação, vou ter que pagar alguma coisa?<i aria-hidden="true"></i></summary>
               <p>Depende do caso. Se algum pedido for negado, a Justiça pode mandar pagar uma parte para o advogado da empresa. Mas quem tem justiça gratuita (quem não pode pagar o processo sem prejudicar o próprio sustento) normalmente não precisa pagar esse valor, a não ser que a situação financeira melhore. Antes de entrar com a ação, a gente explica tudo isso com calma.</p>
             </details>
-            <details>
+            <details name="faq">
               <summary>Quanto tempo demora um processo trabalhista?<i aria-hidden="true"></i></summary>
               <p>Depende de cada caso e de como a empresa age. Muitos terminam em acordo logo nas primeiras audiências. Outros levam mais tempo, até o juiz decidir. Quando analisarmos o seu caso, damos uma previsão sincera.</p>
             </details>
-            <details>
+            <details name="faq">
               <summary>Qual é o prazo para entrar com uma ação?<i aria-hidden="true"></i></summary>
               <p>Você tem até 2 anos depois de sair da empresa para entrar com a ação, e pode cobrar o que deixou de receber nos últimos 5 anos. Quanto antes você procurar, mais direitos consegue garantir.</p>
             </details>
-            <details>
+            <details name="faq">
               <summary>A empresa vai saber que eu procurei um advogado?<i aria-hidden="true"></i></summary>
               <p>Não. Tudo o que você conta para o advogado é sigiloso, por lei. A empresa só fica sabendo se você decidir entrar com a ação.</p>
             </details>
-            <details>
+            <details name="faq">
               <summary>Preciso ir até o escritório?<i aria-hidden="true"></i></summary>
               <p>Não precisa. Você pode ser atendido em uma das unidades (Alphaville, Osasco, Itapevi ou Rio Grande do Sul) ou pelo WhatsApp e por videochamada, sem sair de casa.</p>
             </details>
-            <details>
+            <details name="faq">
               <summary>Quais documentos devo separar?<i aria-hidden="true"></i></summary>
               <p>Carteira de trabalho, holerites, termo de rescisão, extrato do FGTS e qualquer prova do que aconteceu: mensagens, e-mails, fotos, áudios e nomes de testemunhas. Se não tiver tudo, não tem problema: começamos com o que você tiver.</p>
             </details>
-            <details>
+            <details name="faq">
               <summary>O plano de saúde negou meu tratamento. O que eu faço?<i aria-hidden="true"></i></summary>
               <p>Peça ao plano a recusa por escrito (eles são obrigados a entregar) e guarde o relatório do seu médico. Muitas recusas são consideradas ilegais pela Justiça e, em casos urgentes, dá para pedir uma decisão rápida (liminar).</p>
             </details>
@@ -2367,9 +2454,9 @@
         <div class="wrap">
           <span class="eyebrow" data-reveal>Fale com o escritório</span>
           <h2 class="display" data-reveal>Desistir dos seus direitos por medo pode custar <span class="gold">muito mais caro</span> no futuro.</h2>
-          <p class="lead" data-reveal>Conte o que aconteceu. Um advogado do Coelho &amp; Santana vai olhar a sua situação com atenção, e tudo fica entre nós.</p>
+          <p class="lead" data-reveal>Conte o que aconteceu. Nossa equipe vai olhar a sua situação com atenção, e tudo fica entre nós.</p>
           <div class="final-actions" data-reveal>
-            <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
+            <a class="btn btn-gold" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de atendimento." href="https://wa.me/5511936197327" target="_blank" rel="noopener">
               <svg aria-hidden="true"><use href="#i-wa" /></svg>Falar no WhatsApp
             </a>
             <a class="btn btn-ghost" href="tel:+5511961376863"><svg aria-hidden="true"><use href="#i-phone" /></svg>Ligar agora</a>
@@ -2420,11 +2507,12 @@
         <div class="footer-bottom">
           <span>© 2026 Coelho &amp; Santana Advogados Associados. Todos os direitos reservados.</span>
           <a href="/privacidade">Política de privacidade</a>
+          <a class="manure" href="https://www.manure.marketing" target="_blank" rel="noopener" aria-label="Manure Marketing"><svg xmlns="http://www.w3.org/2000/svg" height="20" aria-hidden="true" viewBox="5.41 360.5 989.18 279"> <path fill="currentColor" d="M5.41 608.28h247.78V360.5H5.41v247.78ZM49.14 451.6l29.14-29.15h131.18v72.87l-21.85 21.87-21.87-21.87v-72.87l-14.58 14.58v72.89l-21.87 21.85-21.87-21.85v-72.89l-14.58 14.58v72.87l-21.87 21.87-21.85-21.87v-72.87ZM382.08 431.53h-1.24l-29.11-71.03h-27.56v105.72h21.68v-69.06h.87l27.36 68.55h14.77l27.35-68.29h.88v68.8h21.68V360.5H411.2l-29.12 71.03zM509.43 392.25c-3.15-2.17-6.75-3.76-10.79-4.8-4.04-1.03-8.27-1.55-12.67-1.55-6.33 0-11.9.95-16.7 2.87-4.8 1.91-8.72 4.63-11.74 8.15-3.03 3.53-5.06 7.7-6.09 12.52l20.34 1.65c.76-2.62 2.31-4.79 4.65-6.53 2.34-1.74 5.49-2.6 9.45-2.6s6.65.89 8.7 2.68c2.05 1.79 3.07 4.32 3.07 7.59v.31c0 1.68-.64 2.96-1.91 3.82-1.28.86-3.32 1.5-6.15 1.93-2.82.43-6.54.89-11.15 1.37-3.92.38-7.67 1.03-11.23 1.96-3.56.93-6.73 2.31-9.52 4.13-2.78 1.82-4.99 4.23-6.61 7.23-1.62 2.99-2.43 6.69-2.43 11.1 0 5.23 1.14 9.59 3.43 13.09 2.29 3.49 5.41 6.12 9.37 7.9 3.96 1.77 8.47 2.66 13.52 2.66 3.92 0 7.38-.52 10.37-1.57 3-1.05 5.56-2.51 7.69-4.39 2.14-1.87 3.84-4.05 5.11-6.53h.62v10.99h20.86v-53.48c0-4.71-.91-8.77-2.74-12.16a23.465 23.465 0 0 0-7.46-8.34Zm-11.64 45.63c0 2.78-.7 5.28-2.11 7.48s-3.36 3.95-5.84 5.24-5.33 1.94-8.57 1.94-6.15-.78-8.33-2.35c-2.19-1.56-3.28-3.84-3.28-6.84 0-2.07.53-3.79 1.6-5.19 1.07-1.4 2.57-2.51 4.49-3.33 1.93-.83 4.18-1.43 6.76-1.8 1.2-.17 2.54-.37 4.03-.6 1.48-.22 2.96-.48 4.44-.77 1.48-.29 2.81-.62 4-.98s2.12-.76 2.81-1.21v8.41ZM605.44 466.22v-50.48c0-6.16-1.13-11.47-3.4-15.93-2.27-4.46-5.46-7.89-9.55-10.3-4.1-2.41-8.9-3.61-14.4-3.61-5.88 0-10.89 1.35-15.02 4.05-4.13 2.7-7.07 6.36-8.83 10.97h-.93v-13.99h-20.96v79.29h21.99v-45.84c.03-3.41.68-6.33 1.93-8.75 1.26-2.43 3.01-4.28 5.27-5.55 2.25-1.28 4.86-1.91 7.82-1.91 4.4 0 7.86 1.37 10.38 4.1 2.51 2.74 3.75 6.53 3.71 11.38v46.56h21.99ZM631.22 463.64c4.03 2.41 8.69 3.61 13.99 3.61 5.95 0 11-1.41 15.15-4.23 4.15-2.82 7.12-6.55 8.9-11.2h.83v14.4h21.11v-79.29h-21.99v45.53c.03 3.55-.66 6.52-2.09 8.93-1.43 2.41-3.3 4.23-5.6 5.45-2.31 1.22-4.78 1.83-7.43 1.83-4.16 0-7.49-1.36-9.96-4.08-2.48-2.72-3.73-6.42-3.77-11.1v-46.56h-21.99v50.49c.03 6.19 1.18 11.51 3.43 15.95 2.25 4.44 5.39 7.86 9.42 10.27ZM726.38 421.36c0-3.24.73-6.09 2.19-8.57 1.47-2.48 3.46-4.41 5.99-5.81 2.53-1.4 5.41-2.09 8.65-2.09 1.51 0 3.18.12 5.01.36 1.82.24 3.25.52 4.28.83v-19.51c-.97-.24-2.08-.43-3.36-.57s-2.46-.21-3.56-.21c-4.44 0-8.36 1.26-11.77 3.79-3.41 2.53-5.84 6.25-7.28 11.17h-.83v-13.83h-21.32v79.29h21.99v-44.86ZM817.49 395.92c-3.39-3.33-7.35-5.84-11.87-7.51-4.53-1.67-9.4-2.51-14.63-2.51-7.78 0-14.55 1.72-20.31 5.16-5.76 3.44-10.23 8.24-13.4 14.4s-4.75 13.32-4.75 21.47 1.58 15.6 4.75 21.71c3.17 6.11 7.68 10.83 13.55 14.14 5.87 3.32 12.88 4.98 21.04 4.98 6.54 0 12.31-1.01 17.32-3.02 5.01-2.02 9.1-4.83 12.29-8.47 3.18-3.63 5.29-7.89 6.32-12.78l-20.34-1.34c-.76 1.99-1.86 3.68-3.3 5.06s-3.18 2.41-5.21 3.09c-2.03.69-4.27 1.04-6.71 1.04-3.68 0-6.86-.78-9.55-2.32-2.69-1.55-4.76-3.75-6.22-6.61-1.47-2.86-2.2-6.25-2.2-10.17v-.05h53.99v-6.04c0-6.74-.95-12.64-2.84-17.68-1.9-5.04-4.54-9.23-7.92-12.57Zm-43.14 22.66c.14-2.84.8-5.46 2.13-7.82 1.44-2.57 3.45-4.61 6.01-6.15 2.56-1.53 5.51-2.29 8.85-2.29s6.01.7 8.44 2.09c2.42 1.39 4.33 3.31 5.7 5.75 1.38 2.45 2.07 5.25 2.07 8.41h-33.2ZM810.42 496.36c-3.23 0-6.02 1.09-8.36 3.28-2.34 2.18-3.51 4.81-3.51 7.87s1.16 5.68 3.49 7.85c2.32 2.17 5.12 3.25 8.38 3.25s6.07-1.09 8.39-3.28c2.32-2.18 3.49-4.81 3.49-7.87s-1.16-5.68-3.49-7.84c-2.32-2.17-5.12-3.25-8.39-3.25ZM382.08 573.42h-1.24l-29.11-71.03h-27.56v105.72h21.68v-69.06h.87l27.36 68.55h14.77l27.35-68.29h.88v68.8h21.68V502.39H411.2l-29.12 71.03zM509.43 534.14c-3.15-2.17-6.75-3.76-10.79-4.8-4.04-1.03-8.27-1.55-12.67-1.55-6.33 0-11.9.95-16.7 2.87-4.8 1.91-8.72 4.63-11.74 8.15-3.03 3.53-5.06 7.7-6.09 12.52l20.34 1.65c.76-2.62 2.31-4.79 4.65-6.53 2.34-1.74 5.49-2.6 9.45-2.6s6.65.89 8.7 2.68c2.05 1.79 3.07 4.32 3.07 7.59v.31c0 1.68-.64 2.96-1.91 3.82-1.28.86-3.32 1.5-6.15 1.93-2.82.43-6.54.89-11.15 1.37-3.92.38-7.67 1.03-11.23 1.96-3.56.93-6.73 2.31-9.52 4.13-2.78 1.82-4.99 4.23-6.61 7.23-1.62 2.99-2.43 6.69-2.43 11.1 0 5.23 1.14 9.59 3.43 13.09 2.29 3.49 5.41 6.12 9.37 7.9 3.96 1.77 8.47 2.66 13.52 2.66 3.92 0 7.38-.52 10.37-1.57 3-1.05 5.56-2.51 7.69-4.39 2.14-1.87 3.84-4.05 5.11-6.53h.62v10.99h20.86v-53.48c0-4.71-.91-8.77-2.74-12.16a23.465 23.465 0 0 0-7.46-8.34Zm-11.64 45.63c0 2.78-.7 5.28-2.11 7.48s-3.36 3.95-5.84 5.24-5.33 1.94-8.57 1.94-6.15-.78-8.33-2.35c-2.19-1.56-3.28-3.84-3.28-6.84 0-2.07.53-3.79 1.6-5.19 1.07-1.4 2.57-2.51 4.49-3.33 1.93-.83 4.18-1.43 6.76-1.8 1.2-.17 2.54-.37 4.03-.6 1.48-.22 2.96-.48 4.44-.77 1.48-.29 2.81-.62 4-.98s2.12-.76 2.81-1.21v8.41ZM573.54 527.69c-4.44 0-8.36 1.26-11.77 3.79-3.41 2.53-5.84 6.25-7.28 11.17h-.83v-13.83h-21.32v79.29h21.99v-44.86c0-3.24.73-6.09 2.19-8.57 1.47-2.48 3.46-4.41 5.99-5.81 2.53-1.4 5.41-2.09 8.65-2.09 1.51 0 3.18.12 5.01.36 1.82.24 3.25.52 4.28.83v-19.51c-.97-.24-2.08-.43-3.36-.57s-2.46-.21-3.56-.21ZM661.21 528.82h-25.24l-25.4 30.1h-1.18v-56.53H587.4v105.72h21.99v-25.17l5.95-6.81 21.61 31.98h25.76l-30.91-44.94 29.41-34.35z" class="cls-1"></path> <path fill="currentColor" d="M726.04 537.81c-3.39-3.33-7.35-5.84-11.87-7.51-4.53-1.67-9.4-2.51-14.63-2.51-7.78 0-14.55 1.72-20.31 5.16s-10.23 8.24-13.4 14.4-4.75 13.32-4.75 21.47 1.58 15.6 4.75 21.71c3.17 6.11 7.68 10.83 13.55 14.14 5.87 3.32 12.88 4.98 21.04 4.98 6.54 0 12.31-1.01 17.32-3.02 5.01-2.02 9.1-4.83 12.29-8.47 3.18-3.63 5.29-7.89 6.32-12.78l-20.34-1.34c-.76 1.99-1.86 3.68-3.3 5.06-1.44 1.38-3.18 2.41-5.21 3.09-2.03.69-4.27 1.04-6.71 1.04-3.68 0-6.86-.78-9.55-2.32-2.69-1.55-4.76-3.75-6.22-6.61-1.47-2.86-2.2-6.25-2.2-10.17v-.05h53.99v-6.04c0-6.74-.95-12.64-2.84-17.68-1.9-5.04-4.54-9.23-7.92-12.57Zm-43.14 22.66c.14-2.84.8-5.46 2.13-7.82 1.44-2.57 3.45-4.61 6.01-6.15 2.56-1.53 5.51-2.29 8.85-2.29s6.01.7 8.44 2.09c2.42 1.39 4.33 3.31 5.7 5.75 1.38 2.45 2.07 5.25 2.07 8.41h-33.2ZM784.58 591.21c-1.03.19-2.06.28-3.09.28-1.48 0-2.78-.22-3.9-.67-1.12-.45-1.99-1.23-2.61-2.35-.62-1.12-.93-2.69-.93-4.72v-38.41h14.92v-16.52h-14.92v-18.99h-21.99v18.99h-10.84v16.52h10.84v41.29c-.03 5.2 1.05 9.5 3.25 12.91s5.29 5.92 9.27 7.54c3.98 1.62 8.61 2.32 13.91 2.11 2.86-.1 5.28-.39 7.28-.85 1.99-.46 3.54-.87 4.65-1.21l-3.46-16.36c-.55.1-1.34.25-2.38.44ZM798.91 528.82h21.99v79.29h-21.99zM894.21 531.41c-4.1-2.41-8.9-3.61-14.4-3.61-5.88 0-10.89 1.35-15.02 4.05-4.13 2.7-7.07 6.36-8.83 10.97h-.93v-13.99h-20.96v79.29h21.99v-45.84c.03-3.41.68-6.33 1.93-8.75 1.26-2.43 3.01-4.28 5.27-5.55 2.25-1.28 4.86-1.91 7.82-1.91 4.4 0 7.86 1.37 10.38 4.1 2.51 2.74 3.75 6.53 3.71 11.38v46.56h21.99v-50.48c0-6.16-1.13-11.47-3.4-15.93-2.27-4.46-5.46-7.89-9.55-10.3ZM972.75 542.14h-.83c-1-2.13-2.42-4.31-4.26-6.53-1.84-2.22-4.26-4.08-7.25-5.58-3-1.5-6.71-2.24-11.15-2.24-5.82 0-11.16 1.5-16.03 4.49-4.87 3-8.77 7.5-11.69 13.52s-4.39 13.52-4.39 22.51 1.44 16.03 4.31 21.76c2.87 5.73 6.75 9.98 11.62 12.75 4.87 2.77 10.28 4.16 16.24 4.16 4.19 0 7.81-.62 10.84-1.86 3.03-1.24 5.5-2.84 7.43-4.8 1.93-1.96 3.37-4.04 4.34-6.24h.93v14.5c0 5.44-1.56 9.32-4.67 11.64-3.12 2.32-7.06 3.48-11.85 3.48-3.2 0-5.91-.42-8.13-1.26-2.22-.84-4-1.95-5.34-3.33-1.34-1.38-2.32-2.85-2.94-4.44l-20.34 2.74c.89 4.16 2.84 7.92 5.83 11.25 3 3.33 7.03 5.98 12.11 7.92 5.08 1.95 11.17 2.92 18.3 2.92 7.57 0 14.27-1.14 20.1-3.43 5.84-2.29 10.4-5.7 13.71-10.25 3.3-4.54 4.95-10.18 4.95-16.93v-80.06h-21.84v13.32Zm-1.78 38.02c-1.32 3.32-3.21 5.87-5.68 7.64-2.46 1.77-5.46 2.66-9.01 2.66s-6.65-.9-9.11-2.71c-2.46-1.8-4.34-4.37-5.63-7.69-1.29-3.32-1.94-7.27-1.94-11.85s.64-8.48 1.91-11.93c1.27-3.44 3.15-6.13 5.63-8.07 2.48-1.95 5.52-2.92 9.14-2.92s6.56.95 9.03 2.84c2.48 1.89 4.37 4.55 5.68 7.97 1.31 3.43 1.96 7.46 1.96 12.11s-.66 8.63-1.99 11.95Z" class="cls-1"></path> </svg></a>
         </div>
       </div>
     </footer>
 
-    <a class="wa-float" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de falar com um advogado." href="https://wa.me/5511936197327" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <a class="wa-float" data-wa="Olá! Vim pelo site do Coelho & Santana e gostaria de atendimento." href="https://wa.me/5511936197327" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
       <svg aria-hidden="true"><use href="#i-wa" /></svg><span class="label">Falar no WhatsApp</span>
     </a>
 
@@ -2489,6 +2577,17 @@
             var next = tabs[(i + dir + tabs.length) % tabs.length]
             select(next)
             next.focus()
+          })
+        })
+
+        // Dúvidas: abrir uma fecha as outras (reforço para navegadores sem suporte a details[name])
+        var faqs = [].slice.call(d.querySelectorAll('.faq details'))
+        faqs.forEach(function (el) {
+          el.addEventListener('toggle', function () {
+            if (!el.open) return
+            faqs.forEach(function (o) {
+              if (o !== el) o.open = false
+            })
           })
         })
 

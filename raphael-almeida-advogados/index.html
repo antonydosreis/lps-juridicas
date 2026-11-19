@@ -79,6 +79,13 @@
 }
     </script>
     <!-- erp:head-scripts -->
+    
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-M52G78TV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
         <!-- /erp:head-scripts -->
 
     <style>
@@ -1227,7 +1234,7 @@
 
     <!-- erp:click-tracking -->
     <script>
-                var clickTracking = {"endpoint":"https:\/\/erp.manure.marketing\/api\/landing-pages\/clicks","page":9341,"sig":"8d4da11a8161dfd9a95af399927faa8f","attribution_days":90}        var attribution = (function () {
+                var clickTracking = {"endpoint":"https:\/\/erp.manure.marketing\/api\/landing-pages\/clicks","visits_endpoint":"https:\/\/erp.manure.marketing\/api\/landing-pages\/visits","page":9341,"sig":"8d4da11a8161dfd9a95af399927faa8f","attribution_days":90}        var attribution = (function () {
             var storageKey = 'lp_attribution'
             var params = new URLSearchParams(window.location.search)
             var saved = {}
@@ -1251,11 +1258,43 @@
             } catch (error) {}
             try { fetch(clickTracking.endpoint, { method: 'POST', body: body, mode: 'no-cors', keepalive: true }) } catch (error) {}
         }
+        var pageVisit = (function () {
+            if (!clickTracking.visits_endpoint) return null
+            var params = new URLSearchParams(window.location.search)
+            var utmSource = (params.get('utm_source') || '').toLowerCase()
+            var visit = {
+                key: Date.now().toString(36) + Math.random().toString(36).slice(2, 12),
+                source: params.get('gclid') || params.get('gbraid') || params.get('wbraid') ? 'google' : params.get('fbclid') || /facebook|instagram|^fb|^ig|meta/.test(utmSource) ? 'meta' : 'other',
+                device: window.innerWidth < 768 ? 'mobile' : 'desktop',
+                scroll: 0, headings: 0, clicked: false, visibleMs: 0, shownAt: Date.now()
+            }
+            var headings = Array.prototype.slice.call(document.querySelectorAll('h1, h2'))
+            function measure() {
+                var viewBottom = window.scrollY + window.innerHeight
+                visit.scroll = Math.max(visit.scroll, Math.min(100, Math.round(viewBottom / Math.max(1, document.documentElement.scrollHeight) * 100)))
+                headings.forEach(function (heading, index) { if (heading.getBoundingClientRect().top + window.scrollY < viewBottom - 80) visit.headings = Math.max(visit.headings, index + 1) })
+            }
+            visit.send = function () {
+                var visibleMs = visit.visibleMs + (document.visibilityState === 'visible' ? Date.now() - visit.shownAt : 0)
+                var body = JSON.stringify({ page: clickTracking.page, sig: clickTracking.sig, visit: visit.key, url: window.location.href, source: visit.source, device: visit.device, scroll: visit.scroll, headings: visit.headings, seconds: Math.round(visibleMs / 1000), clicked: visit.clicked })
+                try { if (navigator.sendBeacon && navigator.sendBeacon(clickTracking.visits_endpoint, new Blob([body], { type: 'text/plain' }))) return } catch (error) {}
+                try { fetch(clickTracking.visits_endpoint, { method: 'POST', body: body, mode: 'no-cors', keepalive: true }) } catch (error) {}
+            }
+            window.addEventListener('scroll', measure, { passive: true })
+            window.addEventListener('load', measure)
+            measure()
+            document.addEventListener('visibilitychange', function () {
+                if (document.visibilityState === 'hidden') { visit.visibleMs += Date.now() - visit.shownAt; visit.send() } else visit.shownAt = Date.now()
+            })
+            window.addEventListener('pagehide', function () { if (document.visibilityState === 'visible') visit.send() })
+            return visit
+        })()
                 document.querySelectorAll('a[href^="https://wa.me"]').forEach(function (link) {
             link.addEventListener('click', function () {
                 window.dataLayer = window.dataLayer || []
                 window.dataLayer.push({ event: 'whatsapp_click', cta_position: link.dataset.cta || 'button' })
                                 registerWhatsappClick(link.dataset.cta || 'button')
+                if (pageVisit) { pageVisit.clicked = true; pageVisit.send() }
                             })
         })
     </script>
